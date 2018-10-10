@@ -38,7 +38,11 @@ public class Main {
 	        String forecast = client.forecastJsonString(request);
 	        System.out.println(forecast);
 	        
-	        
+	        String str = "{ \"name\": \"Alice\", \"age\": 20 }";
+	        JSONObject obj = new JSONObject(str);
+	        String n = obj.getString("name");
+	        int a = obj.getInt("age");
+	        System.out.println(n + " " + a);  // prints "Alice 20"
 	        
 		
 	        
