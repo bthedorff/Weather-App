@@ -4,6 +4,8 @@ import tk.plogitech.darksky.forecast.model.Longitude;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
+import org.json.JSONObject;
+
 import tk.plogitech.darksky.forecast.*;
 
 // API Key   5f3d14bc52bfc3ec10922d31be0e7e61
@@ -35,6 +37,8 @@ public class Main {
 	        DarkSkyClient client = new DarkSkyClient();
 	        String forecast = client.forecastJsonString(request);
 	        System.out.println(forecast);
+	        
+	        
 	        
 		
 	        
