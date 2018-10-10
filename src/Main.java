@@ -14,9 +14,10 @@ public class Main {
 	private String APIKey;
 	public static void main(String args[]) throws ForecastException {
 		String APIKey = "5f3d14bc52bfc3ec10922d31be0e7e61";
-		float currLongitude = (float) -85.886879;
-		double currLatitude = 42.966679;
-		String CurrTime;
+		double currLong;
+		double currLat;
+		JSONObject currTime;
+		String Summary;
 //		ForecastRequest request = new ForecastRequestBuilder()
 //	        .key(new APIKey("5f3d14bc52bfc3ec10922d31be0e7e61"))
 //	        .location(new GeoCoordinates(new Longitude(-85.886879), new Latitude(42.966679))).build();
@@ -36,17 +37,25 @@ public class Main {
 
 	        DarkSkyClient client = new DarkSkyClient();
 	        String forecast = client.forecastJsonString(request);
-	        System.out.println(forecast);
+	//        System.out.println(forecast);
 	        
-	        //String forecast1 = "{\"latitude\": \"lat\"}"; 
+
 //	        
-	        String str = "{ \"name\": \"Alice\", \"age\": 20 }";
-	        JSONObject obj = new JSONObject(str);
-	        String n = obj.getString("name");
-	        int a = obj.getInt("age");
-	        System.out.println(n + " " + a);  // prints "Alice 20"
+//	        String str = "{ \"name\": \"Alice\", \"age\": 20 }";
+	        JSONObject obj = new JSONObject(forecast);
+	        
+	        currLong = obj.getDouble("longitude");
+	        currLat = obj.getDouble("latitude");
+	        //currTime = obj.getString("time");\
+	        currTime = obj.getJSONObject("time");
+	        //Summary = obj.getString("summary");
+	        
+	        System.out.println(currLong + ", " + currLat );
+//	        int a = obj.getInt("age");
+//	        System.out.println(n + " " + a);  // prints "Alice 20"
 //	        
 //	        // http://theoryapp.com/parse-json-in-java/
-	        hello
+
+	        
 	}
 }
