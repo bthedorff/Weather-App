@@ -5,7 +5,6 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
 import org.json.JSONObject;
-import org.json.*;
 
 import tk.plogitech.darksky.forecast.*;
 
@@ -13,11 +12,11 @@ import tk.plogitech.darksky.forecast.*;
 //test
 public class Main {
 	private String APIKey;
-	public static void main(String args[]) throws ForecastException, JSONException {
+	public static void main(String args[]) throws ForecastException {
 		String APIKey = "5f3d14bc52bfc3ec10922d31be0e7e61";
 		double currLong;
-		double currLat;
-		String currTime;
+		double currLat,currPrecipProb;
+		int currTime;
 		String Summary;
 //		ForecastRequest request = new ForecastRequestBuilder()
 //	        .key(new APIKey("5f3d14bc52bfc3ec10922d31be0e7e61"))
@@ -38,7 +37,7 @@ public class Main {
 
 	        DarkSkyClient client = new DarkSkyClient();
 	        String forecast = client.forecastJsonString(request);
-	        System.out.println(forecast);
+	//        System.out.println(forecast);
 	        
 
 //	        
@@ -47,20 +46,16 @@ public class Main {
 	        
 	        currLong = obj.getDouble("longitude");
 	        currLat = obj.getDouble("latitude");
-<<<<<<< HEAD
-	        currTime = obj.getInt("time");
+	        currTime = obj.getJSONObject("currently").getInt("time");
 	        //currTime = obj.getJSONObject("time");
-=======
-	        //currTime = obj.getString("time");\
-	        currTime = obj.getString("time");
->>>>>>> 38051408f4e0a7ae31d69da87c276062a2e953af
 	        //Summary = obj.getString("summary");
-	        currPrecipProb = obj.getDouble(precipProbability);
+	        currPrecipProb = obj.getJSONObject("currently").getDouble("precipProbability");
 	        
 	        
 	        
 	        
 	        System.out.println(currLong + ", " + currLat );
+	        System.out.println(currTime + ", " + currPrecipProb);
 //	        int a = obj.getInt("age");
 //	        System.out.println(n + " " + a);  // prints "Alice 20"
 //	        
