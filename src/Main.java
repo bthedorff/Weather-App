@@ -14,9 +14,13 @@ public class Main {
 	private String APIKey;
 	public static void main(String args[]) throws ForecastException {
 		String APIKey = "5f3d14bc52bfc3ec10922d31be0e7e61";
-		float currLongitude = (float) -85.886879;
-		double currLatitude = 42.966679;
-		String CurrTime;
+		double currLong;
+		double currLat,currPrecipProb;
+		int currTime;
+		String summary;
+		double temp;
+		double apptemp;
+		
 //		ForecastRequest request = new ForecastRequestBuilder()
 //	        .key(new APIKey("5f3d14bc52bfc3ec10922d31be0e7e61"))
 //	        .location(new GeoCoordinates(new Longitude(-85.886879), new Latitude(42.966679))).build();
@@ -38,15 +42,29 @@ public class Main {
 	        String forecast = client.forecastJsonString(request);
 	        System.out.println(forecast);
 	        
-	        //String forecast1 = "{\"latitude\": \"lat\"}"; 
+
 //	        
-	        String str = "{ \"name\": \"Alice\", \"age\": 20 }";
-	        JSONObject obj = new JSONObject(str);
-	        String n = obj.getString("name");
-	        int a = obj.getInt("age");
-	        System.out.println(n + " " + a);  // prints "Alice 20"
+//	        String str = "{ \"name\": \"Alice\", \"age\": 20 }";
+	        JSONObject obj = new JSONObject(forecast);
+	        
+	        currLong = obj.getDouble("longitude");
+	        currLat = obj.getDouble("latitude");
+	        currTime = obj.getJSONObject("currently").getInt("time");
+	        //currTime = obj.getJSONObject("time");
+	        summary = obj.getJSONObject("currently").getString("summary");
+	        currPrecipProb = obj.getJSONObject("currently").getDouble("precipProbability");
+	        temp = obj.getJSONObject("currently").getDouble("temperature");
+	        apptemp = obj.getJSONObject("currently").getDouble("apparentTemperature");
+	        
+	        
+	        System.out.println(currLong + ", " + currLat );
+	        System.out.println(currTime + ", " + currPrecipProb);
+	        System.out.println(summary);
+//	        int a = obj.getInt("age");
+//	        System.out.println(n + " " + a);  // prints "Alice 20"
 //	        
 //	        // http://theoryapp.com/parse-json-in-java/
-	        hello
+
+	        
 	}
 }
