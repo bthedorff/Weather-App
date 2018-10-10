@@ -16,7 +16,7 @@ public class Main {
 		String APIKey = "5f3d14bc52bfc3ec10922d31be0e7e61";
 		double currLong;
 		double currLat,currPrecipProb;
-		int currTime;
+		int currTime,sec = 0,min = 0,hour = 0, day = 0,year = 0;
 		String summary;
 		double temp;
 		double apptemp;
@@ -56,10 +56,31 @@ public class Main {
 	        temp = obj.getJSONObject("currently").getDouble("temperature");
 	        apptemp = obj.getJSONObject("currently").getDouble("apparentTemperature");
 	        
+	        for (; currTime > 0;currTime--){
+	        	sec++;
+	        	if (sec == 60){
+	        		sec = 0;
+	        		min++;
+	        	}
+	        	if (min == 60){
+	        		min = 0;
+	        		hour++;
+	        	}
+	        	if (hour == 24){
+	        		hour = 0;
+	        		day++;
+	        	}
+	        	if (day == 365){
+	        		day = 0;
+	        		year++;
+	        	}
+	        }
+	        String time = hour + ":" + min + ":" + sec;
 	        
 	        System.out.println(currLong + ", " + currLat );
 	        System.out.println(currTime + ", " + currPrecipProb);
 	        System.out.println(summary);
+	        System.out.println(time);
 //	        int a = obj.getInt("age");
 //	        System.out.println(n + " " + a);  // prints "Alice 20"
 //	        
