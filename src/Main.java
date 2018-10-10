@@ -5,7 +5,6 @@ import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
 import org.json.JSONObject;
-import org.json.*;
 
 import tk.plogitech.darksky.forecast.*;
 
@@ -13,11 +12,11 @@ import tk.plogitech.darksky.forecast.*;
 //test
 public class Main {
 	private String APIKey;
-	public static void main(String args[]) throws ForecastException, JSONException {
+	public static void main(String args[]) throws ForecastException {
 		String APIKey = "5f3d14bc52bfc3ec10922d31be0e7e61";
 		double currLong;
 		double currLat;
-		String currTime;
+		JSONObject currTime;
 		String Summary;
 //		ForecastRequest request = new ForecastRequestBuilder()
 //	        .key(new APIKey("5f3d14bc52bfc3ec10922d31be0e7e61"))
@@ -38,7 +37,7 @@ public class Main {
 
 	        DarkSkyClient client = new DarkSkyClient();
 	        String forecast = client.forecastJsonString(request);
-	        System.out.println(forecast);
+	//        System.out.println(forecast);
 	        
 
 //	        
@@ -48,7 +47,7 @@ public class Main {
 	        currLong = obj.getDouble("longitude");
 	        currLat = obj.getDouble("latitude");
 	        //currTime = obj.getString("time");\
-	        currTime = obj.getString("time");
+	        currTime = obj.getJSONObject("time");
 	        //Summary = obj.getString("summary");
 	        
 	        System.out.println(currLong + ", " + currLat );
