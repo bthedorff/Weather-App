@@ -12,8 +12,8 @@ public class Main {
 	private String APIKey;
 	public static void main(String args[]) throws ForecastException {
 		String APIKey = "5f3d14bc52bfc3ec10922d31be0e7e61";
-		String currLongitude = "-85.886879";
-		String currLatitude = "42.966679";
+		float currLongitude = (float) -85.886879;
+		double currLatitude = 42.966679;
 		String CurrTime;
 //		ForecastRequest request = new ForecastRequestBuilder()
 //	        .key(new APIKey("5f3d14bc52bfc3ec10922d31be0e7e61"))
