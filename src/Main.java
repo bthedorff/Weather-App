@@ -37,14 +37,16 @@ public class Main {
 	        DarkSkyClient client = new DarkSkyClient();
 	        String forecast = client.forecastJsonString(request);
 	        System.out.println(forecast);
+	        
+	        //String forecast1 = "{\"latitude\": \"lat\"}"; 
 //	        
-//	        String str = "{ \"name\": \"Alice\", \"age\": 20 }";
-//	        JSONObject obj = new JSONObject(str);
-//	        String n = obj.getString("name");
-//	        int a = obj.getInt("age");
-//	        System.out.println(n + " " + a);  // prints "Alice 20"
+	        String str = "{ \"name\": \"Alice\", \"age\": 20 }";
+	        JSONObject obj = new JSONObject(str);
+	        String n = obj.getString("name");
+	        int a = obj.getInt("age");
+	        System.out.println(n + " " + a);  // prints "Alice 20"
 //	        
 //	        // http://theoryapp.com/parse-json-in-java/
-	        
+	        hello
 	}
 }
