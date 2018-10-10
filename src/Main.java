@@ -24,12 +24,12 @@ public class Main {
 //	    DarkSkyClient client = new DarkSkyClient();
 //	    String forecast = client.forecastJsonString(request);
 //	    System.out.println(forecast);
-		
+//		
 	    ForecastRequest request = new ForecastRequestBuilder()
 	            .key(new APIKey(APIKey))
 	            .time(Instant.now().minus(5, ChronoUnit.DAYS))
-	            .language(ForecastRequestBuilder.Language.de)
-	            .units(ForecastRequestBuilder.Units.us)
+	            .language(ForecastRequestBuilder.Language.en)
+	            .units(ForecastRequestBuilder.Units.auto)
 	            .exclude(ForecastRequestBuilder.Block.minutely)
 	            .extendHourly()
 	            .location(new GeoCoordinates(new Longitude(-85.886879), new Latitude(42.966679))).build();
@@ -37,14 +37,14 @@ public class Main {
 	        DarkSkyClient client = new DarkSkyClient();
 	        String forecast = client.forecastJsonString(request);
 	        System.out.println(forecast);
-	        
-	        String str = "{ \"name\": \"Alice\", \"age\": 20 }";
-	        JSONObject obj = new JSONObject(str);
-	        String n = obj.getString("name");
-	        int a = obj.getInt("age");
-	        System.out.println(n + " " + a);  // prints "Alice 20"
-	        
-	        // http://theoryapp.com/parse-json-in-java/
+//	        
+//	        String str = "{ \"name\": \"Alice\", \"age\": 20 }";
+//	        JSONObject obj = new JSONObject(str);
+//	        String n = obj.getString("name");
+//	        int a = obj.getInt("age");
+//	        System.out.println(n + " " + a);  // prints "Alice 20"
+//	        
+//	        // http://theoryapp.com/parse-json-in-java/
 	        
 	}
 }
