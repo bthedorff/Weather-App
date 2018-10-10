@@ -17,7 +17,7 @@ public class Main {
 		double currLong;
 		double currLat,currPrecipProb;
 		int currTime;
-		String Summary;
+		String summary;
 //		ForecastRequest request = new ForecastRequestBuilder()
 //	        .key(new APIKey("5f3d14bc52bfc3ec10922d31be0e7e61"))
 //	        .location(new GeoCoordinates(new Longitude(-85.886879), new Latitude(42.966679))).build();
@@ -48,7 +48,7 @@ public class Main {
 	        currLat = obj.getDouble("latitude");
 	        currTime = obj.getJSONObject("currently").getInt("time");
 	        //currTime = obj.getJSONObject("time");
-	        //Summary = obj.getString("summary");
+	        summary = obj.getJSONObject("currently").getString("summary");
 	        currPrecipProb = obj.getJSONObject("currently").getDouble("precipProbability");
 	        
 	        
@@ -56,6 +56,7 @@ public class Main {
 	        
 	        System.out.println(currLong + ", " + currLat );
 	        System.out.println(currTime + ", " + currPrecipProb);
+	        System.out.println(summary);
 //	        int a = obj.getInt("age");
 //	        System.out.println(n + " " + a);  // prints "Alice 20"
 //	        
