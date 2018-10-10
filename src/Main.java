@@ -44,7 +44,7 @@ public class Main {
 	        int a = obj.getInt("age");
 	        System.out.println(n + " " + a);  // prints "Alice 20"
 	        
-		
+	        // http://theoryapp.com/parse-json-in-java/
 	        
 	}
 }
