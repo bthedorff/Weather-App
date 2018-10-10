@@ -18,6 +18,9 @@ public class Main {
 		double currLat,currPrecipProb;
 		int currTime;
 		String summary;
+		double temp;
+		double apptemp;
+		
 //		ForecastRequest request = new ForecastRequestBuilder()
 //	        .key(new APIKey("5f3d14bc52bfc3ec10922d31be0e7e61"))
 //	        .location(new GeoCoordinates(new Longitude(-85.886879), new Latitude(42.966679))).build();
@@ -37,7 +40,7 @@ public class Main {
 
 	        DarkSkyClient client = new DarkSkyClient();
 	        String forecast = client.forecastJsonString(request);
-	//        System.out.println(forecast);
+	        System.out.println(forecast);
 	        
 
 //	        
@@ -50,8 +53,8 @@ public class Main {
 	        //currTime = obj.getJSONObject("time");
 	        summary = obj.getJSONObject("currently").getString("summary");
 	        currPrecipProb = obj.getJSONObject("currently").getDouble("precipProbability");
-	        
-	        
+	        temp = obj.getJSONObject("currently").getDouble("temperature");
+	        apptemp = obj.getJSONObject("currently").getDouble("apparentTemperature");
 	        
 	        
 	        System.out.println(currLong + ", " + currLat );
