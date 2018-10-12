@@ -18,6 +18,8 @@ public class Main {
 		double currLat,currPrecipProb;
 		int currTime,sec = 0,min = 0,hour = 0, day = 0,year = 0;
 		String summary;
+		String summary2;
+		String currTime2;
 		double temp;
 		double apptemp;
 		
@@ -50,11 +52,19 @@ public class Main {
 	        currLong = obj.getDouble("longitude");
 	        currLat = obj.getDouble("latitude");
 	        currTime = obj.getJSONObject("currently").getInt("time");
-	        //currTime = obj.getJSONObject("time");
+//	        currTime2 = obj.getJSONObject("currently").getString("time");
+	        String icon = obj.getJSONObject("currently").getString("icon");
 	        summary = obj.getJSONObject("currently").getString("summary");
 	        currPrecipProb = obj.getJSONObject("currently").getDouble("precipProbability");
 	        temp = obj.getJSONObject("currently").getDouble("temperature");
 	        apptemp = obj.getJSONObject("currently").getDouble("apparentTemperature");
+	        
+	        summary2 = obj.getJSONObject("currently").getString("summary");
+	        
+	        
+	        
+	        
+	        
 	        
 	        for (; currTime > 0;currTime--){
 	        	sec++;
