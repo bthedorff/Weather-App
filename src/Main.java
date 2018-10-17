@@ -11,7 +11,6 @@ import tk.plogitech.darksky.forecast.*;
 // API Key   5f3d14bc52bfc3ec10922d31be0e7e61
 //test
 public class Main {
-	private String APIKey;
 	public static void main(String args[]) throws ForecastException {
 		String APIKey = "5f3d14bc52bfc3ec10922d31be0e7e61";
 		double currLong;
