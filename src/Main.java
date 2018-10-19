@@ -65,7 +65,7 @@ public class Main {
 	        int hourly = obj.getJSONObject("hourly").getJSONArray("data").getJSONObject(0).getInt("time");
 	        
 	        
-	        gui = new DailyWeather();
+	        gui = new DailyWeather(temp,summary,humid);
 	        
 	        
 /**	        

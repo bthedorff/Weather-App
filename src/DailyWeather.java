@@ -25,16 +25,23 @@ public class DailyWeather extends JDialog {
 	private JButton checkWeekly;
 	private JButton search;
 	
-	public DailyWeather() {
+	private double tempValue;
+	private String forecastValue;
+	private double humidityValue;
+	
+	public DailyWeather(double temp, String forecast, double humid) {
 		frame = new JFrame("Today's Weather");
 		
 		location = new JLabel("Location");
 		currentTemp = new JLabel("Current Temp");
 		highTemp = new JLabel("High");
 		lowTemp = new JLabel("Low");
+		tempValue = temp;
 		currentForecast = new JLabel("Current Forecast");
+		forecastValue = forecast;
 		dailyForecast = new JLabel("Daily Forecast");
 		humidity = new JLabel("Humidity");
+		humidityValue = humid;
 		windspeed = new JLabel("Wind Speed");
 		feelLike = new JLabel("Feel Like");
 		
@@ -48,9 +55,9 @@ public class DailyWeather extends JDialog {
 		checkWeekly.addActionListener(listener);
 		search.addActionListener(listener);
 		
-		frame.add(location);
 		frame.add(currentTemp);
 		frame.add(currentForecast);
+		frame.add(humidity);
 		
 //		setTitle("Daily Weather Summary");
 		frame.setDefaultCloseOperation(JDialog.EXIT_ON_CLOSE);
