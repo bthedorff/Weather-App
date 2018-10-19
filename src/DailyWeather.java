@@ -14,13 +14,18 @@ import javax.swing.JPanel;
 public class DailyWeather extends JDialog {
 	private JFrame frame;
 	
+	private JPanel panel;
+	
 	private JLabel location;
 	private JLabel currentTemp;
 	private JLabel highTemp;
 	private JLabel lowTemp;
+	private JLabel currentTem;
+	private JLabel currentFore;
 	private JLabel currentForecast;
 	private JLabel dailyForecast;
 	private JLabel humidity;
+	private JLabel currentHum;
 	private JLabel windspeed;
 	private JLabel feelLike;
 	
@@ -39,7 +44,7 @@ public class DailyWeather extends JDialog {
 		frame.setDefaultCloseOperation(JDialog.EXIT_ON_CLOSE);
 		frame.getContentPane();
 		//frame.setLayout(null);
-		JPanel panel = (JPanel) frame.getContentPane();
+		panel = (JPanel) frame.getContentPane();
 		panel.setLayout(null);
 		//		createPane();
 		
@@ -50,14 +55,14 @@ public class DailyWeather extends JDialog {
 		highTemp = new JLabel("High");
 		lowTemp = new JLabel("Low");
 		tempValue = temp;
-		JLabel currentTem = new JLabel(Double.toString(temp));
+		currentTem = new JLabel(Double.toString(temp));
 		currentForecast = new JLabel("Current Forecast");
-		JLabel currentFore = new JLabel(forecast);
+		currentFore = new JLabel(forecast);
 		forecastValue = forecast;
 		dailyForecast = new JLabel("Daily Forecast");
 		humidity = new JLabel("Humidity");
 		humidityValue = humid;
-		JLabel currentHum = new JLabel(Double.toString(humid));
+		currentHum = new JLabel(Double.toString(humid));
 		windspeed = new JLabel("Wind Speed");
 		feelLike = new JLabel("Feel Like");
 		
