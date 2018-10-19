@@ -50,11 +50,14 @@ public class DailyWeather extends JDialog {
 		highTemp = new JLabel("High");
 		lowTemp = new JLabel("Low");
 		tempValue = temp;
+		JLabel currentTem = new JLabel(Double.toString(temp));
 		currentForecast = new JLabel("Current Forecast");
+		JLabel currentFore = new JLabel(forecast);
 		forecastValue = forecast;
 		dailyForecast = new JLabel("Daily Forecast");
 		humidity = new JLabel("Humidity");
 		humidityValue = humid;
+		JLabel currentHum = new JLabel(Double.toString(humid));
 		windspeed = new JLabel("Wind Speed");
 		feelLike = new JLabel("Feel Like");
 		
@@ -75,13 +78,19 @@ public class DailyWeather extends JDialog {
 		panel.add(humidity);
 		panel.add(location);
 		panel.add(feelLike);
-		
+		panel.add(currentFore);
+		panel.add(currentHum);
+		panel.add(currentTem);
 		
 		humidity.setBounds(50, -300, 800, 800);
 		currentTemp.setBounds(50, -250, 800, 800);
 		currentForecast.setBounds(50, -200, 800, 800);
 		location.setBounds(50, -350, 800, 800);
 		feelLike.setBounds(50, -150, 800, 800);
+		currentFore.setBounds(200, -200, 800, 800);
+		currentHum.setBounds(200, -300, 800, 800);
+		currentTem.setBounds(200, -250, 800, 800);
+		
 		
 		frame.setSize(800, 800);
 		frame.setVisible(true);
