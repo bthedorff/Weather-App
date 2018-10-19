@@ -4,6 +4,7 @@ import tk.plogitech.darksky.forecast.model.Longitude;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import tk.plogitech.darksky.forecast.*;
@@ -21,6 +22,7 @@ public class Main {
 		String currTime2;
 		double temp;
 		double apptemp;
+		double humid;
 		
 //		ForecastRequest request = new ForecastRequestBuilder()
 //	        .key(new APIKey("5f3d14bc52bfc3ec10922d31be0e7e61"))
@@ -58,7 +60,8 @@ public class Main {
 	        temp = obj.getJSONObject("currently").getDouble("temperature");
 	        apptemp = obj.getJSONObject("currently").getDouble("apparentTemperature");
 	        
-	        summary2 = obj.getJSONObject("currently").getString("summary");
+	        humid = obj.getJSONObject("currently").getDouble("humidity");
+	        int hourly = obj.getJSONObject("hourly").getJSONArray("data").getJSONObject(0).getInt("time");
 	        
 	        
 	        
@@ -90,10 +93,15 @@ public class Main {
 	        System.out.println(currTime + ", " + currPrecipProb);
 	        System.out.println(summary);
 	        System.out.println(time);
+	        System.out.println(hourly);
 //	        int a = obj.getInt("age");
 //	        System.out.println(n + " " + a);  // prints "Alice 20"
 //	        
 //	        // http://theoryapp.com/parse-json-in-java/
+	        
+	        date class
+	        time *1000
+	        getdate()
 
 	        
 	}
