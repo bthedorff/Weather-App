@@ -14,6 +14,7 @@ import tk.plogitech.darksky.forecast.*;
 public class Main {
 	public static void main(String args[]) throws ForecastException {
 		String APIKey = "5f3d14bc52bfc3ec10922d31be0e7e61";
+		DailyWeather gui;
 		double currLong;
 		double currLat,currPrecipProb;
 		int currTime,sec = 0,min = 0,hour = 0, day = 0,year = 0;
@@ -64,7 +65,7 @@ public class Main {
 	        int hourly = obj.getJSONObject("hourly").getJSONArray("data").getJSONObject(0).getInt("time");
 	        
 	        
-	        
+	        gui = new DailyWeather();
 	        
 	        
 /**	        
