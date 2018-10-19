@@ -7,6 +7,9 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class DailyWeather extends JDialog {
 	private JFrame frame;
@@ -32,6 +35,16 @@ public class DailyWeather extends JDialog {
 	public DailyWeather(double temp, String forecast, double humid) {
 		frame = new JFrame("Today's Weather");
 		
+//		setTitle("Daily Weather Summary");
+		frame.setDefaultCloseOperation(JDialog.EXIT_ON_CLOSE);
+		frame.getContentPane();
+		//frame.setLayout(null);
+		JPanel panel = (JPanel) frame.getContentPane();
+		panel.setLayout(null);
+		//		createPane();
+		
+	
+		
 		location = new JLabel("Location");
 		currentTemp = new JLabel("Current Temp");
 		highTemp = new JLabel("High");
@@ -55,16 +68,26 @@ public class DailyWeather extends JDialog {
 		checkWeekly.addActionListener(listener);
 		search.addActionListener(listener);
 		
-		frame.add(currentTemp);
-		frame.add(currentForecast);
-		frame.add(humidity);
 		
-//		setTitle("Daily Weather Summary");
-		frame.setDefaultCloseOperation(JDialog.EXIT_ON_CLOSE);
-		frame.getContentPane();
-//		createPane();
-		frame.setSize(500, 500);
+		
+		panel.add(currentTemp);
+		panel.add(currentForecast);
+		panel.add(humidity);
+		panel.add(location);
+		panel.add(feelLike);
+		
+		
+		humidity.setBounds(50, -300, 800, 800);
+		currentTemp.setBounds(50, -250, 800, 800);
+		currentForecast.setBounds(50, -200, 800, 800);
+		location.setBounds(50, -350, 800, 800);
+		feelLike.setBounds(50, -150, 800, 800);
+		
+		frame.setSize(800, 800);
 		frame.setVisible(true);
+
+		
+
 	}
 	
 	private class ButtonListener implements ActionListener {
