@@ -94,14 +94,12 @@ public class Main {
 	        System.out.println(summary);
 	        System.out.println(time);
 	        System.out.println(hourly);
-//	        int a = obj.getInt("age");
-//	        System.out.println(n + " " + a);  // prints "Alice 20"
-//	        
+
 //	        // http://theoryapp.com/parse-json-in-java/
 	        
-	        date class
-	        time *1000
-	        getdate()
+//	        create date class
+//	        time * 1000
+//	        getdate() 
 
 	        
 	}
