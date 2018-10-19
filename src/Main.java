@@ -67,7 +67,7 @@ public class Main {
 	        
 	        
 	        
-	        
+/**	        
 	        for (; currTime > 0;currTime--){
 	        	sec++;
 	        	if (sec == 60){
@@ -87,12 +87,13 @@ public class Main {
 	        		year++;
 	        	}
 	        }
+	        **/
 	        String time = hour + ":" + min + ":" + sec;
 	        
 	        System.out.println(currLong + ", " + currLat );
 	        System.out.println(currTime + ", " + currPrecipProb);
 	        System.out.println(summary);
-	        System.out.println(time);
+//	        System.out.println(time);
 	        System.out.println(hourly);
 
 //	        // http://theoryapp.com/parse-json-in-java/
