@@ -9,6 +9,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class DailyWeather extends JDialog {
+	private JFrame frame;
+	
 	private JLabel location;
 	private JLabel currentTemp;
 	private JLabel highTemp;
@@ -24,6 +26,8 @@ public class DailyWeather extends JDialog {
 	private JButton search;
 	
 	public DailyWeather() {
+		frame = new JFrame("Today's Weather");
+		
 		location = new JLabel("Location");
 		currentTemp = new JLabel("Current Temp");
 		highTemp = new JLabel("High");
@@ -44,12 +48,16 @@ public class DailyWeather extends JDialog {
 		checkWeekly.addActionListener(listener);
 		search.addActionListener(listener);
 		
-		setTitle("Daily Weather Summary");
-		setDefaultCloseOperation(JDialog.EXIT_ON_CLOSE);
-		getContentPane();
+		frame.add(location);
+		frame.add(currentTemp);
+		frame.add(currentForecast);
+		
+//		setTitle("Daily Weather Summary");
+		frame.setDefaultCloseOperation(JDialog.EXIT_ON_CLOSE);
+		frame.getContentPane();
 //		createPane();
-		setSize(500, 500);
-		setVisible(true);
+		frame.setSize(500, 500);
+		frame.setVisible(true);
 	}
 	
 	private class ButtonListener implements ActionListener {
