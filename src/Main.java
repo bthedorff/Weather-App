@@ -1,5 +1,11 @@
+
 import tk.plogitech.darksky.forecast.model.Latitude;
 import tk.plogitech.darksky.forecast.model.Longitude;
+import java.util.Date;
+import java.util.*;
+import java.lang.Object.*;
+
+
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
@@ -17,10 +23,10 @@ public class Main {
 		DailyWeather gui;
 		double currLong;
 		double currLat,currPrecipProb;
-		int currTime,sec = 0,min = 0,hour = 0, day = 0,year = 0;
+//		int currTime,sec = 0,min = 0,hour = 0, day = 0,year = 0;
 		String summary;
 		String summary2;
-		String currTime2;
+		int currTime;
 		double temp;
 		double apptemp;
 		double humid;
@@ -38,8 +44,8 @@ public class Main {
 	            .time(Instant.now().minus(5, ChronoUnit.DAYS))
 	            .language(ForecastRequestBuilder.Language.en)
 	            .units(ForecastRequestBuilder.Units.auto)
-	            .exclude(ForecastRequestBuilder.Block.minutely)
-	            .extendHourly()
+//	            .exclude(ForecastRequestBuilder.Block.minutely)
+//	            .extendHourly()
 	            .location(new GeoCoordinates(new Longitude(-85.886879), new Latitude(42.966679))).build();
 
 	        DarkSkyClient client = new DarkSkyClient();
@@ -89,12 +95,12 @@ public class Main {
 	        	}
 	        }
 	        **/
-	        String time = hour + ":" + min + ":" + sec;
+	        //String time = hour + ":" + min + ":" + sec;
 	        
 	        System.out.println(currLong + ", " + currLat );
 	        System.out.println(currTime + ", " + currPrecipProb);
 	        System.out.println(summary);
-//	        System.out.println(time);
+	        System.out.println(currTime);
 	        System.out.println(hourly);
 
 //	        // http://theoryapp.com/parse-json-in-java/
@@ -104,5 +110,10 @@ public class Main {
 //	        getdate() 
 
 	        
+	}
+	
+	public void Date (long currTime) {
+		
+		
 	}
 }
