@@ -10,6 +10,7 @@ public class locLookup {
 	private JLabel location;
 	private JButton searchBut;
 	private JTextField userInput;
+	public static String userLoc;
 
 	public void locationLookup() {
 		JFrame locFrame = new JFrame("Set Location");
@@ -23,6 +24,8 @@ public class locLookup {
 		searchBut.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				userLoc = userInput.getText();
+				System.out.println(userLoc);
 				System.exit(0);
 			}
 		});
