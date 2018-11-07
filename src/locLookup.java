@@ -25,7 +25,7 @@ public class locLookup {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				userLoc = userInput.getText();
-				System.out.println(userLoc);
+				//System.out.println(userLoc);
 				System.exit(0);
 			}
 		});
