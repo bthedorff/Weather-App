@@ -100,7 +100,7 @@ public class forecastGUI{
 		Panel.add(low);
 		Panel.add(precip);
 		
-		Object line.setColor(Color.BLACK);
+		//Object line.setColor(Color.BLACK);
 		
 		
 		locFrame.setSize(800, 600);
