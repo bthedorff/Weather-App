@@ -32,13 +32,13 @@ public class locLookup {
 		userInput = new JTextField("",10);
 		location = new JLabel("Enter Desired Location:");
 		
-		searchBut.setBounds(160, 80, 150, 40);
-		userInput.setBounds(157, 20, 250, 40);
-		location.setBounds(10, 20, 250, 40);
+		searchBut.setBounds(160, 55, 130, 30);
+		userInput.setBounds(157, 18, 250, 30);
+		location.setBounds(10, 20, 250, 30);
 		Panel.add(searchBut);
 		Panel.add(userInput);
 		Panel.add(location);
-		locFrame.setSize(450, 150);
+		locFrame.setSize(450, 110);
 		locFrame.setLocationRelativeTo(null);
 		locFrame.setVisible(true);
 	}
