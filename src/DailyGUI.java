@@ -21,10 +21,6 @@ public class DailyGUI extends JFrame implements ActionListener
 	
 	public static void main(String[] args) {
 		DailyGUI gui = new DailyGUI();
-		gui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		gui.setTitle("Daily Weather");
-		gui.pack();
-		gui.setVisible(true);
 	}
 	
 	public DailyGUI() {
@@ -99,6 +95,11 @@ public class DailyGUI extends JFrame implements ActionListener
 		position.gridx = 1;
 		position.gridy = 6;
 		add(feelsLike, position);
+
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle("Daily Weather");
+		pack();
+		setVisible(true);
 	}
 	
 	@Override
