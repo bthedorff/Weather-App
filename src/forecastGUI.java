@@ -18,6 +18,7 @@ public class forecastGUI{
 	private JLabel high;
 	private JLabel low;
 	private JLabel precip;
+	private JLabel location;
 	
 	private JButton dailyBut;
 	private JButton weeklyBut;
@@ -74,9 +75,9 @@ public class forecastGUI{
 		JLabel Thursday = new JLabel("Thursday");
 		JLabel Friday = new JLabel("Friday");
 		JLabel Saturday = new JLabel("Saturday");
-		JLabel high = new JLabel("High");
-		JLabel low = new JLabel("Low");
+		JLabel hilow = new JLabel("High/Low");
 		JLabel precip = new JLabel("Precipitation");
+		JLabel location = new JLabel("Location");
 		
 		Sunday.setBounds(285, 80, 75, 30);
 		Monday.setBounds(350, 80, 75, 30);
@@ -85,9 +86,9 @@ public class forecastGUI{
 		Thursday.setBounds(565, 80, 75, 30);
 		Friday.setBounds(640, 80, 75, 30);
 		Saturday.setBounds(705, 80, 75, 30);
-		high.setBounds(250, 120, 75, 30);
-		low.setBounds(250, 200, 75, 30);
+		hilow.setBounds(210, 140, 75, 30);
 		precip.setBounds(200, 300, 90, 30);
+		location.setBounds(200, 30, 90, 30);
 		
 		Panel.add(Sunday);
 		Panel.add(Monday);
@@ -96,9 +97,9 @@ public class forecastGUI{
 		Panel.add(Thursday);
 		Panel.add(Friday);
 		Panel.add(Saturday);
-		Panel.add(high);
-		Panel.add(low);
+		Panel.add(hilow);
 		Panel.add(precip);
+		Panel.add(location);
 		
 		//Object line.setColor(Color.BLACK);
 		
