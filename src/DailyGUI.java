@@ -1,8 +1,11 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.util.*;
 
 public class DailyGUI extends JFrame implements ActionListener
 {
@@ -18,6 +21,10 @@ public class DailyGUI extends JFrame implements ActionListener
 	JLabel humidity;
 	JLabel windspeed;
 	JLabel feelsLike;
+	
+	ImageIcon icon;
+	Image image = null;
+	
 	
 	public static void main(String[] args) {
 		DailyGUI gui = new DailyGUI();
@@ -70,7 +77,11 @@ public class DailyGUI extends JFrame implements ActionListener
 		add(highlowTemp, position);
 		
 		//currentForecast Label
-		currentForecast = new JLabel("Current Forecast");
+		try {
+		image = ImageIO.read(new File("C:\\Users\\denve\\Documents\\GitHub\\Weather-App\\Icons\\sunnyIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+		} catch(IOException e) {}
+		icon = new ImageIcon(image);
+		currentForecast = new JLabel(icon);
 		position.gridx = 3;
 		position.gridy = 2;
 		add(currentForecast, position);
