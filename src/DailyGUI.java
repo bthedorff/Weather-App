@@ -32,18 +32,21 @@ public class DailyGUI extends JFrame implements ActionListener
 		
 		//checkDaily Button
 		checkDaily = new JButton("Check Daily");
+		checkDaily.addActionListener(this);
 		position.gridx = 0;
 		position.gridy = 2;
 		add(checkDaily, position);
 		
 		//checkWeekly Button
 		checkWeekly = new JButton("Check Weekly");
+		checkWeekly.addActionListener(this);
 		position.gridx = 0;
 		position.gridy = 4;
 		add(checkWeekly, position);
 		
 		//search Button
 		search = new JButton("Search");
+		search.addActionListener(this);
 		position.gridx = 0;
 		position.gridy = 6;
 		add(search, position);
@@ -104,5 +107,19 @@ public class DailyGUI extends JFrame implements ActionListener
 	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {		
+		if(arg0.getSource() == checkDaily) {
+			dispose();
+			new DailyGUI();
+		}
+		else if(arg0.getSource() == checkWeekly) {
+			dispose();
+			//new WeeklyGUI();
+			System.exit(0);
+		}
+		else if(arg0.getSource() == search) {
+			dispose();
+			//new searchGUI();
+			System.exit(0);
+		}
 	}
 }
