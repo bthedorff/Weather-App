@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class locLookup {
+public class searchGUI {
 	private JPanel Panel;
 	private JLabel location;
 	private JButton searchBut;
@@ -44,7 +44,7 @@ public class locLookup {
 	}
 	
 	public static void main(String[] args) {
-		new locLookup().locationLookup();
+		new searchGUI().locationLookup();
 	}
 
 }
