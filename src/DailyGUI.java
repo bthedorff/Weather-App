@@ -27,6 +27,7 @@ public class DailyGUI extends JFrame implements ActionListener
 	ImageIcon icon;
 	Image image = null;
 	
+	WeatherData data = new WeatherData();
 	
 	public static void main(String[] args) {
 		DailyGUI gui = new DailyGUI();
@@ -79,9 +80,34 @@ public class DailyGUI extends JFrame implements ActionListener
 		add(highlowTemp, position);
 		
 		//currentForecast Label
-		try {
-		image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/sunnyIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
-		} catch(IOException e) {}
+		if (data.currentForecast.equals("Overcast")) {
+			try {
+				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/cloudyIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+				} catch(IOException e) {}
+		}
+		else if (data.currentForecast.equals("Clear")) {
+			try {
+				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/sunnyIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+				} catch(IOException e) {}
+		}
+//Might not work
+		else if (data.currentForecast.equals("Raining")) {
+			try {
+				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/rainIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+				} catch(IOException e) {}
+		}
+//Might not work
+		else if (data.currentForecast.equals("Thunder Storms")) {
+			try {
+				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/thunderstormIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+				} catch(IOException e) {}
+		}
+		//Might not work
+				else if (data.currentForecast.equals("Snowing")) {
+					try {
+						image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/snowIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+						} catch(IOException e) {}
+				}
 		icon = new ImageIcon(image);
 		currentForecast = new JLabel(icon);
 		position.gridx = 3;
@@ -116,6 +142,9 @@ public class DailyGUI extends JFrame implements ActionListener
 		setTitle("Daily Weather");
 		pack();
 		setVisible(true);
+		
+		
+		
 	}
 	
 	@Override
