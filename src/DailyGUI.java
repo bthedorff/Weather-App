@@ -4,6 +4,8 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
@@ -78,7 +80,7 @@ public class DailyGUI extends JFrame implements ActionListener
 		
 		//currentForecast Label
 		try {
-		image = ImageIO.read(new File("C:\\Users\\denve\\Documents\\GitHub\\Weather-App\\Icons\\sunnyIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+		image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/sunnyIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
 		} catch(IOException e) {}
 		icon = new ImageIcon(image);
 		currentForecast = new JLabel(icon);
