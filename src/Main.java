@@ -32,6 +32,7 @@ public class Main {
 		double apptemp;
 		double humid;
 		Date date;
+		WeatherData data;
 		
 //		ForecastRequest request = new ForecastRequestBuilder()
 //	        .key(new APIKey("5f3d14bc52bfc3ec10922d31be0e7e61"))
@@ -55,7 +56,7 @@ public class Main {
 	        System.out.println(forecast);
 	        
 	        JSONObject obj = new JSONObject(forecast);
-	        
+	        /**
 	        currLong = obj.getDouble("longitude");
 	        currLat = obj.getDouble("latitude");
 	        currTime = obj.getJSONObject("currently").getInt("time");
@@ -66,11 +67,11 @@ public class Main {
 	        apptemp = obj.getJSONObject("currently").getDouble("apparentTemperature");
 	        humid = obj.getJSONObject("currently").getDouble("humidity");
 	        hourly = obj.getJSONObject("hourly").getJSONArray("data").getJSONObject(0).getInt("time");
-	        date = new Date(currTime);
 	        
-	        
-	        gui = new DailyWeather(temp,summary,humid);
-	        
+	        **/
+	        date = new Date();
+	        data.currentTemp = obj.getJSONObject("currently").getDouble("temperature");
+	        data.humidity = obj.getJSONObject("currently").getDouble("humidity");
 	        
 	        
 	        System.out.println(currLong + ", " + currLat );
@@ -86,10 +87,5 @@ public class Main {
 //	        getdate() 
 
 	        
-	}
-	
-	public void Date (long currTime) {
-		
-		
 	}
 }
