@@ -30,11 +30,12 @@ public class forecastGUI extends JFrame implements ActionListener
 	
 	public void Forecast()
 	{
-		JFrame locFrame = new JFrame("Weekly Forecast");
-		locFrame.getContentPane();
-		locFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//JFrame locFrame = new JFrame("Weekly Forecast");
+		setTitle("Weekly Forecast");
+		getContentPane();
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		Panel = (JPanel) locFrame.getContentPane();
+		Panel = (JPanel) getContentPane();
 		Panel.setLayout(null);
 		
 		searchLocBut = new JButton("Search Location");
@@ -93,9 +94,9 @@ public class forecastGUI extends JFrame implements ActionListener
 		//Object line.setColor(Color.BLACK);
 		
 		
-		locFrame.setSize(800, 600);
-		locFrame.setLocationRelativeTo(null);
-		locFrame.setVisible(true);
+		setSize(800, 600);
+		setLocationRelativeTo(null);
+		setVisible(true);
 	}
 	
 	public void actionPerformed(ActionEvent arg0) {		
