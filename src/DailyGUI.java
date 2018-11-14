@@ -62,7 +62,7 @@ public class DailyGUI extends JFrame implements ActionListener
 		add(search, position);
 		
 		//location Label
-		location = new JLabel("Location");
+		location = new JLabel(searchGUI.getLoc());
 		position.gridx = 1;
 		position.gridy = 0;
 		add(location, position);
@@ -80,34 +80,7 @@ public class DailyGUI extends JFrame implements ActionListener
 		add(highlowTemp, position);
 		
 		//currentForecast Label
-		if (data.currentForecast.equals("Overcast")) {
-			try {
-				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/cloudyIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
-				} catch(IOException e) {}
-		}
-		else if (data.currentForecast.equals("Clear")) {
-			try {
-				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/sunnyIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
-				} catch(IOException e) {}
-		}
-//Might not work
-		else if (data.currentForecast.equals("Raining")) {
-			try {
-				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/rainIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
-				} catch(IOException e) {}
-		}
-//Might not work
-		else if (data.currentForecast.equals("Thunder Storms")) {
-			try {
-				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/thunderstormIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
-				} catch(IOException e) {}
-		}
-		//Might not work
-				else if (data.currentForecast.equals("Snowing")) {
-					try {
-						image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/snowIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
-						} catch(IOException e) {}
-				}
+
 		icon = new ImageIcon(image);
 		currentForecast = new JLabel(icon);
 		position.gridx = 3;
@@ -155,13 +128,11 @@ public class DailyGUI extends JFrame implements ActionListener
 		}
 		else if(arg0.getSource() == checkWeekly) {
 			dispose();
-			//new WeeklyGUI();
-			System.exit(0);
+			new forecastGUI();
 		}
 		else if(arg0.getSource() == search) {
 			dispose();
-			//new searchGUI();
-			System.exit(0);
+			new searchGUI();
 		}
 	}
 }
