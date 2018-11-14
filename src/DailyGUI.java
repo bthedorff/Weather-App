@@ -9,7 +9,7 @@ import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
-public class DailyGUI extends JFrame implements ActionListener
+public class DailyGUI extends JFrame implements ActionListener 
 {
 	JButton checkDaily;
 	JButton checkWeekly;
@@ -27,7 +27,8 @@ public class DailyGUI extends JFrame implements ActionListener
 	ImageIcon icon;
 	Image image = null;
 	
-	WeatherData data = new WeatherData();
+	Main main = new Main();
+	WeatherData data = main.gather(-85.886879,42.966679);
 	
 	public static void main(String[] args) {
 		DailyGUI gui = new DailyGUI();
