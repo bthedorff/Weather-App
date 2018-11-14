@@ -32,7 +32,7 @@ public class Main {
 		double apptemp;
 		double humid;
 		Date date;
-		WeatherData data;
+		WeatherData data = new WeatherData();
 		
 //		ForecastRequest request = new ForecastRequestBuilder()
 //	        .key(new APIKey("5f3d14bc52bfc3ec10922d31be0e7e61"))

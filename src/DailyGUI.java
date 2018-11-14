@@ -134,3 +134,4 @@ public class DailyGUI extends JFrame implements ActionListener
 		}
 	}
 }
+

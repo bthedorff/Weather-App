@@ -112,3 +112,4 @@ public class forecastGUI{
 		new forecastGUI().Forecast();
 	}
 }
+
