@@ -27,8 +27,10 @@ public class DailyGUI extends JFrame implements ActionListener
 	ImageIcon icon;
 	Image image = null;
 	
+	WeatherData data = new WeatherData();
+	
 	Main main = new Main();
-	WeatherData data = main.gather(-85.886879,42.966679);
+	//WeatherData data = main.gather(-85.886879,42.966679);
 	
 	public static void main(String[] args) {
 		DailyGUI gui = new DailyGUI();
@@ -80,6 +82,7 @@ public class DailyGUI extends JFrame implements ActionListener
 		position.gridy = 2;
 		add(highlowTemp, position);
 		
+		data.currentForecast = "Clear";
 		//currentForecast Label
 		if (data.currentForecast.equals("Overcast")) {
 			try {
@@ -105,6 +108,11 @@ public class DailyGUI extends JFrame implements ActionListener
 		}
 		//Might not work
 				else if (data.currentForecast.equals("Snowing")) {
+					try {
+						image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/snowIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+						} catch(IOException e) {}
+				}
+				else {
 					try {
 						image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/snowIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
 						} catch(IOException e) {}
