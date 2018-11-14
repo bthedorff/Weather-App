@@ -14,11 +14,11 @@ public class searchGUI extends JFrame implements ActionListener{
 	public static String userLoc = "Choose Location";
 
 	public void locationLookup() {
-		JFrame locFrame = new JFrame("Set Location");
-		locFrame.getContentPane();
-		locFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setTitle("Set Location");
+		getContentPane();
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		Panel = (JPanel) locFrame.getContentPane();
+		Panel = (JPanel) getContentPane();
 		Panel.setLayout(null);
 		
 		searchBut = new JButton("Search Location");
@@ -33,9 +33,9 @@ public class searchGUI extends JFrame implements ActionListener{
 		Panel.add(searchBut);
 		Panel.add(userInput);
 		Panel.add(location);
-		locFrame.setSize(450, 110);
-		locFrame.setLocationRelativeTo(null);
-		locFrame.setVisible(true);
+		setSize(450, 110);
+		setLocationRelativeTo(null);
+		setVisible(true);
 	}
 	
 

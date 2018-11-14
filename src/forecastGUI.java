@@ -30,7 +30,6 @@ public class forecastGUI extends JFrame implements ActionListener
 	
 	public void Forecast()
 	{
-		//JFrame locFrame = new JFrame("Weekly Forecast");
 		setTitle("Weekly Forecast");
 		getContentPane();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -38,7 +37,7 @@ public class forecastGUI extends JFrame implements ActionListener
 		Panel = (JPanel) getContentPane();
 		Panel.setLayout(null);
 		
-		searchLocBut = new JButton("Search Location");
+		searchLocBut = new JButton("Set Location");
 		searchLocBut.addActionListener(this);
 		
 		weeklyBut = new JButton("Weekly Forecast");
@@ -70,12 +69,12 @@ public class forecastGUI extends JFrame implements ActionListener
 		Friday.setBounds(640, 80, 75, 30);
 		Saturday.setBounds(705, 80, 75, 30);
 		hilow.setBounds(210, 140, 75, 30);
-		precip.setBounds(200, 300, 90, 30);
+		precip.setBounds(200, 250, 90, 30);
 		location.setBounds(340, 30, 300, 30);
-		dailyBut.setBounds(50, 120, 150, 30);
-		weeklyBut.setBounds(50, 250, 150, 30);
-		searchLocBut.setBounds(50, 400, 150, 30);
-		warnBut.setBounds(670, 550, 120, 30);
+		dailyBut.setBounds(35, 120, 150, 30);
+		weeklyBut.setBounds(35, 230, 150, 30);
+		searchLocBut.setBounds(35, 350, 150, 30);
+		warnBut.setBounds(670, 400, 120, 30);
 		
 		Panel.add(Sunday);
 		Panel.add(Monday);
@@ -91,10 +90,9 @@ public class forecastGUI extends JFrame implements ActionListener
 		Panel.add(weeklyBut);
 		Panel.add(searchLocBut);
 		Panel.add(warnBut);
-		//Object line.setColor(Color.BLACK);
 		
 		
-		setSize(800, 600);
+		setSize(800, 450);
 		setLocationRelativeTo(null);
 		setVisible(true);
 	}
@@ -109,7 +107,6 @@ public class forecastGUI extends JFrame implements ActionListener
 		else if(arg0.getSource() == searchLocBut) {
 			dispose();
 			new searchGUI().locationLookup();
-			//System.exit(0);
 		}
 		else if(arg0.getSource() == warnBut) {
 			dispose();
