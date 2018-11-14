@@ -5,7 +5,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 
-public class forecastGUI{
+public class forecastGUI extends JFrame implements ActionListener
+{
 	private JPanel Panel;
 	
 	private JLabel Sunday;
@@ -37,36 +38,16 @@ public class forecastGUI{
 		Panel.setLayout(null);
 		
 		searchLocBut = new JButton("Search Location");
-		searchLocBut.addActionListener(new ActionListener(){
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
-			}
-		});
+		searchLocBut.addActionListener(this);
 		
 		weeklyBut = new JButton("Weekly Forecast");
-		weeklyBut.addActionListener(new ActionListener(){
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
-			}
-		});
+		weeklyBut.addActionListener(this);
 		
 		dailyBut = new JButton("Daily Weather");
-		dailyBut.addActionListener(new ActionListener(){
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
-			}
-		});
+		dailyBut.addActionListener(this);
 		
-		warnBut = new JButton("Daily Weather");
-		warnBut.addActionListener(new ActionListener(){
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				System.exit(0);
-			}
-		});
+		warnBut = new JButton("Warnings");
+		warnBut.addActionListener(this);
 		
 		JLabel Sunday = new JLabel("Sunday");
 		JLabel Monday = new JLabel("Monday");
@@ -77,7 +58,8 @@ public class forecastGUI{
 		JLabel Saturday = new JLabel("Saturday");
 		JLabel hilow = new JLabel("High/Low");
 		JLabel precip = new JLabel("Precipitation");
-		JLabel location = new JLabel("Location");
+		JLabel location = new JLabel(searchGUI.getLoc());
+		location.setFont(new Font("Serif", Font.PLAIN, 20));
 		
 		Sunday.setBounds(285, 80, 75, 30);
 		Monday.setBounds(350, 80, 75, 30);
@@ -88,7 +70,11 @@ public class forecastGUI{
 		Saturday.setBounds(705, 80, 75, 30);
 		hilow.setBounds(210, 140, 75, 30);
 		precip.setBounds(200, 300, 90, 30);
-		location.setBounds(200, 30, 90, 30);
+		location.setBounds(380, 30, 200, 30);
+		dailyBut.setBounds(50, 120, 150, 30);
+		weeklyBut.setBounds(50, 250, 150, 30);
+		searchLocBut.setBounds(50, 400, 150, 30);
+		warnBut.setBounds(670, 550, 120, 30);
 		
 		Panel.add(Sunday);
 		Panel.add(Monday);
@@ -100,13 +86,38 @@ public class forecastGUI{
 		Panel.add(hilow);
 		Panel.add(precip);
 		Panel.add(location);
-		
+		Panel.add(dailyBut);
+		Panel.add(weeklyBut);
+		Panel.add(searchLocBut);
+		Panel.add(warnBut);
 		//Object line.setColor(Color.BLACK);
 		
 		
 		locFrame.setSize(800, 600);
 		locFrame.setLocationRelativeTo(null);
 		locFrame.setVisible(true);
+	}
+	
+	public void actionPerformed(ActionEvent arg0) {		
+		if(arg0.getSource() == dailyBut) {
+			dispose();
+			new DailyGUI();
+		}
+		else if(arg0.getSource() == weeklyBut) {
+			dispose();
+			//new WeeklyGUI();
+			System.exit(0);
+		}
+		else if(arg0.getSource() == searchLocBut) {
+			dispose();
+			new searchGUI().locationLookup();
+			//System.exit(0);
+		}
+		else if(arg0.getSource() == warnBut) {
+			dispose();
+			//new warnGUI();
+			System.exit(0);
+		}
 	}
 	public static void main(String[] args) {
 		new forecastGUI().Forecast();

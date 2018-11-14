@@ -1,16 +1,17 @@
-import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.*;
 
-public class searchGUI {
+public class searchGUI extends JFrame implements ActionListener{
+	/**
+	 * 
+	 */
 	private JPanel Panel;
 	private JLabel location;
 	private JButton searchBut;
 	private JTextField userInput;
-	public static String userLoc;
+	public static String userLoc = "Not Chosen";
 
 	public void locationLookup() {
 		JFrame locFrame = new JFrame("Set Location");
@@ -21,16 +22,10 @@ public class searchGUI {
 		Panel.setLayout(null);
 		
 		searchBut = new JButton("Search Location");
-		searchBut.addActionListener(new ActionListener(){
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				userLoc = userInput.getText();
-				//System.out.println(userLoc);
-				System.exit(0);
-			}
-		});
+		searchBut.addActionListener(this);
 		userInput = new JTextField("",10);
 		location = new JLabel("Enter Desired Location:");
+
 		
 		searchBut.setBounds(160, 55, 130, 30);
 		userInput.setBounds(157, 18, 250, 30);
@@ -43,8 +38,21 @@ public class searchGUI {
 		locFrame.setVisible(true);
 	}
 	
+
+	
 	public static void main(String[] args) {
 		new searchGUI().locationLookup();
 	}
 
+	public static String getLoc()
+	{
+		return userLoc;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		userLoc = userInput.getText();
+		dispose();
+		new DailyGUI();
+	}
 }
