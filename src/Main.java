@@ -19,21 +19,20 @@ import tk.plogitech.darksky.forecast.*;
 //test
 public class Main {
 	public static void main(String args[]) throws ForecastException {
-		
+		Main test = new Main();
+		test.gather(-85.886879,42.966679);
 	}
+	
+	Main(){}
 	
 	WeatherData gather(double lon, double lat) throws ForecastException{
 		String APIKey = "5f3d14bc52bfc3ec10922d31be0e7e61";
 		double currLong;
 		double currLat,currPrecipProb;
-		String summary;
 		String summary2;
-		String icon;
 		int currTime;
 		int hourly;
-		double temp;
 		double apptemp;
-		double humid;
 		Date date;
 		WeatherData data = new WeatherData();
 		
@@ -52,7 +51,7 @@ public class Main {
 	            .units(ForecastRequestBuilder.Units.auto)
 //	            .exclude(ForecastRequestBuilder.Block.minutely)
 //	            .extendHourly()
-	            .location(new GeoCoordinates(new Longitude(-85.886879), new Latitude(42.966679))).build();
+	            .location(new GeoCoordinates(new Longitude(lon), new Latitude(lat))).build();
 
 	        DarkSkyClient client = new DarkSkyClient();
 	        String forecast = client.forecastJsonString(request);
@@ -68,6 +67,7 @@ public class Main {
 	        data.windspeed = obj.getJSONObject("currently").getDouble("windSpeed");
 	        data.date = date;
 	        
+	        System.out.println(forecast);
 	        
 	        return data;
 //	        // http://theoryapp.com/parse-json-in-java/
