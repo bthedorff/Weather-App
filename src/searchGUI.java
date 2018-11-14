@@ -53,6 +53,6 @@ public class searchGUI extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		userLoc = userInput.getText();
 		dispose();
-		new DailyGUI();
+		new forecastGUI().Forecast();
 	}
 }
