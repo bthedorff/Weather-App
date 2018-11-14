@@ -11,7 +11,7 @@ public class searchGUI extends JFrame implements ActionListener{
 	private JLabel location;
 	private JButton searchBut;
 	private JTextField userInput;
-	public static String userLoc = "Not Chosen";
+	public static String userLoc = "Choose Location";
 
 	public void locationLookup() {
 		JFrame locFrame = new JFrame("Set Location");
