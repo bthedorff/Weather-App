@@ -19,8 +19,11 @@ import tk.plogitech.darksky.forecast.*;
 //test
 public class Main {
 	public static void main(String args[]) throws ForecastException {
+		
+	}
+	
+	WeatherData gather(double lon, double lat) throws ForecastException{
 		String APIKey = "5f3d14bc52bfc3ec10922d31be0e7e61";
-		DailyWeather gui;
 		double currLong;
 		double currLat,currPrecipProb;
 		String summary;
@@ -56,36 +59,18 @@ public class Main {
 	        System.out.println(forecast);
 	        
 	        JSONObject obj = new JSONObject(forecast);
-	        /**
-	        currLong = obj.getDouble("longitude");
-	        currLat = obj.getDouble("latitude");
-	        currTime = obj.getJSONObject("currently").getInt("time");
-	        icon = obj.getJSONObject("currently").getString("icon");
-	        summary = obj.getJSONObject("currently").getString("summary");
-	        currPrecipProb = obj.getJSONObject("currently").getDouble("precipProbability");
-	        temp = obj.getJSONObject("currently").getDouble("temperature");
-	        apptemp = obj.getJSONObject("currently").getDouble("apparentTemperature");
-	        humid = obj.getJSONObject("currently").getDouble("humidity");
-	        hourly = obj.getJSONObject("hourly").getJSONArray("data").getJSONObject(0).getInt("time");
 	        
-	        **/
 	        date = new Date();
 	        data.currentTemp = obj.getJSONObject("currently").getDouble("temperature");
 	        data.humidity = obj.getJSONObject("currently").getDouble("humidity");
+	        data.currentForecast = obj.getJSONObject("currently").getString("summary");
+	        data.weatherIcon = obj.getJSONObject("currently").getString("icon");
+	        data.windspeed = obj.getJSONObject("currently").getDouble("windSpeed");
+	        data.date = date;
 	        
 	        
-	        System.out.println(currLong + ", " + currLat );
-	        System.out.println(currTime + ", " + currPrecipProb);
-	        System.out.println(summary);
-	        System.out.println(currTime);
-	        System.out.println(hourly);
-
+	        return data;
 //	        // http://theoryapp.com/parse-json-in-java/
-	        
-//	        create date class
-//	        time * 1000
-//	        getdate() 
-
-	        
+	
 	}
 }
