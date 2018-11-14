@@ -9,6 +9,13 @@ import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
+import tk.plogitech.darksky.forecast.ForecastException;
+import tk.plogitech.darksky.forecast.model.Latitude;
+import tk.plogitech.darksky.forecast.model.Longitude;
+import java.util.Date;
+import java.util.*;
+import java.lang.Object.*;
+
 public class DailyGUI extends JFrame implements ActionListener 
 {
 	JButton checkDaily;
@@ -27,13 +34,18 @@ public class DailyGUI extends JFrame implements ActionListener
 	ImageIcon icon;
 	Image image = null;
 	
-	WeatherData data = new WeatherData();
 	
-	Main main = new Main();
-	//WeatherData data = main.gather(-85.886879,42.966679);
 	
 	public static void main(String[] args) {
 		DailyGUI gui = new DailyGUI();
+		//WeatherData data = new WeatherData();
+		try {
+				Main main = new Main();
+				WeatherData data1 = main.gather(-85.886879,42.966679);
+		}
+		catch ForecastException {
+			
+		}
 	}
 	
 	public DailyGUI() {
