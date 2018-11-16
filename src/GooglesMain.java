@@ -64,8 +64,8 @@ public class GooglesMain {
 //	                throw new Exception("Can not find geocode for: " + address);
 //	            }
 //	            return geocode;
-//	        }
-//	    }
+	        }
+	    }
 	}
 	
 	
@@ -87,4 +87,4 @@ public class GooglesMain {
 //	    }
 //	    return latlng;
 //	}
-}}}
+}
