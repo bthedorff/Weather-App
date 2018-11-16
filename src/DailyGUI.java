@@ -35,10 +35,11 @@ public class DailyGUI extends JFrame implements ActionListener
 	Image image = null;
 	
 	Main main = new Main();
+	static WeatherData data;
 	
 	public static void main(String[] args) {
 		DailyGUI gui = new DailyGUI();
-		WeatherData data = new WeatherData();
+		data = new WeatherData();
 		
 	}
 	
