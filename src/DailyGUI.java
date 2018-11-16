@@ -34,18 +34,12 @@ public class DailyGUI extends JFrame implements ActionListener
 	ImageIcon icon;
 	Image image = null;
 	
-	
+	Main main = new Main();
 	
 	public static void main(String[] args) {
 		DailyGUI gui = new DailyGUI();
-		//WeatherData data = new WeatherData();
-		try {
-				Main main = new Main();
-				WeatherData data1 = main.gather(-85.886879,42.966679);
-		}
-		catch ForecastException {
-			
-		}
+		WeatherData data = new WeatherData();
+		
 	}
 	
 	public DailyGUI() {
