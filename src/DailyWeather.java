@@ -7,17 +7,25 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class DailyWeather extends JDialog {
 	private JFrame frame;
+	
+	private JPanel panel;
 	
 	private JLabel location;
 	private JLabel currentTemp;
 	private JLabel highTemp;
 	private JLabel lowTemp;
+	private JLabel currentTem;
+	private JLabel currentFore;
 	private JLabel currentForecast;
 	private JLabel dailyForecast;
 	private JLabel humidity;
+	private JLabel currentHum;
 	private JLabel windspeed;
 	private JLabel feelLike;
 	
@@ -25,16 +33,36 @@ public class DailyWeather extends JDialog {
 	private JButton checkWeekly;
 	private JButton search;
 	
-	public DailyWeather() {
+	private double tempValue;
+	private String forecastValue;
+	private double humidityValue;
+	
+	public DailyWeather(double temp, String forecast, double humid) {
 		frame = new JFrame("Today's Weather");
+		
+//		setTitle("Daily Weather Summary");
+		frame.setDefaultCloseOperation(JDialog.EXIT_ON_CLOSE);
+		frame.getContentPane();
+		//frame.setLayout(null);
+		panel = (JPanel) frame.getContentPane();
+		panel.setLayout(null);
+		//		createPane();
+		
+	
 		
 		location = new JLabel("Location");
 		currentTemp = new JLabel("Current Temp");
 		highTemp = new JLabel("High");
 		lowTemp = new JLabel("Low");
+		tempValue = temp;
+		currentTem = new JLabel(Double.toString(temp));
 		currentForecast = new JLabel("Current Forecast");
+		currentFore = new JLabel(forecast);
+		forecastValue = forecast;
 		dailyForecast = new JLabel("Daily Forecast");
 		humidity = new JLabel("Humidity");
+		humidityValue = humid;
+		currentHum = new JLabel(Double.toString(humid));
 		windspeed = new JLabel("Wind Speed");
 		feelLike = new JLabel("Feel Like");
 		
@@ -48,16 +76,32 @@ public class DailyWeather extends JDialog {
 		checkWeekly.addActionListener(listener);
 		search.addActionListener(listener);
 		
-		frame.add(location);
-		frame.add(currentTemp);
-		frame.add(currentForecast);
 		
-//		setTitle("Daily Weather Summary");
-		frame.setDefaultCloseOperation(JDialog.EXIT_ON_CLOSE);
-		frame.getContentPane();
-//		createPane();
-		frame.setSize(500, 500);
+		
+		panel.add(currentTemp);
+		panel.add(currentForecast);
+		panel.add(humidity);
+		panel.add(location);
+		panel.add(feelLike);
+		panel.add(currentFore);
+		panel.add(currentHum);
+		panel.add(currentTem);
+		
+		humidity.setBounds(50, -300, 800, 800);
+		currentTemp.setBounds(50, -250, 800, 800);
+		currentForecast.setBounds(50, -200, 800, 800);
+		location.setBounds(50, -350, 800, 800);
+		feelLike.setBounds(50, -150, 800, 800);
+		currentFore.setBounds(200, -200, 800, 800);
+		currentHum.setBounds(200, -300, 800, 800);
+		currentTem.setBounds(200, -250, 800, 800);
+		
+		
+		frame.setSize(800, 800);
 		frame.setVisible(true);
+
+		
+
 	}
 	
 	private class ButtonListener implements ActionListener {

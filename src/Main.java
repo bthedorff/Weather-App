@@ -1,9 +1,16 @@
+
 import tk.plogitech.darksky.forecast.model.Latitude;
 import tk.plogitech.darksky.forecast.model.Longitude;
+import java.util.Date;
+import java.util.*;
+import java.lang.Object.*;
+
+
 
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import tk.plogitech.darksky.forecast.*;
@@ -12,15 +19,22 @@ import tk.plogitech.darksky.forecast.*;
 //test
 public class Main {
 	public static void main(String args[]) throws ForecastException {
+		Main test = new Main();
+		test.gather(-85.886879,42.966679);
+	}
+	
+	Main(){}
+	
+	WeatherData gather(double lon, double lat) throws ForecastException{
 		String APIKey = "5f3d14bc52bfc3ec10922d31be0e7e61";
 		double currLong;
 		double currLat,currPrecipProb;
-		int currTime,sec = 0,min = 0,hour = 0, day = 0,year = 0;
-		String summary;
 		String summary2;
-		String currTime2;
-		double temp;
+		int currTime;
+		int hourly;
 		double apptemp;
+		Date date;
+		WeatherData data = new WeatherData();
 		
 //		ForecastRequest request = new ForecastRequestBuilder()
 //	        .key(new APIKey("5f3d14bc52bfc3ec10922d31be0e7e61"))
@@ -35,66 +49,28 @@ public class Main {
 	            .time(Instant.now().minus(5, ChronoUnit.DAYS))
 	            .language(ForecastRequestBuilder.Language.en)
 	            .units(ForecastRequestBuilder.Units.auto)
-	            .exclude(ForecastRequestBuilder.Block.minutely)
-	            .extendHourly()
-	            .location(new GeoCoordinates(new Longitude(-85.886879), new Latitude(42.966679))).build();
+//	            .exclude(ForecastRequestBuilder.Block.minutely)
+//	            .extendHourly()
+	            .location(new GeoCoordinates(new Longitude(lon), new Latitude(lat))).build();
 
 	        DarkSkyClient client = new DarkSkyClient();
 	        String forecast = client.forecastJsonString(request);
 	        System.out.println(forecast);
 	        
-
-//	        
-//	        String str = "{ \"name\": \"Alice\", \"age\": 20 }";
 	        JSONObject obj = new JSONObject(forecast);
 	        
-	        currLong = obj.getDouble("longitude");
-	        currLat = obj.getDouble("latitude");
-	        currTime = obj.getJSONObject("currently").getInt("time");
-//	        currTime2 = obj.getJSONObject("currently").getString("time");
-	        String icon = obj.getJSONObject("currently").getString("icon");
-	        summary = obj.getJSONObject("currently").getString("summary");
-	        currPrecipProb = obj.getJSONObject("currently").getDouble("precipProbability");
-	        temp = obj.getJSONObject("currently").getDouble("temperature");
-	        apptemp = obj.getJSONObject("currently").getDouble("apparentTemperature");
+	        date = new Date();
+	        data.currentTemp = obj.getJSONObject("currently").getDouble("temperature");
+	        data.humidity = obj.getJSONObject("currently").getDouble("humidity");
+	        data.currentForecast = obj.getJSONObject("currently").getString("summary");
+	        data.weatherIcon = obj.getJSONObject("currently").getString("icon");
+	        data.windspeed = obj.getJSONObject("currently").getDouble("windSpeed");
+	        data.date = date;
 	        
-	        summary2 = obj.getJSONObject("currently").getString("summary");
+	        System.out.println(forecast);
 	        
-	        
-	        
-	        
-	        
-	        
-	        for (; currTime > 0;currTime--){
-	        	sec++;
-	        	if (sec == 60){
-	        		sec = 0;
-	        		min++;
-	        	}
-	        	if (min == 60){
-	        		min = 0;
-	        		hour++;
-	        	}
-	        	if (hour == 24){
-	        		hour = 0;
-	        		day++;
-	        	}
-	        	if (day == 365){
-	        		day = 0;
-	        		year++;
-	        	}
-	        }
-	        String time = hour + ":" + min + ":" + sec;
-	        
-	        System.out.println(currLong + ", " + currLat );
-	        System.out.println(currTime + ", " + currPrecipProb);
-	        System.out.println(summary);
-	        System.out.println(time);
-//	        int a = obj.getInt("age");
-//	        System.out.println(n + " " + a);  // prints "Alice 20"
-//	        
+	        return data;
 //	        // http://theoryapp.com/parse-json-in-java/
-
-	        
+	
 	}
 }
