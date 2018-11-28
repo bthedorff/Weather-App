@@ -18,6 +18,8 @@ public class GooglesMain {
 	    }
 	  
 	    url.append("://maps.googleapis.com/maps/api/geocode/json?");
+	    
+	    // new api key?  AIzaSyB0qev_Lz6CWQDApx1n24b5VglYaFDFlTs 
 	    String API_KEY = "AIzaSyC-R5ltDUdew5JR_LpFQWOlLla9Y4Wdxog";
 	    if ( ssl ) {
 	        url.append("key=");
