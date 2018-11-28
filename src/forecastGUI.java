@@ -46,7 +46,8 @@ public class forecastGUI extends JFrame implements ActionListener
 		dailyBut = new JButton("Daily Weather");
 		dailyBut.addActionListener(this);
 		
-		warnBut = new JButton("Warnings");
+		warnBut = new JButton();
+		warnBut.setBackground(Color.RED);
 		warnBut.addActionListener(this);
 		
 		JLabel Sunday = new JLabel("Sunday");
@@ -74,7 +75,7 @@ public class forecastGUI extends JFrame implements ActionListener
 		dailyBut.setBounds(30, 120, 150, 30);
 		weeklyBut.setBounds(30, 150, 150, 30);
 		searchLocBut.setBounds(30, 180, 150, 30);
-		warnBut.setBounds(30, 210, 150, 30);
+		warnBut.setBounds(730, 275, 20, 20);
 		
 		Panel.add(Sunday);
 		Panel.add(Monday);
@@ -106,10 +107,9 @@ public class forecastGUI extends JFrame implements ActionListener
 		}
 		else if(arg0.getSource() == searchLocBut) {
 			dispose();
-			new searchGUI().locationLookup();
+			new searchGUI();
 		}
 		else if(arg0.getSource() == warnBut) {
-			dispose();
 			//new warnGUI();
 			System.exit(0);
 		}

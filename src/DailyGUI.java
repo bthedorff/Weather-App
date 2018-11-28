@@ -23,6 +23,8 @@ public class DailyGUI extends JFrame implements ActionListener
 	JButton checkWeekly;
 	/**Opens the search window to change locations*/
 	JButton search;
+	/**Opens a window that displays any weather warnings*/
+	JButton warning;
 
 	/**Displays the location*/
 	JLabel location;
@@ -47,7 +49,7 @@ public class DailyGUI extends JFrame implements ActionListener
 	Image image = null;
 	
 	/**Holds the weather data obtained from the API*/
-	WeatherData data;
+	WeatherData data = new WeatherData();
 
 	public static void main(String[] args) {
 		DailyGUI gui = new DailyGUI();
@@ -84,6 +86,15 @@ public class DailyGUI extends JFrame implements ActionListener
 		position.gridy = 6;
 		add(search, position);
 
+		/**warning Button*/
+		warning = new JButton();
+		warning.setBackground(Color.RED);
+		warning.addActionListener(this);
+		position.gridx = 5;
+		position.gridy = 6;
+		warning.setPreferredSize(new Dimension(20,20));
+		add(warning, position);
+		
 		/**location Label*/
 		location = new JLabel("Location");
 		position.gridx = 1;
@@ -162,9 +173,6 @@ public class DailyGUI extends JFrame implements ActionListener
 		setTitle("Daily Weather");
 		pack();
 		setVisible(true);
-
-
-
 	}
 
 	@Override
@@ -184,6 +192,10 @@ public class DailyGUI extends JFrame implements ActionListener
 		else if(arg0.getSource() == search) {
 			dispose();
 			new searchGUI();
+		}
+		else if(arg0.getSource() == warning) {
+			//new warnGUI();
+			System.exit(0);
 		}
 	}
 }
