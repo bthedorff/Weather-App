@@ -97,7 +97,7 @@ public class DailyGUI extends JFrame implements ActionListener
 		add(warning, position);
 		
 		/**location Label*/
-		location = new JLabel("Location");
+		location = new JLabel(searchGUI.getLoc());
 		position.gridx = 1;
 		position.gridy = 0;
 		add(location, position);
@@ -173,6 +173,7 @@ public class DailyGUI extends JFrame implements ActionListener
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setTitle("Daily Weather");
 		pack();
+		setLocationRelativeTo(null);
 		setVisible(true);
 	}
 
@@ -195,8 +196,8 @@ public class DailyGUI extends JFrame implements ActionListener
 			new searchGUI();
 		}
 		else if(arg0.getSource() == warning) {
+			dispose();
 			new WarnGUI();
-			System.exit(0);
 		}
 	}
 }

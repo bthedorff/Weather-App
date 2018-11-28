@@ -118,6 +118,7 @@ public class forecastGUI extends JFrame implements ActionListener
 		
 		/**Creates frame on screen*/
 		setSize(800, 375);
+		setLocationRelativeTo(null);
 		setVisible(true);
 	}
 
@@ -137,8 +138,8 @@ public class forecastGUI extends JFrame implements ActionListener
 			new searchGUI();
 		}
 		else if(arg0.getSource() == warnBut) {
+			dispose();
 			new WarnGUI();
-			System.exit(0);
 		}
 	}
 	////////////////DELETE//////////////////////////
