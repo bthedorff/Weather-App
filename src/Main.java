@@ -25,7 +25,7 @@ public class Main {
 	
 	Main(){}
 	
-	WeatherData gather(double lon, double lat) throws ForecastException{
+	public WeatherData gather(double lon, double lat) throws ForecastException{
 		String APIKey = "5f3d14bc52bfc3ec10922d31be0e7e61";
 		double currLong;
 		double currLat,currPrecipProb;
@@ -49,13 +49,12 @@ public class Main {
 	            .time(Instant.now().minus(5, ChronoUnit.DAYS))
 	            .language(ForecastRequestBuilder.Language.en)
 	            .units(ForecastRequestBuilder.Units.auto)
-//	            .exclude(ForecastRequestBuilder.Block.minutely)
-//	            .extendHourly()
+	            .exclude(ForecastRequestBuilder.Block.minutely)
+	            .extendHourly()
 	            .location(new GeoCoordinates(new Longitude(lon), new Latitude(lat))).build();
 
 	        DarkSkyClient client = new DarkSkyClient();
 	        String forecast = client.forecastJsonString(request);
-	        System.out.println(forecast);
 	        
 	        JSONObject obj = new JSONObject(forecast);
 	        

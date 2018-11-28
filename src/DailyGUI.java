@@ -48,11 +48,11 @@ public class DailyGUI extends JFrame implements ActionListener
 
 	Main main = new Main();
 	/**Holds the weather data obtained from the API*/
-	static WeatherData data;
+	WeatherData data;
 
 	public static void main(String[] args) {
 		DailyGUI gui = new DailyGUI();
-		data = new WeatherData();
+		data = Main.gather(-85.886879,42.966679);
 	}
 
 	/**
