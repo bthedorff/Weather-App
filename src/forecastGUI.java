@@ -137,7 +137,7 @@ public class forecastGUI extends JFrame implements ActionListener
 			new searchGUI();
 		}
 		else if(arg0.getSource() == warnBut) {
-			//new warnGUI();
+			new WarnGUI();
 			System.exit(0);
 		}
 	}

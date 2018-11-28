@@ -195,7 +195,7 @@ public class DailyGUI extends JFrame implements ActionListener
 			new searchGUI();
 		}
 		else if(arg0.getSource() == warning) {
-			//new warnGUI();
+			new WarnGUI();
 			System.exit(0);
 		}
 	}

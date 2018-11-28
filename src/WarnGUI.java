@@ -16,7 +16,7 @@ public class WarnGUI extends JFrame implements ActionListener
 	/**Updated from main, contains number of current weather warnings*/
 	public int numOfWarnings;
 	
-	public void warning()
+	public WarnGUI()
 	{
 		/**Sets title and layout of frame*/
 		setTitle("Weather Warnings");
@@ -81,7 +81,7 @@ public class WarnGUI extends JFrame implements ActionListener
 		Panel.add(Warning4);
 		Panel.add(closeBut);
 		
-		setSize(450, 200);
+		setSize(450, 250);
 		/**appear in middle of screen*/
 		setLocationRelativeTo(null);
 		setVisible(true);
@@ -95,6 +95,6 @@ public class WarnGUI extends JFrame implements ActionListener
 		}
 	}
 	public static void main(String[] args) {
-		new WarnGUI().warning();
+		new WarnGUI();
 	}
 }
