@@ -7,28 +7,45 @@ import java.awt.event.ActionListener;
 
 public class forecastGUI extends JFrame implements ActionListener
 {
+	/**Displays the weather forecast for the week*/
 	private JPanel Panel;
 	
+	/**Displays data for Sunday*/
 	private JLabel Sunday;
+	/**Displays data for Monday*/
 	private JLabel Monday;
+	/**Displays data for Tuesday*/
 	private JLabel Tuesday;
+	/**Displays data for Wednesday*/
 	private JLabel Wednesday;
+	/**Displays data for Thursday*/
 	private JLabel Thursday;
+	/**Displays data for Friday*/
 	private JLabel Friday;
+	/**Displays data for Saturday*/
 	private JLabel Saturday;
+	/**Displays data for daily high*/
 	private JLabel high;
+	/**Displays data for daily low*/
 	private JLabel low;
+	/**Displays data for precipitation*/
 	private JLabel precip;
+	/**Displays the location*/
 	private JLabel location;
 	
+	/**Used to switch to the dailyGUI window*/
 	private JButton dailyBut;
+	/**Used to refresh the forecastGUI window*/
 	private JButton weeklyBut;
+	/**Allows the user to search for a new location*/
 	private JButton searchLocBut;
+	/**Used to display any weather warnings*/
 	private JButton warnBut;
 	
-	private Graphics line;
-	
-	public void Forecast()
+	/**
+	 * Sets up the forecastGUI panel
+	 */
+	public forecastGUI()
 	{
 		setTitle("Weekly Forecast");
 		getContentPane();
@@ -37,19 +54,24 @@ public class forecastGUI extends JFrame implements ActionListener
 		Panel = (JPanel) getContentPane();
 		Panel.setLayout(null);
 		
+		/**Initializes search button*/
 		searchLocBut = new JButton("Set Location");
 		searchLocBut.addActionListener(this);
 		
+		/**Initializes weekly weather button*/
 		weeklyBut = new JButton("Weekly Forecast");
 		weeklyBut.addActionListener(this);
 		
+		/**Initializes daily weather button*/
 		dailyBut = new JButton("Daily Weather");
 		dailyBut.addActionListener(this);
 		
+		/**Initializes warning button*/
 		warnBut = new JButton();
 		warnBut.setBackground(Color.RED);
 		warnBut.addActionListener(this);
 		
+		/**Initailizes JLabels*/
 		JLabel Sunday = new JLabel("Sunday");
 		JLabel Monday = new JLabel("Monday");
 		JLabel Tuesday = new JLabel("Tuesday");
@@ -62,6 +84,7 @@ public class forecastGUI extends JFrame implements ActionListener
 		JLabel location = new JLabel(searchGUI.getLoc());
 		location.setFont(new Font("Serif", Font.PLAIN, 20));
 		
+		/**Sets location of components on the panel*/
 		Sunday.setBounds(285, 80, 75, 30);
 		Monday.setBounds(350, 80, 75, 30);
 		Tuesday.setBounds(415, 80, 75, 30);
@@ -77,6 +100,7 @@ public class forecastGUI extends JFrame implements ActionListener
 		searchLocBut.setBounds(30, 180, 150, 30);
 		warnBut.setBounds(730, 275, 20, 20);
 		
+		/**Adds components to panel*/
 		Panel.add(Sunday);
 		Panel.add(Monday);
 		Panel.add(Tuesday);
@@ -92,13 +116,16 @@ public class forecastGUI extends JFrame implements ActionListener
 		Panel.add(searchLocBut);
 		Panel.add(warnBut);
 		
-		
+		/**Creates frame on screen*/
 		setSize(800, 375);
-		setLocationRelativeTo(null);
 		setVisible(true);
 	}
-	
-	public void actionPerformed(ActionEvent arg0) {		
+
+	/**
+	 * Sets the functionality of the buttons
+	 * @param arg0 the user pressing a button
+	 */
+	public void actionPerformed(ActionEvent arg0) {
 		if(arg0.getSource() == dailyBut) {
 			dispose();
 			new DailyGUI();
@@ -114,8 +141,9 @@ public class forecastGUI extends JFrame implements ActionListener
 			System.exit(0);
 		}
 	}
+	////////////////DELETE//////////////////////////
 	public static void main(String[] args) {
-		new forecastGUI().Forecast();
+		new forecastGUI();
 	}
 }
 
