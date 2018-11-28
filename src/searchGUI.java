@@ -33,7 +33,7 @@ public class searchGUI extends JFrame implements ActionListener{
 		Panel.add(searchBut);
 		Panel.add(userInput);
 		Panel.add(location);
-		setSize(450, 110);
+		setSize(450, 180);
 		setLocationRelativeTo(null);
 		setVisible(true);
 	}
