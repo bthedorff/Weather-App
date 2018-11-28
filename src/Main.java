@@ -39,8 +39,12 @@ public class Main {
 		WeatherData data = new WeatherData();
 		
 		GooglesMain goog = new GooglesMain();
-		googGeo = goog.getGeoCode(lon,lat,true); //parse this object and store relevant stuff in data (WeatherData object)
-
+//		googGeo = goog.getGeoCode(lon,lat,true); //parse this object and store relevant stuff in data (WeatherData object)
+//		googGeo.cityName = obj.getJSONObject("results").getJSONObject("address_components").getJSONObject("3").getJSONObject("long_name");
+//      googGeo.StateName = obj.getJSONObject("results").getJSONObject("address_components").getJSONObject("5").getJSONObject("long_name");
+		
+		
+		
 //		ForecastRequest request = new ForecastRequestBuilder()
 //	        .key(new APIKey("5f3d14bc52bfc3ec10922d31be0e7e61"))
 //	        .location(new GeoCoordinates(new Longitude(-85.886879), new Latitude(42.966679))).build();
