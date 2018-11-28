@@ -46,7 +46,10 @@ public class DailyGUI extends JFrame implements ActionListener
 	/**Holds the URL to the image to be display on the currentForecast label*/
 	Image image = null;
 
+	////////////////DELETE////////////////////
 	Main main = new Main();
+	///////////////////////////////////////////
+	
 	/**Holds the weather data obtained from the API*/
 	WeatherData data;
 
@@ -170,7 +173,10 @@ public class DailyGUI extends JFrame implements ActionListener
 	}
 
 	@Override
-	/**Sets the functionality of the buttons*/
+	/**
+	 * Sets the functionality of the buttons
+	 * @param arg0 the user pressing a button
+	 */
 	public void actionPerformed(ActionEvent arg0) {		
 		if(arg0.getSource() == checkDaily) {
 			dispose();
