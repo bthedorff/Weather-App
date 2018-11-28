@@ -21,6 +21,7 @@ public class Main {
 	public static void main(String args[]) throws ForecastException {
 		Main test = new Main();
 		test.gather(-85.886879,42.966679);
+		
 	}
 	
 	Main(){}
@@ -35,6 +36,7 @@ public class Main {
 		double apptemp;
 		Date date;
 		WeatherData data = new WeatherData();
+		getGeoCode();
 
 //		ForecastRequest request = new ForecastRequestBuilder()
 //	        .key(new APIKey("5f3d14bc52bfc3ec10922d31be0e7e61"))
@@ -65,6 +67,8 @@ public class Main {
 	        data.weatherIcon = obj.getJSONObject("currently").getString("icon");
 	        data.windspeed = obj.getJSONObject("currently").getDouble("windSpeed");
 	        data.date = date;
+	        
+	        
 	        
 	        System.out.println(forecast);
 	        
