@@ -1,7 +1,6 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URLEncoder;
-import java.util.Date;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -11,7 +10,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.json.JSONObject;
 
 public class GooglesMain {
-	public GoogleGeoCode getGeoCode(String address, boolean ssl) throws Exception {
+	public GoogleGeoCode getGeoCode(double lon, double lat, boolean ssl) throws Exception {
 	    // build url
 	    StringBuilder url = new StringBuilder("http");
 	    if ( ssl ) {
@@ -19,8 +18,7 @@ public class GooglesMain {
 	    }
 	  
 	    url.append("://maps.googleapis.com/maps/api/geocode/json?");
-	    double lat = 42.966679;
-	    double lng = -85.886879;
+	    
 	    // new api key?  AIzaSyB0qev_Lz6CWQDApx1n24b5VglYaFDFlTs 
 	    String API_KEY = "AIzaSyC-R5ltDUdew5JR_LpFQWOlLla9Y4Wdxog";
 	    url.append("latlng=");
@@ -65,18 +63,6 @@ public class GooglesMain {
 	            
 	            JSONObject obj = new JSONObject(result);
 	            
-	            cityName = obj.getJSONObject("results").getJSONObject(address_components)
-	            
-	            
-	           
-		        
-		        date = new Date();
-		        data.currentTemp = obj.getJSONObject("currently").getDouble("temperature");
-		        data.humidity = obj.getJSONObject("currently").getDouble("humidity");
-		        data.currentForecast = obj.getJSONObject("currently").getString("summary");
-		        data.weatherIcon = obj.getJSONObject("currently").getString("icon");
-		        data.windspeed = obj.getJSONObject("currently").getDouble("windSpeed");
-		        data.date = date
 	            return null;
 	            //use own json parser
 //	            // parse result

@@ -18,15 +18,15 @@ import tk.plogitech.darksky.forecast.*;
 // API Key   5f3d14bc52bfc3ec10922d31be0e7e61
 //test
 public class Main {
-	public static void main(String args[]) throws ForecastException {
+	public static void main(String args[]) throws Exception {
 		Main test = new Main();
-		test.gather(-85.886879,42.966679);
+		test.gather(-85.886879,42.966679); //replace hard code with user input from relevant GUI
 		
 	}
 	
 	Main(){}
 	
-	public WeatherData gather(double lon, double lat) throws ForecastException{
+	public WeatherData gather(double lon, double lat) throws Exception{
 		String APIKey = "5f3d14bc52bfc3ec10922d31be0e7e61";
 		double currLong;
 		double currLat,currPrecipProb;
@@ -35,8 +35,11 @@ public class Main {
 		int hourly;
 		double apptemp;
 		Date date;
+		GoogleGeoCode googGeo;
 		WeatherData data = new WeatherData();
-		getGeoCode();
+		
+		GooglesMain goog = new GooglesMain();
+		googGeo = goog.getGeoCode(lon,lat,true); //parse this object and store relevant stuff in data (WeatherData object)
 
 //		ForecastRequest request = new ForecastRequestBuilder()
 //	        .key(new APIKey("5f3d14bc52bfc3ec10922d31be0e7e61"))
