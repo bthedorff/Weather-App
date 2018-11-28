@@ -7,30 +7,31 @@ import java.awt.event.ActionListener;
 
 public class WarnGUI extends JFrame implements ActionListener
 {
+	/**Contains all the elements to put on the Frame*/
 	private JPanel Panel;
-	
+	/**Display number and type of warnings*/
 	private JLabel heading, Warning1, Warning2, Warning3, Warning4;
+	/**Close the window*/
 	private JButton closeBut;
-	
-	public boolean Warning;
+	/**Updated from main, contains number of current weather warnings*/
 	public int numOfWarnings;
 	
 	public void warning()
 	{
+		/**Sets title and layout of frame*/
 		setTitle("Weather Warnings");
 		getContentPane();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+		/** Creates Panel*/
 		Panel = (JPanel) getContentPane();
 		Panel.setLayout(null);
-		numOfWarnings = 0;
-		heading = new JLabel(numOfWarnings + " Weather Warnings");
 		
-		//Warning1 = new JLabel("There is a Winter Weather Advisory");
-		//Warning2 = new JLabel("There is a Winter Weather Advisory");
-		//Warning3 = new JLabel("There is a Winter Weather Advisory");
-		//Warning4 = new JLabel("There is a Winter Weather Advisory");
+		numOfWarnings = 0;
+		
+		/**Displays number of warnings*/
+		heading = new JLabel(numOfWarnings + " Weather Warnings");
 
+		/**Displays appropriate number of warnings*/
 		if(numOfWarnings == 1)
 		{
 			Warning1 = new JLabel("There is a Winter Weather Advisory");
@@ -51,7 +52,8 @@ public class WarnGUI extends JFrame implements ActionListener
 			Warning1 = new JLabel("There is a Winter Weather Advisory");
 			Warning2 = new JLabel("There is a Winter Weather Advisory");
 			Warning3 = new JLabel("There is a Winter Weather Advisory");
-			Warning4 = new JLabel("There is a Winter Weather Advisory");		}
+			Warning4 = new JLabel("There is a Winter Weather Advisory");		
+		}
 		else
 		{
 			Warning1 = new JLabel("");
@@ -59,17 +61,19 @@ public class WarnGUI extends JFrame implements ActionListener
 			Warning3 = new JLabel("");
 			Warning4 = new JLabel("");
 		}
-		
+		/**initialize closeBut*/
 		closeBut = new JButton("Close");
 		closeBut.addActionListener(this);
 		closeBut.setBounds(150, 140, 150, 30);
 		
+		/**Set location and size*/
 		heading.setBounds(15,5,150,20);
 		Warning1.setBounds(15,25,240,20);
 		Warning2.setBounds(15,40,240,20);
 		Warning3.setBounds(15,55,240,20);
 		Warning4.setBounds(15,70,240,20);
 		
+		/**Add to panel*/
 		Panel.add(heading);
 		Panel.add(Warning1);
 		Panel.add(Warning2);
@@ -78,15 +82,16 @@ public class WarnGUI extends JFrame implements ActionListener
 		Panel.add(closeBut);
 		
 		setSize(450, 200);
+		/**appear in middle of screen*/
 		setLocationRelativeTo(null);
 		setVisible(true);
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
+		/**Open DailyGUI on close*/
 		if(e.getSource() == closeBut) {
 			dispose();
-			new forecastGUI();
+			new DailyGUI();
 		}
 	}
 	public static void main(String[] args) {
