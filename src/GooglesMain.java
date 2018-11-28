@@ -7,6 +7,7 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.json.JSONObject;
 
 public class GooglesMain {
 	public GoogleGeoCode getGeoCode(String address, boolean ssl) throws Exception {
@@ -17,7 +18,7 @@ public class GooglesMain {
 	    }
 	  
 	    url.append("://maps.googleapis.com/maps/api/geocode/json?");
-	  
+	    String API_KEY = "AIzaSyC-R5ltDUdew5JR_LpFQWOlLla9Y4Wdxog";
 	    if ( ssl ) {
 	        url.append("key=");
 	        url.append(API_KEY);
@@ -52,6 +53,10 @@ public class GooglesMain {
 	                }
 	            }
 
+	            System.out.print(result);
+	            
+	            JSONObject obj = new JSONObject(result);
+	            
 	            //use own json parser
 //	            // parse result
 //	            ObjectMapper mapper = new ObjectMapper();
