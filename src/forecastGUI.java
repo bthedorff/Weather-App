@@ -69,12 +69,12 @@ public class forecastGUI extends JFrame implements ActionListener
 		Friday.setBounds(640, 80, 75, 30);
 		Saturday.setBounds(705, 80, 75, 30);
 		hilow.setBounds(210, 140, 75, 30);
-		precip.setBounds(200, 250, 90, 30);
+		precip.setBounds(200, 225, 90, 30);
 		location.setBounds(340, 30, 300, 30);
-		dailyBut.setBounds(35, 120, 150, 30);
-		weeklyBut.setBounds(35, 230, 150, 30);
-		searchLocBut.setBounds(35, 350, 150, 30);
-		warnBut.setBounds(670, 400, 120, 30);
+		dailyBut.setBounds(30, 120, 150, 30);
+		weeklyBut.setBounds(30, 150, 150, 30);
+		searchLocBut.setBounds(30, 180, 150, 30);
+		warnBut.setBounds(30, 210, 150, 30);
 		
 		Panel.add(Sunday);
 		Panel.add(Monday);
@@ -92,7 +92,7 @@ public class forecastGUI extends JFrame implements ActionListener
 		Panel.add(warnBut);
 		
 		
-		setSize(800, 450);
+		setSize(800, 375);
 		setLocationRelativeTo(null);
 		setVisible(true);
 	}
