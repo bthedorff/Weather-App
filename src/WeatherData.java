@@ -13,6 +13,7 @@ public class WeatherData {
 	public double humidity;
 	public double windspeed;
 	public double feelsLike;
+	public String warning;
 	
 	WeatherData(){
 		
