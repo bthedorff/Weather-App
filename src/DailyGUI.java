@@ -45,17 +45,12 @@ public class DailyGUI extends JFrame implements ActionListener
 	ImageIcon icon;
 	/**Holds the URL to the image to be display on the currentForecast label*/
 	Image image = null;
-
-	////////////////DELETE////////////////////
-	Main main = new Main();
-	///////////////////////////////////////////
 	
 	/**Holds the weather data obtained from the API*/
 	WeatherData data;
 
 	public static void main(String[] args) {
 		DailyGUI gui = new DailyGUI();
-		data = Main.gather(-85.886879,42.966679);
 	}
 
 	/**
