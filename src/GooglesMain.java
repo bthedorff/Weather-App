@@ -21,13 +21,17 @@ public class GooglesMain {
 	    
 	    // new api key?  AIzaSyB0qev_Lz6CWQDApx1n24b5VglYaFDFlTs 
 	    String API_KEY = "AIzaSyC-R5ltDUdew5JR_LpFQWOlLla9Y4Wdxog";
+	    url.append("latlng=");
+	    url.append(lat);   // latitude
+	    url.append(",");
+	    url.append(lng);    // longitude
+	    url.append("&");
 	    if ( ssl ) {
 	        url.append("key=");
 	        url.append(API_KEY);
-	        url.append("&");
+	  
 	    }
-	    url.append("sensor=false&address=");
-	    url.append( URLEncoder.encode(address) );
+	    
 	  
 	    // request url like: http://maps.googleapis.com/maps/api/geocode/json?address=" + URLEncoder.encode(address) + "&sensor=false"
 	    // do request
@@ -59,6 +63,7 @@ public class GooglesMain {
 	            
 	            JSONObject obj = new JSONObject(result);
 	            
+	            return null;
 	            //use own json parser
 //	            // parse result
 //	            ObjectMapper mapper = new ObjectMapper();

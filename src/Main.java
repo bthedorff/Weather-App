@@ -35,7 +35,7 @@ public class Main {
 		double apptemp;
 		Date date;
 		WeatherData data = new WeatherData();
-		
+
 //		ForecastRequest request = new ForecastRequestBuilder()
 //	        .key(new APIKey("5f3d14bc52bfc3ec10922d31be0e7e61"))
 //	        .location(new GeoCoordinates(new Longitude(-85.886879), new Latitude(42.966679))).build();
@@ -43,7 +43,7 @@ public class Main {
 //	    DarkSkyClient client = new DarkSkyClient();
 //	    String forecast = client.forecastJsonString(request);
 //	    System.out.println(forecast);
-//		
+//	
 	    ForecastRequest request = new ForecastRequestBuilder()
 	            .key(new APIKey(APIKey))
 	            .time(Instant.now().minus(5, ChronoUnit.DAYS))
