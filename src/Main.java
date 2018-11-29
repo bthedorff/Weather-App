@@ -74,6 +74,7 @@ public class Main {
 	        data.weatherIcon = obj.getJSONObject("currently").getString("icon");
 	        data.windspeed = obj.getJSONObject("currently").getDouble("windSpeed");
 	        data.date = date;
+	        data.warning = obj.getJSONObject("alerts").getString("description");
 	        
 	        
 	        
