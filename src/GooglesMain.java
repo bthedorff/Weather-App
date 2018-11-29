@@ -24,7 +24,7 @@ public class GooglesMain {
 	    url.append("latlng=");
 	    url.append(lat);   // latitude
 	    url.append(",");
-	    url.append(lng);    // longitude
+	    url.append(lon);    // longitude
 	    url.append("&");
 	    if ( ssl ) {
 	        url.append("key=");
