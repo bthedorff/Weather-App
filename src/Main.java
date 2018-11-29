@@ -77,8 +77,28 @@ public class Main {
 	        
 	        
 	        
-	        System.out.println(forecast);
+	       // System.out.println(forecast);
 	        
+	        
+	        ForecastRequest request2 = new ForecastRequestBuilder()
+		            .key(new APIKey(APIKey))
+		            .extendHourly()
+		            .url(url)
+		            .time(Instant.now().minus(5, ChronoUnit.DAYS))
+		            .language(ForecastRequestBuilder.Language.en)
+		            .units(ForecastRequestBuilder.Units.auto)
+		            .exclude(ForecastRequestBuilder.Block.minutely)
+		            .exclude(ForecastRequestBuilder.Block.currently)
+		            .exclude(ForecastRequestBuilder.Block.hourly)
+		            
+		            .location(new GeoCoordinates(new Longitude(lon), new Latitude(lat))).build();
+
+	        //https://api.darksky.net/forecast/5f3d14bc52bfc3ec10922d31be0e7e61/42.966679,-85
+		        DarkSkyClient client2 = new DarkSkyClient();
+		        String forecast2 = client2.forecastJsonString(request2);
+		        
+		        System.out.println(forecast2);
+		        //JSONObject obj = new JSONObject(forecast2);
 	        return data;
 //	        // http://theoryapp.com/parse-json-in-java/
 	
