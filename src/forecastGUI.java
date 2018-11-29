@@ -79,7 +79,7 @@ public class forecastGUI extends JFrame implements ActionListener
 		JLabel Thursday = new JLabel("<html><div style='text-align: center;'>Thursday<br><br><br><br>TEST<br><br><br><br><br>Image</div></html>");
 		JLabel Friday = new JLabel("<html><div style='text-align: center;'>Friday<br><br><br><br>TEST<br><br><br><br><br>Image</div></html>");
 		JLabel Saturday = new JLabel("<html><div style='text-align: center;'>Saturday<br><br><br><br>TEST<br><br><br><br><br>Image</div></html>");
-		JLabel hilow = new JLabel("High/Low");
+		JLabel hilow = new JLabel("<html><div style='text-align: center;'>High<br>-------<br>Low</div></html>");
 		JLabel precip = new JLabel("Precipitation");
 		JLabel location = new JLabel(searchGUI.getLoc());
 		location.setFont(new Font("Serif", Font.PLAIN, 20));
@@ -92,7 +92,7 @@ public class forecastGUI extends JFrame implements ActionListener
 		Thursday.setBounds(565, 68, 75, 200);
 		Friday.setBounds(640, 68, 75, 200);
 		Saturday.setBounds(705, 68, 75, 200);
-		hilow.setBounds(210, 140, 75, 30);
+		hilow.setBounds(240, 110, 75, 100);
 		precip.setBounds(200, 225, 90, 30);
 		location.setBounds(340, 30, 300, 30);
 		dailyBut.setBounds(30, 120, 150, 30);
