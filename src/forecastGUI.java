@@ -72,26 +72,26 @@ public class forecastGUI extends JFrame implements ActionListener
 		warnBut.addActionListener(this);
 		
 		/**Initailizes JLabels*/
-		JLabel Sunday = new JLabel("Sunday");
-		JLabel Monday = new JLabel("Monday");
-		JLabel Tuesday = new JLabel("Tuesday");
-		JLabel Wednesday = new JLabel("Wednesday");
-		JLabel Thursday = new JLabel("Thursday");
-		JLabel Friday = new JLabel("Friday");
-		JLabel Saturday = new JLabel("Saturday");
+		JLabel Sunday = new JLabel("<html><div style='text-align: center;'>Sunday<br><br><br><br>TEST<br><br><br><br><br>Image</div></html>");
+		JLabel Monday = new JLabel("<html><div style='text-align: center;'>Monday<br><br><br><br>TEST<br><br><br><br><br>Image</div></html>");
+		JLabel Tuesday = new JLabel("<html><div style='text-align: center;'>Tuesday<br><br><br><br>TEST<br><br><br><br><br>Image</div></html>");
+		JLabel Wednesday = new JLabel("<html><div style='text-align: center;'>Wednesday<br><br><br><br>TEST<br><br><br><br><br>Image</div></html>");
+		JLabel Thursday = new JLabel("<html><div style='text-align: center;'>Thursday<br><br><br><br>TEST<br><br><br><br><br>Image</div></html>");
+		JLabel Friday = new JLabel("<html><div style='text-align: center;'>Friday<br><br><br><br>TEST<br><br><br><br><br>Image</div></html>");
+		JLabel Saturday = new JLabel("<html><div style='text-align: center;'>Saturday<br><br><br><br>TEST<br><br><br><br><br>Image</div></html>");
 		JLabel hilow = new JLabel("High/Low");
 		JLabel precip = new JLabel("Precipitation");
 		JLabel location = new JLabel(searchGUI.getLoc());
 		location.setFont(new Font("Serif", Font.PLAIN, 20));
 		
 		/**Sets location of components on the panel*/
-		Sunday.setBounds(285, 80, 75, 30);
-		Monday.setBounds(350, 80, 75, 30);
-		Tuesday.setBounds(415, 80, 75, 30);
-		Wednesday.setBounds(480, 80, 75, 30);
-		Thursday.setBounds(565, 80, 75, 30);
-		Friday.setBounds(640, 80, 75, 30);
-		Saturday.setBounds(705, 80, 75, 30);
+		Sunday.setBounds(285, 68, 75, 200);
+		Monday.setBounds(350, 68, 75, 200);
+		Tuesday.setBounds(415, 68, 75, 200);
+		Wednesday.setBounds(480, 68, 75, 200);
+		Thursday.setBounds(565, 68, 75, 200);
+		Friday.setBounds(640, 68, 75, 200);
+		Saturday.setBounds(705, 68, 75, 200);
 		hilow.setBounds(210, 140, 75, 30);
 		precip.setBounds(200, 225, 90, 30);
 		location.setBounds(340, 30, 300, 30);
