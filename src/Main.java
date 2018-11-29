@@ -55,7 +55,7 @@ public class Main {
 //	
 	    ForecastRequest request = new ForecastRequestBuilder()
 	            .key(new APIKey(APIKey))
-	            .time(Instant.now().minus(5, ChronoUnit.DAYS))
+	            //.time(Instant.now().minus(5, ChronoUnit.DAYS))
 	            .language(ForecastRequestBuilder.Language.en)
 	            .units(ForecastRequestBuilder.Units.auto)
 	            .exclude(ForecastRequestBuilder.Block.minutely)
@@ -74,18 +74,18 @@ public class Main {
 	        data.weatherIcon = obj.getJSONObject("currently").getString("icon");
 	        data.windspeed = obj.getJSONObject("currently").getDouble("windSpeed");
 	        data.date = date;
-	        data.warning = obj.getJSONObject("alerts").getString("description");
+	        //data.warning = obj.getJSONObject("alerts").getString("description");
 	        
 	        
 	        
-	       // System.out.println(forecast);
+	        System.out.println(forecast);
 	        
 	        
 	        ForecastRequest request2 = new ForecastRequestBuilder()
 		            .key(new APIKey(APIKey))
 		            .extendHourly()
-		            .url(url)
-		            .time(Instant.now().minus(5, ChronoUnit.DAYS))
+		           
+		            //.time(Instant.now().minus(5, ChronoUnit.DAYS))
 		            .language(ForecastRequestBuilder.Language.en)
 		            .units(ForecastRequestBuilder.Units.auto)
 		            .exclude(ForecastRequestBuilder.Block.minutely)
@@ -98,7 +98,7 @@ public class Main {
 		        DarkSkyClient client2 = new DarkSkyClient();
 		        String forecast2 = client2.forecastJsonString(request2);
 		        
-		        System.out.println(forecast2);
+		        //System.out.println(forecast2);
 		        //JSONObject obj = new JSONObject(forecast2);
 	        return data;
 //	        // http://theoryapp.com/parse-json-in-java/
