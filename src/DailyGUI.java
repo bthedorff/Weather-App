@@ -109,7 +109,7 @@ public class DailyGUI extends JFrame implements ActionListener
 		add(currentTemp, position);
 
 		/**highTemp Label*/
-		highlowTemp = new JLabel("High / Low");
+		highlowTemp = new JLabel("<html><div style='text-align: center;'>High<br>-------<br>Low</div></html>");
 		position.gridx = 2;
 		position.gridy = 2;
 		add(highlowTemp, position);
