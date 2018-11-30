@@ -14,6 +14,8 @@ public class WeatherData {
 	public double windspeed;
 	public double feelsLike;
 	public String warning;
+	public String cityName;
+	public String StateName;
 	
 	WeatherData(){
 		
