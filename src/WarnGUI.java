@@ -16,8 +16,12 @@ public class WarnGUI extends JFrame implements ActionListener
 	/**Updated from main, contains number of current weather warnings*/
 	public int numOfWarnings;
 	
-	public WarnGUI()
+	static WeatherData data;
+	
+	public WarnGUI(WeatherData d)
 	{
+		data = d;
+		
 		/**Sets title and layout of frame*/
 		setTitle("Weather Warnings");
 		getContentPane();
@@ -88,13 +92,12 @@ public class WarnGUI extends JFrame implements ActionListener
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		/**Open DailyGUI on close*/
+		/**Close the warning GUI*/
 		if(e.getSource() == closeBut) {
-			new DailyGUI();
 			dispose();
 		}
 	}
 	public static void main(String[] args) {
-		new WarnGUI();
+		new WarnGUI(data);
 	}
 }

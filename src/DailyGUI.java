@@ -49,17 +49,19 @@ public class DailyGUI extends JFrame implements ActionListener
 	Image image = null;
 	
 	/**Holds the weather data obtained from the API*/
-	WeatherData data = new WeatherData();
+	static WeatherData data;
 
 	/////////////////////////DELETE/////////////////////////
 	public static void main(String[] args) {
-		DailyGUI gui = new DailyGUI();
+		DailyGUI gui = new DailyGUI(data);
 	}
 
 	/**
 	 * Initializes each label and sets it onto the frame
 	 */
-	public DailyGUI() {
+	public DailyGUI(WeatherData d) {
+		data = d;
+		
 		setLayout(new GridBagLayout());
 		GridBagConstraints position = new GridBagConstraints();
 		position.insets.left = 20;
@@ -185,11 +187,11 @@ public class DailyGUI extends JFrame implements ActionListener
 	 */
 	public void actionPerformed(ActionEvent arg0) {		
 		if(arg0.getSource() == checkDaily) {
-			new DailyGUI();
+			new DailyGUI(data);
 			dispose();
 		}
 		else if(arg0.getSource() == checkWeekly) {
-			new forecastGUI();
+			new forecastGUI(data);
 			dispose();
 		}
 		else if(arg0.getSource() == search) {
@@ -197,8 +199,7 @@ public class DailyGUI extends JFrame implements ActionListener
 			dispose();
 		}
 		else if(arg0.getSource() == warning) {
-			new WarnGUI();
-			dispose();
+			new WarnGUI(data);
 		}
 	}
 }

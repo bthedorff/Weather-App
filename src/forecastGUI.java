@@ -44,13 +44,15 @@ public class forecastGUI extends JFrame implements ActionListener
 	private JButton warnBut;
 	
 	/**Holds the weather data obtained from the API*/
-	WeatherData data = new WeatherData();
+	static WeatherData data;
 	
 	/**
 	 * Sets up the forecastGUI panel
 	 */
-	public forecastGUI()
+	public forecastGUI(WeatherData d)
 	{
+		data = d;
+		
 		setTitle("Weekly Forecast");
 		getContentPane();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -148,11 +150,11 @@ public class forecastGUI extends JFrame implements ActionListener
 	 */
 	public void actionPerformed(ActionEvent arg0) {
 		if(arg0.getSource() == dailyBut) {
-			new DailyGUI();
+			new DailyGUI(data);
 			dispose();
 		}
 		else if(arg0.getSource() == weeklyBut) {
-			new forecastGUI();
+			new forecastGUI(data);
 			dispose();
 		}
 		else if(arg0.getSource() == searchLocBut) {
@@ -160,13 +162,12 @@ public class forecastGUI extends JFrame implements ActionListener
 			dispose();
 		}
 		else if(arg0.getSource() == warnBut) {
-			new WarnGUI();
-			dispose();
+			new WarnGUI(data);
 		}
 	}
 	////////////////DELETE//////////////////////////
 	public static void main(String[] args) {
-		new forecastGUI();
+		new forecastGUI(data);
 	}
 }
 
