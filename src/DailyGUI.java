@@ -98,6 +98,7 @@ public class DailyGUI extends JFrame implements ActionListener
 		
 		/**location Label*/
 		location = new JLabel(searchGUI.getLoc());
+		location.setFont(new Font("Serif", Font.PLAIN, 20));
 		position.gridx = 1;
 		position.gridy = 0;
 		add(location, position);
@@ -184,20 +185,20 @@ public class DailyGUI extends JFrame implements ActionListener
 	 */
 	public void actionPerformed(ActionEvent arg0) {		
 		if(arg0.getSource() == checkDaily) {
-			dispose();
 			new DailyGUI();
+			dispose();
 		}
 		else if(arg0.getSource() == checkWeekly) {
-			dispose();
 			new forecastGUI();
+			dispose();
 		}
 		else if(arg0.getSource() == search) {
-			dispose();
 			new searchGUI();
+			dispose();
 		}
 		else if(arg0.getSource() == warning) {
-			dispose();
 			new WarnGUI();
+			dispose();
 		}
 	}
 }

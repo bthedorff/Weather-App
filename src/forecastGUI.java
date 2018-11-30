@@ -128,18 +128,20 @@ public class forecastGUI extends JFrame implements ActionListener
 	 */
 	public void actionPerformed(ActionEvent arg0) {
 		if(arg0.getSource() == dailyBut) {
-			dispose();
 			new DailyGUI();
+			dispose();
 		}
 		else if(arg0.getSource() == weeklyBut) {
+			new forecastGUI();
+			dispose();
 		}
 		else if(arg0.getSource() == searchLocBut) {
-			dispose();
 			new searchGUI();
+			dispose();
 		}
 		else if(arg0.getSource() == warnBut) {
-			dispose();
 			new WarnGUI();
+			dispose();
 		}
 	}
 	////////////////DELETE//////////////////////////

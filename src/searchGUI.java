@@ -69,8 +69,8 @@ public class searchGUI extends JFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == searchBut) {
 			userLoc = userInput.getText();
-			dispose();
 			new DailyGUI();
+			dispose();
 		}
 	}
 }

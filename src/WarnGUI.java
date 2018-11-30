@@ -90,8 +90,8 @@ public class WarnGUI extends JFrame implements ActionListener
 	public void actionPerformed(ActionEvent e) {
 		/**Open DailyGUI on close*/
 		if(e.getSource() == closeBut) {
-			dispose();
 			new DailyGUI();
+			dispose();
 		}
 	}
 	public static void main(String[] args) {
