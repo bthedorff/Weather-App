@@ -49,10 +49,11 @@ public class Main {
 	
 	    ForecastRequest request = new ForecastRequestBuilder()
 	            .key(new APIKey(APIKey))
-	            .time(Instant.now())
+	            .time(Instant.now().plus(5, ChronoUnit.DAYS))
 	            .language(ForecastRequestBuilder.Language.en)
 	            .units(ForecastRequestBuilder.Units.auto)
 	            .exclude(ForecastRequestBuilder.Block.minutely)
+	            .exclude(ForecastRequestBuilder.Block.hourly)
 	            .extendHourly()
 	            .location(new GeoCoordinates(new Longitude(lon), new Latitude(lat))).build();
 
@@ -74,12 +75,14 @@ public class Main {
 	        obj = new JSONObject(goog.getGeoCode(lon,lat,true)); //parse this object and store relevant stuff in data (WeatherData object)
 			data.cityName = obj.getJSONArray("results").getJSONObject(0).getJSONArray("address_components").getJSONObject(3).getString("long_name");
 	        data.StateName = obj.getJSONArray("results").getJSONObject(0).getJSONArray("address_components").getJSONObject(5).getString("long_name");
-	        	        
-	        System.out.println(forecast);
 	        
-	        System.out.println(data.cityName);
+	        System.out.println(forecast);  
 	        
-	        System.out.println(data.StateName);
+	       
+
+	        //System.out.println(data.cityName);
+	        
+	        //System.out.println(data.StateName);
 	        
 //	        ForecastRequest request2 = new ForecastRequestBuilder()
 //		            .key(new APIKey(APIKey))
