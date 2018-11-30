@@ -3,6 +3,9 @@ import java.awt.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 
 public class forecastGUI extends JFrame implements ActionListener
@@ -24,10 +27,8 @@ public class forecastGUI extends JFrame implements ActionListener
 	private JLabel Friday;
 	/**Displays data for Saturday*/
 	private JLabel Saturday;
-	/**Displays data for daily high*/
-	private JLabel high;
-	/**Displays data for daily low*/
-	private JLabel low;
+	/**Displays data for daily high and low*/
+	private JLabel hilow;
 	/**Displays data for precipitation*/
 	private JLabel precip;
 	/**Displays the location*/
@@ -71,17 +72,33 @@ public class forecastGUI extends JFrame implements ActionListener
 		warnBut.setBackground(Color.RED);
 		warnBut.addActionListener(this);
 		
+		Calendar calendar = Calendar.getInstance();
+		Date day = calendar.getTime();
+		SimpleDateFormat format = new SimpleDateFormat("E");
+		
 		/**Initailizes JLabels*/
-		JLabel Sunday = new JLabel("<html><div style='text-align: center;'>Sunday<br><br><br><br>TEST<br><br><br><br><br>Image</div></html>");
-		JLabel Monday = new JLabel("<html><div style='text-align: center;'>Monday<br><br><br><br>TEST<br><br><br><br><br>Image</div></html>");
-		JLabel Tuesday = new JLabel("<html><div style='text-align: center;'>Tuesday<br><br><br><br>TEST<br><br><br><br><br>Image</div></html>");
-		JLabel Wednesday = new JLabel("<html><div style='text-align: center;'>Wednesday<br><br><br><br>TEST<br><br><br><br><br>Image</div></html>");
-		JLabel Thursday = new JLabel("<html><div style='text-align: center;'>Thursday<br><br><br><br>TEST<br><br><br><br><br>Image</div></html>");
-		JLabel Friday = new JLabel("<html><div style='text-align: center;'>Friday<br><br><br><br>TEST<br><br><br><br><br>Image</div></html>");
-		JLabel Saturday = new JLabel("<html><div style='text-align: center;'>Saturday<br><br><br><br>TEST<br><br><br><br><br>Image</div></html>");
-		JLabel hilow = new JLabel("<html><div style='text-align: center;'>High<br>-------<br>Low</div></html>");
-		JLabel precip = new JLabel("Precipitation");
-		JLabel location = new JLabel(searchGUI.getLoc());
+		Sunday = new JLabel("<html><div style='text-align: center;'>" + format.format(day) + "<br><br><br><br>TEST<br><br><br><br><br>Image</div></html>");
+		calendar.add(Calendar.DAY_OF_YEAR, 1);
+		day = calendar.getTime();
+		Monday = new JLabel("<html><div style='text-align: center;'>" + format.format(day) + "<br><br><br><br>TEST<br><br><br><br><br>Image</div></html>");
+		calendar.add(Calendar.DAY_OF_YEAR, 1);
+		day = calendar.getTime();
+		Tuesday = new JLabel("<html><div style='text-align: center;'>" + format.format(day) + "<br><br><br><br>TEST<br><br><br><br><br>Image</div></html>");
+		calendar.add(Calendar.DAY_OF_YEAR, 1);
+		day = calendar.getTime();
+		Wednesday = new JLabel("<html><div style='text-align: center;'>" + format.format(day) + "<br><br><br><br>TEST<br><br><br><br><br>Image</div></html>");
+		calendar.add(Calendar.DAY_OF_YEAR, 1);
+		day = calendar.getTime();
+		Thursday = new JLabel("<html><div style='text-align: center;'>" + format.format(day) + "<br><br><br><br>TEST<br><br><br><br><br>Image</div></html>");
+		calendar.add(Calendar.DAY_OF_YEAR, 1);
+		day = calendar.getTime();
+		Friday = new JLabel("<html><div style='text-align: center;'>" + format.format(day) + "<br><br><br><br>TEST<br><br><br><br><br>Image</div></html>");
+		calendar.add(Calendar.DAY_OF_YEAR, 1);
+		day = calendar.getTime();
+		Saturday = new JLabel("<html><div style='text-align: center;'>" + format.format(day) + "<br><br><br><br>TEST<br><br><br><br><br>Image</div></html>");
+		hilow = new JLabel("<html><div style='text-align: center;'>High<br>-------<br>Low</div></html>");
+		precip = new JLabel("Precipitation");
+		location = new JLabel(searchGUI.getLoc());
 		location.setFont(new Font("Serif", Font.PLAIN, 20));
 		
 		/**Sets location of components on the panel*/

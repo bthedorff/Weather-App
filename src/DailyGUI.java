@@ -97,7 +97,7 @@ public class DailyGUI extends JFrame implements ActionListener
 		add(warning, position);
 		
 		/**location Label*/
-		location = new JLabel(searchGUI.getLoc());
+		location = new JLabel(data.cityName);
 		location.setFont(new Font("Serif", Font.PLAIN, 20));
 		position.gridx = 1;
 		position.gridy = 0;

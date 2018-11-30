@@ -12,7 +12,7 @@ public class WeatherData {
 	//current high temperature
 	public double highTemp;
 	//current low temperature
-	public double lowTemp
+	public double lowTemp;
 	//description of current weather conditions ex: "cloudy"
 	public String currentForecast;
 	//current humidity
