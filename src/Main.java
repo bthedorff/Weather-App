@@ -67,6 +67,7 @@ public class Main {
 	        String forecast = client.forecastJsonString(request);
 	        
 	        JSONObject obj = new JSONObject(forecast);
+	       // System.out.println(obj.toString());
 	        
 	        date = new Date();
 	        data.currentTemp = obj.getJSONObject("currently").getDouble("temperature");
@@ -79,15 +80,15 @@ public class Main {
 	        
 	        GooglesMain goog = new GooglesMain();
 			//JSONObject obj2 = new JSONObject(goog);
-			googGeo = goog.getGeoCode(lon,lat,true); //parse this object and store relevant stuff in data (WeatherData object)
-			googGeo.cityName = obj.getJSONObject("results").getJSONArray("address_components").getJSONObject(3).getString("long_name");
-	        googGeo.StateName = obj.getJSONObject("results").getJSONArray("address_components").getJSONObject(5).getString("long_name");
+	        obj = new JSONObject(goog.getGeoCode(lon,lat,true)); //parse this object and store relevant stuff in data (WeatherData object)
+			data.cityName = obj.getJSONArray("results").getJSONObject(0).getJSONArray("address_components").getJSONObject(3).getString("long_name");
+	        data.StateName = obj.getJSONArray("results").getJSONObject(0).getJSONArray("address_components").getJSONObject(5).getString("long_name");
+	        System.out.println(data.StateName);
+	        //data.cityName = googGeo.cityName;
+	        //data.StateName = googGeo.StateName;
 	        
-	        data.cityName = googGeo.cityName;
-	        data.StateName = googGeo.StateName;
 	        
-	        
-	        System.out.println(forecast);
+	        System.out.println(data.cityName);
 	        
 	        
 	        ForecastRequest request2 = new ForecastRequestBuilder()

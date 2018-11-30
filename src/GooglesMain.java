@@ -10,7 +10,7 @@ import org.apache.http.impl.client.HttpClients;
 import org.json.JSONObject;
 
 public class GooglesMain {
-	public GoogleGeoCode getGeoCode(double lon, double lat, boolean ssl) throws Exception {
+	public String getGeoCode(double lon, double lat, boolean ssl) throws Exception {
 	    // build url
 	    StringBuilder url = new StringBuilder("http");
 	    if ( ssl ) {
@@ -63,7 +63,7 @@ public class GooglesMain {
 	            
 	            JSONObject obj2 = new JSONObject(result);
 	            
-	            return null;
+	            return result.toString();
 	            //use own json parser
 //	            // parse result
 //	            ObjectMapper mapper = new ObjectMapper();
