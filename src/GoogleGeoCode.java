@@ -3,5 +3,7 @@ public class GoogleGeoCode {
     private GoogleGeoResult [] results;
     private Boolean exclude_from_slo;
     private String error_message;
+	public String cityName;
+	public Object StateName;
 
 }

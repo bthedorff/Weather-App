@@ -38,11 +38,12 @@ public class Main {
 		GoogleGeoCode googGeo;
 		WeatherData data = new WeatherData();
 		
-		GooglesMain goog = new GooglesMain();
+//		GooglesMain goog = new GooglesMain();
+//		//JSONObject obj2 = new JSONObject(goog);
 //		googGeo = goog.getGeoCode(lon,lat,true); //parse this object and store relevant stuff in data (WeatherData object)
-//		googGeo.cityName = obj.getJSONObject("results").getJSONObject("address_components").getJSONObject("3").getJSONObject("long_name");
-//      googGeo.StateName = obj.getJSONObject("results").getJSONObject("address_components").getJSONObject("5").getJSONObject("long_name");
-		
+//		googGeo.cityName = obj.getJSONObject("results").getJSONArray("address_components").getJSONObject(3).getString("long_name");
+//        googGeo.StateName = obj.getJSONObject("results").getJSONArray("address_components").getJSONObject(5).getString("long_name");
+//		
 		
 		
 //		ForecastRequest request = new ForecastRequestBuilder()
@@ -76,6 +77,14 @@ public class Main {
 	        data.date = date;
 	        //data.warning = obj.getJSONObject("alerts").getString("description");
 	        
+	        GooglesMain goog = new GooglesMain();
+			//JSONObject obj2 = new JSONObject(goog);
+			googGeo = goog.getGeoCode(lon,lat,true); //parse this object and store relevant stuff in data (WeatherData object)
+			googGeo.cityName = obj.getJSONObject("results").getJSONArray("address_components").getJSONObject(3).getString("long_name");
+	        googGeo.StateName = obj.getJSONObject("results").getJSONArray("address_components").getJSONObject(5).getString("long_name");
+	        
+	        data.cityName = googGeo.cityName;
+	        data.StateName = googGeo.StateName;
 	        
 	        
 	        System.out.println(forecast);

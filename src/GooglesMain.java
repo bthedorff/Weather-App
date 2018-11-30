@@ -61,7 +61,7 @@ public class GooglesMain {
 
 	            System.out.print(result);
 	            
-	            JSONObject obj = new JSONObject(result);
+	            JSONObject obj2 = new JSONObject(result);
 	            
 	            return null;
 	            //use own json parser
