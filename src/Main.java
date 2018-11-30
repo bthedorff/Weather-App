@@ -52,8 +52,8 @@ public class Main {
 //
 //	    DarkSkyClient client = new DarkSkyClient();
 //	    String forecast = client.forecastJsonString(request);
-//	    System.out.println(forecast);
-//	
+	    
+	
 	    ForecastRequest request = new ForecastRequestBuilder()
 	            .key(new APIKey(APIKey))
 	            //.time(Instant.now().minus(5, ChronoUnit.DAYS))
@@ -87,6 +87,7 @@ public class Main {
 	        //data.cityName = googGeo.cityName;
 	        //data.StateName = googGeo.StateName;
 	        
+	        System.out.println(forecast);
 	        
 	        System.out.println(data.cityName);
 	        
