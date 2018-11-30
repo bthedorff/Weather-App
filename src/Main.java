@@ -28,14 +28,7 @@ public class Main {
 	
 	public WeatherData gather(double lon, double lat) throws Exception{
 		String APIKey = "5f3d14bc52bfc3ec10922d31be0e7e61";
-		double currLong;
-		double currLat,currPrecipProb;
-		String summary2;
-		int currTime;
-		int hourly;
-		double apptemp;
 		Date date;
-		GoogleGeoCode googGeo;
 		WeatherData data = new WeatherData();
 		
 //		GooglesMain goog = new GooglesMain();
@@ -67,7 +60,6 @@ public class Main {
 	        String forecast = client.forecastJsonString(request);
 	        
 	        JSONObject obj = new JSONObject(forecast);
-	       // System.out.println(obj.toString());
 	        
 	        date = new Date();
 	        data.currentTemp = obj.getJSONObject("currently").getDouble("temperature");
@@ -79,35 +71,32 @@ public class Main {
 	        //data.warning = obj.getJSONObject("alerts").getString("description");
 	        
 	        GooglesMain goog = new GooglesMain();
-			//JSONObject obj2 = new JSONObject(goog);
 	        obj = new JSONObject(goog.getGeoCode(lon,lat,true)); //parse this object and store relevant stuff in data (WeatherData object)
 			data.cityName = obj.getJSONArray("results").getJSONObject(0).getJSONArray("address_components").getJSONObject(3).getString("long_name");
 	        data.StateName = obj.getJSONArray("results").getJSONObject(0).getJSONArray("address_components").getJSONObject(5).getString("long_name");
-	        System.out.println(data.StateName);
-	        //data.cityName = googGeo.cityName;
-	        //data.StateName = googGeo.StateName;
-	        
+	        	        
 	        System.out.println(forecast);
 	        
 	        System.out.println(data.cityName);
 	        
+	        System.out.println(data.StateName);
 	        
-	        ForecastRequest request2 = new ForecastRequestBuilder()
-		            .key(new APIKey(APIKey))
-		            .extendHourly()
-		           
-		            .time(Instant.now())
-		            .language(ForecastRequestBuilder.Language.en)
-		            .units(ForecastRequestBuilder.Units.auto)
-		            .exclude(ForecastRequestBuilder.Block.minutely)
-		            .exclude(ForecastRequestBuilder.Block.currently)
-		            .exclude(ForecastRequestBuilder.Block.hourly)
-		            
-		            .location(new GeoCoordinates(new Longitude(lon), new Latitude(lat))).build();
-
-	        //https://api.darksky.net/forecast/5f3d14bc52bfc3ec10922d31be0e7e61/42.966679,-85
-		        DarkSkyClient client2 = new DarkSkyClient();
-		        String forecast2 = client2.forecastJsonString(request2);
+//	        ForecastRequest request2 = new ForecastRequestBuilder()
+//		            .key(new APIKey(APIKey))
+//		            .extendHourly()
+//		           
+//		            .time(Instant.now())
+//		            .language(ForecastRequestBuilder.Language.en)
+//		            .units(ForecastRequestBuilder.Units.auto)
+//		            .exclude(ForecastRequestBuilder.Block.minutely)
+//		            .exclude(ForecastRequestBuilder.Block.currently)
+//		            .exclude(ForecastRequestBuilder.Block.hourly)
+//		            
+//		            .location(new GeoCoordinates(new Longitude(lon), new Latitude(lat))).build();
+//
+//	        //https://api.darksky.net/forecast/5f3d14bc52bfc3ec10922d31be0e7e61/42.966679,-85
+//		        DarkSkyClient client2 = new DarkSkyClient();
+//		        String forecast2 = client2.forecastJsonString(request2);
 		        
 		        //System.out.println(forecast2);
 		        //JSONObject obj = new JSONObject(forecast2);
