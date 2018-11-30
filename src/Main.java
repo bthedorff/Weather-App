@@ -56,7 +56,7 @@ public class Main {
 	
 	    ForecastRequest request = new ForecastRequestBuilder()
 	            .key(new APIKey(APIKey))
-	            //.time(Instant.now().minus(5, ChronoUnit.DAYS))
+	            .time(Instant.now())
 	            .language(ForecastRequestBuilder.Language.en)
 	            .units(ForecastRequestBuilder.Units.auto)
 	            .exclude(ForecastRequestBuilder.Block.minutely)
@@ -96,7 +96,7 @@ public class Main {
 		            .key(new APIKey(APIKey))
 		            .extendHourly()
 		           
-		            //.time(Instant.now().minus(5, ChronoUnit.DAYS))
+		            .time(Instant.now())
 		            .language(ForecastRequestBuilder.Language.en)
 		            .units(ForecastRequestBuilder.Units.auto)
 		            .exclude(ForecastRequestBuilder.Block.minutely)
