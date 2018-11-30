@@ -59,7 +59,7 @@ public class GooglesMain {
 	                }
 	            }
 
-	            System.out.print(result);
+	            //System.out.print(result);
 	            
 	            JSONObject obj2 = new JSONObject(result);
 	            
