@@ -31,7 +31,7 @@ public class WeatherData {
 	public Date warnStop;
 	//description of warning
 	public String warning;
-	
+	//title of warning
 	public String warnTitle;
 	
 	WeatherData(){
