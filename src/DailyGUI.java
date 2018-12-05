@@ -15,6 +15,16 @@ import java.util.Date;
 import java.util.*;
 import java.lang.Object.*;
 
+/*****************************************************************
+Graphical representation of a six sided die with various controls 
+over the appearance.  Current value is constrained between 1 and 6.
+
+@author Brandon Thedorff
+@author Nick Pydyn
+@author Denver DeBoer
+@author Ryan De Jong
+@version Winter 2007
+*****************************************************************/
 public class DailyGUI extends JFrame implements ActionListener 
 {
 	/**Updates the checkDaily window*/
@@ -56,9 +66,10 @@ public class DailyGUI extends JFrame implements ActionListener
 		DailyGUI gui = new DailyGUI(data);
 	}
 
-	/**
+	/************************************************************
 	 * Initializes each label and sets it onto the frame
-	 */
+	 * @param d the weatherdata object holding the data
+	 ************************************************************/
 	public DailyGUI(WeatherData d) {
 		data = d;
 		
@@ -156,6 +167,7 @@ public class DailyGUI extends JFrame implements ActionListener
 				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/clearDayIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
 			}
 		} catch(IOException e) {}
+		//SpotBugs: image isn't really null
 		icon = new ImageIcon(image);
 		
 		/**currentForecast Label*/
