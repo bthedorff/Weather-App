@@ -33,8 +33,6 @@ public class WeatherData {
 	public String warning;
 	
 	public String warnTitle;
-	//Autocreated. can undo if needed
-	public String currentForecast;
 	
 	WeatherData(){
 		//current date/time
