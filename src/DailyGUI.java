@@ -119,6 +119,7 @@ public class DailyGUI extends JFrame implements ActionListener
 
 		//For testing purposes
 		data.currentForecast = "Snowing";
+	
 		/**Sets the icon image that will be displayed*/
 		try {
 			if (data.currentForecast.equals("Overcast")) {
