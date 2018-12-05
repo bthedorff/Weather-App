@@ -12,6 +12,15 @@ import tk.plogitech.darksky.forecast.GeoCoordinates;
 import tk.plogitech.darksky.forecast.model.Latitude;
 import tk.plogitech.darksky.forecast.model.Longitude;
 
+/*****************************************************************
+* Pulls data from the API and parses the data needed
+* 
+* @author Brandon Thedorff
+* @author Nick Pydyn
+* @author Denver DeBoer
+* @author Ryan De Jong
+* @version Fall 2007
+******************************************************************/
 public class APIPuller {
 	
 	WeatherData data = new WeatherData();

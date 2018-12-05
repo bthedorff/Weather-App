@@ -23,7 +23,7 @@ over the appearance.  Current value is constrained between 1 and 6.
 @author Nick Pydyn
 @author Denver DeBoer
 @author Ryan De Jong
-@version Winter 2007
+@version Fall 2018
 *****************************************************************/
 public class DailyGUI extends JFrame implements ActionListener 
 {
