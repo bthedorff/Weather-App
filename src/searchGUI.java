@@ -19,6 +19,7 @@ public class searchGUI extends JFrame implements ActionListener{
 	/**Holds the user's desired location*/
 	public static String userLoc = "Choose Location";
 	public static double Long, Lat;
+	public boolean waiting = true;
 	
 	private JComboBox<String> locList;
 
@@ -140,6 +141,7 @@ public class searchGUI extends JFrame implements ActionListener{
 				Long = Double.parseDouble(inpLong.getText());
 				Lat = Double.parseDouble(inpLat.getText());
 			}
+			waiting = false;
 			dispose();
 		}
 	}
