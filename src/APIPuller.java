@@ -76,7 +76,12 @@ public class APIPuller {
 	    data.weatherIcon[0] = obj.getJSONObject("currently").getString("icon");
 	    data.windSpeed[0] = obj.getJSONObject("currently").getLong("windSpeed");
 	    data.date[0] = new Date(obj.getJSONObject("currently").getLong("time"));
-	    //data.warning = obj.getJSONObject("alerts").getString("description");
+	    if (forecast.contains("alerts")){
+	    	data.warnStart = new Date(obj.getJSONObject("alerts").getLong("time"));
+	    	data.warnStop = new Date(obj.getJSONObject("alerts").getLong("expires"));
+	    	data.warnTitle = obj.getJSONObject("alerts").getString("title");
+	    	data.warning = obj.getJSONObject("alerts").getString("description");
+	    }
 	
 		//repeats API calling process for the week in the future (not at all efficient but daily 
 	        //does not work as described in API docs
@@ -105,7 +110,6 @@ public class APIPuller {
 		    data.weatherIcon[i] = obj.getJSONObject("daily").getJSONArray("data").getJSONObject(0).getString("icon");
 		    data.windSpeed[1] = obj.getJSONObject("daily").getJSONArray("data").getJSONObject(0).getLong("windSpeed");
 		    data.date[1] = new Date(obj.getJSONObject("daily").getJSONArray("data").getJSONObject(0).getLong("time"));
-		    //data.warning = obj.getJSONObject("alerts").getJSONObject("data").getString("description");
 		}
 	
 		

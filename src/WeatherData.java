@@ -21,12 +21,16 @@ public class WeatherData {
 	public double[] windSpeed;
 	//currently feels like... temperature
 	public double[] feelsLike;
-	//notification of dangerous weather
-	public String[] warning;
 	//city location
 	public String cityName;
 	//state location
 	public String StateName;
+	//warning start time
+	public Date warnStart;
+	//warning end time
+	public Date warnStop;
+	//description of warning
+	public String warning;
 	
 	WeatherData(){
 		//current date/time
@@ -47,8 +51,6 @@ public class WeatherData {
 		windSpeed = new double[8];
 		//currently feels like... temperature
 		feelsLike = new double[8];
-		//notification of dangerous weather
-		warning = new String[8];
 	}
 
 }
