@@ -22,7 +22,7 @@ import tk.plogitech.darksky.forecast.model.Longitude;
 * @version Fall 2007
 ******************************************************************/
 public class APIPuller {
-	
+	/**Data objects to home */
 	WeatherData data = new WeatherData();
 	
 	//for testing only
@@ -34,10 +34,14 @@ public class APIPuller {
 		pull.gather(coords);
 	}
 	
+	/**create object to call */
 	APIPuller(){
 		
 	}
-
+	/*****************************************************************
+    Constructor creates a die of specified size X size pixels
+    @param coords The coordinates of the location 
+    *****************************************************************/
 	public WeatherData gather(double[] coords) throws Exception{
 		
 		String APIKey = "5f3d14bc52bfc3ec10922d31be0e7e61";

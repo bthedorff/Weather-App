@@ -16,14 +16,13 @@ import java.util.*;
 import java.lang.Object.*;
 
 /*****************************************************************
-Graphical representation of a six sided die with various controls 
-over the appearance.  Current value is constrained between 1 and 6.
-
-@author Brandon Thedorff
-@author Nick Pydyn
-@author Denver DeBoer
-@author Ryan De Jong
-@version Fall 2018
+* GUI for the current weather 
+*
+* @author Brandon Thedorff
+* @author Nick Pydyn
+* @author Denver DeBoer
+* @author Ryan De Jong
+* @version Fall 2018
 *****************************************************************/
 public class DailyGUI extends JFrame implements ActionListener 
 {
