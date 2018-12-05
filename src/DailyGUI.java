@@ -122,23 +122,38 @@ public class DailyGUI extends JFrame implements ActionListener
 	
 		/**Sets the icon image that will be displayed*/
 		try {
-			if (data.forecast[0].equals("Overcast")) {
-				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/cloudyIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+			if (data.weatherIcon[0].equals("partly-cloudy-day")) {
+				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/partlyCloudyIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
 			}
-			else if (data.forecast[0].equals("Clear")) {
-				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/sunnyIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+			else if (data.weatherIcon[0].equals("clear-day")) {
+				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/clearDayIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
 			}
-			else if (data.forecast[0].equals("Raining")) {
+			else if (data.weatherIcon[0].equals("rain")) {
 				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/rainIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
 			}
-			else if (data.forecast[0].equals("Thunder Storms")) {
-				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/thunderstormIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+			else if (data.weatherIcon[0].equals("cloudy")) {
+				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/cloudyIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
 			}
-			else if (data.forecast[0].equals("Snowing")) {
+			else if (data.weatherIcon[0].equals("snow")) {
 				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/snowIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
 			}
+			else if (data.weatherIcon[0].equals("sleet")) {
+				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/sleetIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+			}
+			else if (data.weatherIcon[0].equals("wind")) {
+				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/windIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+			}
+			else if (data.weatherIcon[0].equals("fog")) {
+				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/fogIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+			}
+			else if (data.weatherIcon[0].equals("clear-night")) {
+				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/clearNightIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+			}
+			else if (data.weatherIcon[0].equals("partly-cloudy-night")) {
+				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/partlyCloudyNightIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+			}
 			else {
-				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/sunnyIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/clearDayIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
 			}
 		} catch(IOException e) {}
 		icon = new ImageIcon(image);
