@@ -32,6 +32,8 @@ public class WeatherData {
 	//description of warning
 	public String warning;
 	
+	public String warnTitle;
+	
 	WeatherData(){
 		//current date/time
 		date = new Date[8];
