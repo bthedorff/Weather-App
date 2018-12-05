@@ -44,7 +44,7 @@ public class forecastGUI extends JFrame implements ActionListener
 	private JButton warnBut;
 	
 	/**Holds the weather data obtained from the API*/
-	static WeatherData data;
+	static WeatherData data = new WeatherData();
 	
 	/**
 	 * Sets up the forecastGUI panel
