@@ -19,6 +19,7 @@ public class searchGUI extends JFrame implements ActionListener{
 	/**Holds the user's desired location*/
 	public static String userLoc = "Choose Location";
 	public static double Long, Lat;
+	public boolean waiting = true;
 	
 	private JComboBox<String> locList;
 
@@ -28,8 +29,8 @@ public class searchGUI extends JFrame implements ActionListener{
 		getContentPane();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		String[] Locations = new String[] {"custom", "Allendale, MI", "Denver, CO", "Los Angeles, CA", "New York , NY",
-				"Detroit, MI", "London, UK"};
+		String[] Locations = new String[] {"Allendale, MI", "Denver, CO", "Los Angeles, CA", "New York , NY",
+				"Detroit, MI", "London, UK", "Custom"};
 		locList = new JComboBox<>(Locations);
 
 		Panel = (JPanel) getContentPane();
@@ -72,20 +73,20 @@ public class searchGUI extends JFrame implements ActionListener{
 
 	/////////////////DELETE FOR FINAL///////////////////
 	/////////////////RUN IN MAIN////////////////////////
-	public static void main(String[] args) {
-		new searchGUI();
-	}
+	//public static void main(String[] args) {
+	//	new searchGUI();
+	//}
 	////////////////////////////////////////////////////
 
 	/**
 	 * Returns the location the user entered
 	 * @return userLoc user's location
 	 */
-	public static double getLong()
+	public double getLong()
 	{
 		return Long;
 	}
-	public static double getLat()
+	public double getLat()
 	{
 		return Lat;
 	}
@@ -140,6 +141,7 @@ public class searchGUI extends JFrame implements ActionListener{
 				Long = Double.parseDouble(inpLong.getText());
 				Lat = Double.parseDouble(inpLat.getText());
 			}
+			waiting = false;
 			dispose();
 		}
 	}

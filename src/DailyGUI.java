@@ -222,7 +222,12 @@ public class DailyGUI extends JFrame implements ActionListener
 			dispose();
 		}
 		else if(arg0.getSource() == search) {
-			new searchGUI();
+			String args[] = new String[0];
+			try {
+				Main.main(args);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			dispose();
 		}
 		else if(arg0.getSource() == warning) {

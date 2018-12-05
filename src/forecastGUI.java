@@ -158,7 +158,12 @@ public class forecastGUI extends JFrame implements ActionListener
 			dispose();
 		}
 		else if(arg0.getSource() == searchLocBut) {
-			new searchGUI();
+			String args[] = new String[0];
+			try {
+				Main.main(args);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			dispose();
 		}
 		else if(arg0.getSource() == warnBut) {
