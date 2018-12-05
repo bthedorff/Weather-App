@@ -5,33 +5,33 @@ public class WeatherData {
 
 	/**current date/time */
 	public Date[] date;
-	//icon correlating to current weather
+	/**icon correlating to current weather */
 	public String[] weatherIcon;
-	//current temperature
+	/**current temperature */
 	public double[] temp;
-	//current high temperature
+	/**current high temperature */
 	public double[] highTemp;
-	//current low temperature
+	/**current low temperature */
 	public double[] lowTemp;
-	//description of current weather conditions ex: "cloudy"
+	/**description of current weather conditions ex: "cloudy" */
 	public String[] forecast;
-	//current humidity
+	/**current humidity */
 	public double[] humidity;
-	//current windspeed
+	/**current windspeed */
 	public double[] windSpeed;
-	//currently feels like... temperature
+	/**currently feels like... temperature */
 	public double[] feelsLike;
-	//city location
+	/**city location */
 	public String cityName;
-	//state location
+	/**state location */
 	public String StateName;
-	//warning start time
+	/**warning start time */
 	public Date warnStart;
-	//warning end time
+	/**warning end time */
 	public Date warnStop;
-	//description of warning
+	/**description of warning */
 	public String warning;
-	//title of warning
+	/**Name/type of the warning*/
 	public String warnTitle;
 	
 	WeatherData(){
