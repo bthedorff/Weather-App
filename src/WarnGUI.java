@@ -25,7 +25,7 @@ public class WarnGUI extends JFrame implements ActionListener
 		/**Sets title and layout of frame*/
 		setTitle("Weather Warnings");
 		getContentPane();
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		/** Creates Panel*/
 		Panel = (JPanel) getContentPane();
 		Panel.setLayout(null);
