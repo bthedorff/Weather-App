@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 * @author Nick Pydyn
 * @author Denver DeBoer
 * @author Ryan De Jong
-* @version Fall 2007
+* @version Fall 2018
 ******************************************************************/
 public class WeatherData {
 
@@ -52,7 +52,7 @@ public class WeatherData {
 		//current temperature
 		temp = new double[8];
 		//current high temperature
-		highTemp = new double[8] ;
+		highTemp = new double[8];
 		//current low temperature
 		lowTemp = new double[8];
 		//description of current weather conditions ex: "cloudy"
