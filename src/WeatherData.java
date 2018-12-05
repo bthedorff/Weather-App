@@ -3,7 +3,7 @@ import java.util.Date;
 import javax.swing.JLabel;
 public class WeatherData {
 
-	//current date/time
+	/**current date/time */
 	public Date[] date;
 	//icon correlating to current weather
 	public String[] weatherIcon;
