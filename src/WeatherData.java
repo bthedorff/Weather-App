@@ -4,32 +4,51 @@ import javax.swing.JLabel;
 public class WeatherData {
 
 	//current date/time
-	public Date date;
-	//icon correllating to curret weather
-	public String weatherIcon;
+	public Date[] date;
+	//icon correlating to current weather
+	public String[] weatherIcon;
 	//current temperature
-	public double currentTemp;
+	public double[] temp;
 	//current high temperature
-	public double highTemp;
+	public double[] highTemp;
 	//current low temperature
-	public double lowTemp;
+	public double[] lowTemp;
 	//description of current weather conditions ex: "cloudy"
-	public String currentForecast;
+	public String[] forecast;
 	//current humidity
-	public double humidity;
+	public double[] humidity;
 	//current windspeed
-	public double windspeed;
+	public double[] windSpeed;
 	//currently feels like... temperature
-	public double feelsLike;
+	public double[] feelsLike;
 	//notification of dangerous weather
-	public String warning;
+	public String[] warning;
 	//city location
 	public String cityName;
 	//state location
 	public String StateName;
 	
 	WeatherData(){
-		
+		//current date/time
+		date = new Date[8];
+		//icon correlating to current weather
+		weatherIcon = new String[8];
+		//current temperature
+		temp = new double[8];
+		//current high temperature
+		highTemp = new double[8] ;
+		//current low temperature
+		lowTemp = new double[8];
+		//description of current weather conditions ex: "cloudy"
+		forecast = new String[8];
+		//current humidity
+		humidity = new double[8];
+		//current windspeed
+		windSpeed = new double[8];
+		//currently feels like... temperature
+		feelsLike = new double[8];
+		//notification of dangerous weather
+		warning = new String[8];
 	}
 
 }
