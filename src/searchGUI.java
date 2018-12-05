@@ -8,38 +8,63 @@ public class searchGUI extends JFrame implements ActionListener{
 	private JPanel Panel;
 	/**Instructs the user*/
 	private JLabel location;
+	private JLabel enterLongitude;
+	private JLabel enterLatitude;
 	/**Used to search for a location*/
-	private JButton searchBut;
+
+	private JButton enterBut;
 	/**Allows the user to enter a location*/
-	private JTextField userInput;
+	private JTextField inpLat;
+	private JTextField inpLong;
 	/**Holds the user's desired location*/
 	public static String userLoc = "Choose Location";
+	public static double Long, Lat;
+	
+	private JComboBox<String> locList;
 
 	/**Initializes each variable*/
 	public searchGUI() {
 		setTitle("Set Location");
 		getContentPane();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		String[] Locations = new String[] {"custom", "Allendale, MI", "Denver, CO", "Los Angeles, CA", "New York , NY",
+				"Detroit, MI", "London, UK"};
+		locList = new JComboBox<>(Locations);
 
 		Panel = (JPanel) getContentPane();
 		Panel.setLayout(null);
 
 		/**Initializes search button*/
-		searchBut = new JButton("Search Location");
-		searchBut.addActionListener(this);
+		enterBut = new JButton("Enter");
+		enterBut.addActionListener(this);
 
 		/**Initializes search bar*/
-		userInput = new JTextField("",10);
-		location = new JLabel("Enter Desired Location:");
+		inpLat= new JTextField("",10);
+		inpLong= new JTextField("",10);
+		location = new JLabel("Choose Desired Location:");
+		enterLongitude = new JLabel("Enter Longitude:");
+		enterLatitude = new JLabel("Enter Latitude:");
 
 		/**Organizes components on the panel*/
-		searchBut.setBounds(160, 55, 130, 30);
-		userInput.setBounds(157, 18, 250, 30);
 		location.setBounds(10, 20, 250, 30);
-		Panel.add(searchBut);
-		Panel.add(userInput);
+		locList.setBounds(175, 20, 160, 30);
+		enterBut.setBounds(160, 155, 130, 30);
+		inpLat.setBounds(120, 70, 250, 30);
+		enterLatitude.setBounds(16, 110, 250, 30);
+		inpLong.setBounds(120, 110, 250, 30);
+		enterLongitude.setBounds(10, 70, 250, 30);
+		
+		
+		Panel.add(enterBut);
+		Panel.add(inpLat);
+		Panel.add(inpLong);
 		Panel.add(location);
-		setSize(450, 180);
+		Panel.add(enterLongitude);
+		Panel.add(enterLatitude);
+		Panel.add(locList);
+		
+		setSize(450, 215);
 		setLocationRelativeTo(null);
 		setVisible(true);
 	}
@@ -56,9 +81,47 @@ public class searchGUI extends JFrame implements ActionListener{
 	 * Returns the location the user entered
 	 * @return userLoc user's location
 	 */
-	public static String getLoc()
+	public static double getLong()
 	{
-		return userLoc;
+		return Long;
+	}
+	public static double getLat()
+	{
+		return Lat;
+	}
+	
+	public void setCoordinates(String Location)
+	{
+		if(Location == "Allendale")
+		{
+			Long = -85.95365;
+			Lat = 42.97225;
+		}
+		else if(Location == "Denver")
+		{
+			Long = -104.9847;
+			Lat = 39.73915;
+		}
+		else if(Location == "Los Angeles")
+		{
+			Long = -118.24368;
+			Lat = 34.05223;
+		}
+		else if(Location == "Detroit")
+		{
+			Long = -83.04575;
+			Lat = 42.33143;
+		}
+		else if(Location == "New York")
+		{
+			Long = -74.00597;
+			Lat = 40.71427;
+		}
+		else if(Location == "London")
+		{
+			Long = -0.12574;
+			Lat = 51.50853;
+		}
 	}
 
 	/**
@@ -67,8 +130,16 @@ public class searchGUI extends JFrame implements ActionListener{
 	 */
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == searchBut) {
-			userLoc = userInput.getText();
+		if(e.getSource() == enterBut) {
+			if(locList.getSelectedItem() != "custom")
+			{
+				this.setCoordinates((String) locList.getSelectedItem());
+			}
+			else
+			{
+				Long = Double.parseDouble(inpLong.getText());
+				Lat = Double.parseDouble(inpLat.getText());
+			}
 			dispose();
 		}
 	}
