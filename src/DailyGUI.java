@@ -118,23 +118,23 @@ public class DailyGUI extends JFrame implements ActionListener
 		add(highlowTemp, position);
 
 		//For testing purposes
-		data.currentForecast = "Snowing";
+		data.forecast[0] = "Snowing";
 	
 		/**Sets the icon image that will be displayed*/
 		try {
-			if (data.currentForecast.equals("Overcast")) {
+			if (data.forecast[0].equals("Overcast")) {
 				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/cloudyIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
 			}
-			else if (data.currentForecast.equals("Clear")) {
+			else if (data.forecast[0].equals("Clear")) {
 				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/sunnyIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
 			}
-			else if (data.currentForecast.equals("Raining")) {
+			else if (data.forecast[0].equals("Raining")) {
 				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/rainIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
 			}
-			else if (data.currentForecast.equals("Thunder Storms")) {
+			else if (data.forecast[0].equals("Thunder Storms")) {
 				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/thunderstormIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
 			}
-			else if (data.currentForecast.equals("Snowing")) {
+			else if (data.forecast[0].equals("Snowing")) {
 				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/snowIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
 			}
 			else {
