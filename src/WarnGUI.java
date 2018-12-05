@@ -97,7 +97,7 @@ public class WarnGUI extends JFrame implements ActionListener
 			dispose();
 		}
 	}
-	public static void main(String[] args) {
-		new WarnGUI(data);
-	}
+	//public static void main(String[] args) {
+	//	new WarnGUI(data);
+	//}
 }

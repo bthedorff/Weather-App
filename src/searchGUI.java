@@ -72,20 +72,20 @@ public class searchGUI extends JFrame implements ActionListener{
 
 	/////////////////DELETE FOR FINAL///////////////////
 	/////////////////RUN IN MAIN////////////////////////
-	public static void main(String[] args) {
-		new searchGUI();
-	}
+	//public static void main(String[] args) {
+	//	new searchGUI();
+	//}
 	////////////////////////////////////////////////////
 
 	/**
 	 * Returns the location the user entered
 	 * @return userLoc user's location
 	 */
-	public static double getLong()
+	public double getLong()
 	{
 		return Long;
 	}
-	public static double getLat()
+	public double getLat()
 	{
 		return Lat;
 	}

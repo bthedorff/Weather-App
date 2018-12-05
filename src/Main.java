@@ -25,6 +25,7 @@ public class Main {
 		WeatherData data = new WeatherData();
 		double[] coords = new double[2];
 		APIPuller pull = new APIPuller();
+		
 		searchGUI sgui = new searchGUI();
 		coords[0] = sgui.getLong();
 		coords[1] = sgui.getLat();
