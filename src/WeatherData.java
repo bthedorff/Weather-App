@@ -64,5 +64,21 @@ public class WeatherData {
 		//currently feels like... temperature
 		feelsLike = new double[8];
 	}
+	
+	public void setTestData() {
+		cityName = "TEST";
+		StateName = "DATA";
+		for(int i = 0; i < 8; i++) {
+			date[i] = new Date();
+			weatherIcon[i] = "partly-cloudy-day";
+			temp[i] = 0.0;
+			highTemp[i] = 0.0;
+			lowTemp[i] = 0.0;
+			forecast[i] = "Partly Cloudy";
+			humidity[i] = 0.0;
+			windSpeed[i] = 0.0;
+			feelsLike[i] = 0.0;
+		}
+	}
 
 }
