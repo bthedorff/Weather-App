@@ -29,8 +29,8 @@ public class searchGUI extends JFrame implements ActionListener{
 		getContentPane();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		String[] Locations = new String[] {"Allendale, MI", "Denver, CO", "Los Angeles, CA", "New York, NY",
-				"Detroit, MI", "London, UK", "Custom"};
+		String[] Locations = new String[] {"Custom", "Allendale, MI", "Denver, CO", "Los Angeles, CA", "New York, NY",
+				"Detroit, MI", "London, UK"};
 		locList = new JComboBox<>(Locations);
 
 		Panel = (JPanel) getContentPane();
