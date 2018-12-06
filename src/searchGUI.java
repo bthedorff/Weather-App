@@ -29,7 +29,7 @@ public class searchGUI extends JFrame implements ActionListener{
 		getContentPane();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		String[] Locations = new String[] {"Allendale, MI", "Denver, CO", "Los Angeles, CA", "New York , NY",
+		String[] Locations = new String[] {"Allendale, MI", "Denver, CO", "Los Angeles, CA", "New York, NY",
 				"Detroit, MI", "London, UK", "Custom"};
 		locList = new JComboBox<>(Locations);
 
@@ -82,48 +82,55 @@ public class searchGUI extends JFrame implements ActionListener{
 	 * Returns the location the user entered
 	 * @return userLoc user's location
 	 */
-	public double getLong()
-	{
-		return Long;
-	}
-	public double getLat()
-	{
-		return Lat;
-	}
+
 	
 	public void setCoordinates(String Location)
 	{
-		if(Location == "Allendale")
+		if(Location == "Allendale, MI")
 		{
 			Long = -85.95365;
 			Lat = 42.97225;
 		}
-		else if(Location == "Denver")
+		else if(Location == "Denver, CO")
 		{
 			Long = -104.9847;
 			Lat = 39.73915;
 		}
-		else if(Location == "Los Angeles")
+		else if(Location == "Los Angeles, CA")
 		{
 			Long = -118.24368;
 			Lat = 34.05223;
 		}
-		else if(Location == "Detroit")
+		else if(Location == "Detroit, MI")
 		{
 			Long = -83.04575;
 			Lat = 42.33143;
 		}
-		else if(Location == "New York")
+		else if(Location == "New York, NY")
 		{
 			Long = -74.00597;
 			Lat = 40.71427;
 		}
-		else
+		else if(Location == "London, UK")
 		{
 			Long = -0.12574;
 			Lat = 51.50853;
 		}
-
+		else
+		{
+			Long = -85.95365;
+			Lat = 42.97225;
+		}
+	}
+	
+	public double getLong()
+	{
+		return Long;
+	}
+	
+	public double getLat()
+	{
+		return Lat;
 	}
 
 	/**
