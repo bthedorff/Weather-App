@@ -154,8 +154,8 @@ public class searchGUI extends JFrame implements ActionListener{
 			double[] coords = new double[2];
 			APIPuller pull = new APIPuller();
 			
-			coords[0] = sgui.getLong();
-			coords[1] = sgui.getLat();
+			coords[0] = this.getLong();
+			coords[1] = this.getLat();
 			try {
 				data = pull.gather(coords);
 			} catch (Exception e1) {
