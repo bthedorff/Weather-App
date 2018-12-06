@@ -52,7 +52,6 @@ public class forecastGUI extends JFrame implements ActionListener
 	public forecastGUI(WeatherData d)
 	{
 		data = d;
-		d.setTestData();
 		
 		setTitle("Weekly Forecast");
 		getContentPane();
