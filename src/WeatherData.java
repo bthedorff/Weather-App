@@ -26,7 +26,9 @@ public class WeatherData {
 	/**description of current weather conditions ex: "cloudy" */
 	public String[] forecast;
 	/**current humidity */
-	public double[] humidity;
+	public int[] humidity;
+	/**current chance of rain */
+	public int[] precipProb;
 	/**current windspeed */
 	public double[] windSpeed;
 	/**currently feels like... temperature */
@@ -58,7 +60,9 @@ public class WeatherData {
 		//description of current weather conditions ex: "cloudy"
 		forecast = new String[8];
 		//current humidity
-		humidity = new double[8];
+		humidity = new int[8];
+		//current chance of precipitation
+		precipProb = new int[8];
 		//current windspeed
 		windSpeed = new double[8];
 		//currently feels like... temperature

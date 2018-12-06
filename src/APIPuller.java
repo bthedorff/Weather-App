@@ -29,8 +29,8 @@ public class APIPuller {
 	public static void main(String args[])throws Exception{
 		APIPuller pull = new APIPuller();
 		double[] coords= new double[2];
-		coords[0] = -85.886879;
-		coords[1] = 42.966679;
+		coords[0] = -118.24368;
+		coords[1] = 34.05223;
 		pull.gather(coords);
 	}
 	
@@ -83,8 +83,9 @@ public class APIPuller {
 	    //locates data and stores to WeatherData object
 	    data.highTemp[0] = obj.getJSONObject("daily").getJSONArray("data").getJSONObject(0).getDouble("temperatureHigh");
 	    data.lowTemp[0] = obj.getJSONObject("daily").getJSONArray("data").getJSONObject(0).getDouble("temperatureLow");
-	    data.temp[0] = ((data.highTemp[0] + data.lowTemp[0]) / 2);
-	    data.humidity[0] = obj.getJSONObject("currently").getDouble("humidity");
+	    data.temp[0] = obj.getJSONObject("currently").getDouble("temperature");
+	    data.humidity[0] = (int)(obj.getJSONObject("currently").getDouble("humidity") * 100);
+	    data.precipProb[0] = (int)(obj.getJSONObject("currently").getDouble("precipProbability") * 100);
 	    data.forecast[0] = obj.getJSONObject("currently").getString("summary");
 	    data.weatherIcon[0] = obj.getJSONObject("currently").getString("icon");
 	    data.windSpeed[0] = obj.getJSONObject("currently").getLong("windSpeed");
@@ -95,6 +96,8 @@ public class APIPuller {
 	    	data.warnTitle = obj.getJSONObject("alerts").getString("title");
 	    	data.warning = obj.getJSONObject("alerts").getString("description");
 	    }
+	    
+	    //System.out.println(forecast);  
 	
 		//repeats API calling process for the week in the future (not at all efficient but daily 
 	        //does not work as described in API docs
@@ -117,8 +120,9 @@ public class APIPuller {
 		        
 		    data.highTemp[i] = obj.getJSONObject("daily").getJSONArray("data").getJSONObject(0).getDouble("temperatureHigh");
 		    data.lowTemp[i] = obj.getJSONObject("daily").getJSONArray("data").getJSONObject(0).getDouble("temperatureLow");
-		    data.temp[i] = ((data.highTemp[i] + data.lowTemp[i]) / 2);
-		    data.humidity[i] = obj.getJSONObject("daily").getJSONArray("data").getJSONObject(0).getDouble("humidity");
+		    data.temp[i] = (int)(((data.highTemp[i] + data.lowTemp[i]) / 2));
+		    data.humidity[i] = (int)(obj.getJSONObject("daily").getJSONArray("data").getJSONObject(0).getDouble("humidity") * 100);
+		    data.precipProb[i] = (int)(obj.getJSONObject("daily").getJSONArray("data").getJSONObject(0).getDouble("precipProbability") * 100);
 		    data.forecast[i] = obj.getJSONObject("daily").getJSONArray("data").getJSONObject(0).getString("summary");
 		    data.weatherIcon[i] = obj.getJSONObject("daily").getJSONArray("data").getJSONObject(0).getString("icon");
 		    data.windSpeed[1] = obj.getJSONObject("daily").getJSONArray("data").getJSONObject(0).getLong("windSpeed");
@@ -132,7 +136,7 @@ public class APIPuller {
 			data.cityName = obj.getJSONArray("results").getJSONObject(0).getJSONArray("address_components").getJSONObject(3).getString("long_name");
 	        data.StateName = obj.getJSONArray("results").getJSONObject(0).getJSONArray("address_components").getJSONObject(5).getString("long_name");
 	        
-	        //System.out.println(forecast);  
+	        
 	        
 	       
 
