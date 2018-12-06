@@ -18,7 +18,7 @@ public class searchGUI extends JFrame implements ActionListener{
 	private JTextField inpLong;
 	/**Holds the user's desired location*/
 	public static String userLoc = "Choose Location";
-	public static double Long, Lat;
+	public static double Long = -0.12574, Lat = 51.50853;
 	public boolean waiting = true;
 	
 	private JComboBox<String> locList;
@@ -118,7 +118,7 @@ public class searchGUI extends JFrame implements ActionListener{
 			Long = -74.00597;
 			Lat = 40.71427;
 		}
-		else if(Location == "London")
+		else
 		{
 			Long = -0.12574;
 			Lat = 51.50853;
