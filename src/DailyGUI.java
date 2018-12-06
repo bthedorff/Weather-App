@@ -71,7 +71,7 @@ public class DailyGUI extends JFrame implements ActionListener
 	 ************************************************************/
 	public DailyGUI(WeatherData d) {
 		data = d;
-		data.setTestData();
+		//data.setTestData();
 		
 		setLayout(new GridBagLayout());
 		GridBagConstraints position = new GridBagConstraints();
