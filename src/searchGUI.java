@@ -140,7 +140,7 @@ public class searchGUI extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == enterBut) {
-			if(locList.getSelectedItem() != "custom")
+			if(locList.getSelectedItem() != "Custom")
 			{
 				this.setCoordinates((String) locList.getSelectedItem());
 			}
