@@ -149,8 +149,22 @@ public class searchGUI extends JFrame implements ActionListener{
 				Long = Double.parseDouble(inpLong.getText());
 				Lat = Double.parseDouble(inpLat.getText());
 			}
-			waiting = false;
 			dispose();
+			WeatherData data = new WeatherData();
+			double[] coords = new double[2];
+			APIPuller pull = new APIPuller();
+			
+			coords[0] = this.getLong();
+			coords[1] = this.getLat();
+			try {
+				data = pull.gather(coords);
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} 
+			//^ replace null with call to search gui. have gui return the longitude and latitude values as an array of 2 doubles. 
+			
+			DailyGUI dgui = new DailyGUI(data);
 		}
 	}
 }
