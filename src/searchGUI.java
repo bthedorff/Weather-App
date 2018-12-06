@@ -149,14 +149,12 @@ public class searchGUI extends JFrame implements ActionListener{
 				Long = Double.parseDouble(inpLong.getText());
 				Lat = Double.parseDouble(inpLat.getText());
 			}
-			waiting = false;
 			dispose();
 			WeatherData data = new WeatherData();
 			double[] coords = new double[2];
 			APIPuller pull = new APIPuller();
 			
 			searchGUI sgui = new searchGUI();
-			//while(sgui.waiting){} 
 			coords[0] = sgui.getLong();
 			coords[1] = sgui.getLat();
 			try {
