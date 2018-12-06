@@ -123,10 +123,7 @@ public class searchGUI extends JFrame implements ActionListener{
 			Long = -0.12574;
 			Lat = 51.50853;
 		}
-		else {
-			Long = -85.95365;
-			Lat = 42.97225;
-		}
+
 	}
 
 	/**
