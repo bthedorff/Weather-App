@@ -70,11 +70,11 @@ public class WeatherData {
 		StateName = "DATA";
 		for(int i = 0; i < 8; i++) {
 			date[i] = new Date();
-			weatherIcon[i] = "partly-cloudy-day";
+			weatherIcon[i] = "rain";
 			temp[i] = 0.0;
 			highTemp[i] = 0.0;
 			lowTemp[i] = 0.0;
-			forecast[i] = "Partly Cloudy";
+			forecast[i] = "Rain";
 			humidity[i] = 0.0;
 			windSpeed[i] = 0.0;
 			feelsLike[i] = 0.0;
