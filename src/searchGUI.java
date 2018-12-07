@@ -146,8 +146,24 @@ public class searchGUI extends JFrame implements ActionListener{
 			}
 			else
 			{
+				try 
+				{
 				Long = Double.parseDouble(inpLong.getText());
 				Lat = Double.parseDouble(inpLat.getText());
+				if((!(-180.0 <= Long && Long <= 180.0) || !(-90 <= Lat && Lat <= 90)))
+				{
+					inpLong.setText("");
+					inpLat.setText("");
+					return;
+				}
+				}
+				catch(Exception ex)
+				{
+					inpLong.setText("");
+					inpLat.setText("");
+					return;
+				}
+				
 			}
 			dispose();
 			WeatherData data = new WeatherData();
