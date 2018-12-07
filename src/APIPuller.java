@@ -84,6 +84,7 @@ public class APIPuller {
 	    data.highTemp[0] = obj.getJSONObject("daily").getJSONArray("data").getJSONObject(0).getDouble("temperatureHigh");
 	    data.lowTemp[0] = obj.getJSONObject("daily").getJSONArray("data").getJSONObject(0).getDouble("temperatureLow");
 	    data.temp[0] = obj.getJSONObject("currently").getDouble("temperature");
+	    data.feelsLike[0] = obj.getJSONObject("currently").getDouble("apparentTemperature");
 	    data.humidity[0] = (int)(obj.getJSONObject("currently").getDouble("humidity") * 100);
 	    data.precipProb[0] = (int)(obj.getJSONObject("currently").getDouble("precipProbability") * 100);
 	    data.forecast[0] = obj.getJSONObject("currently").getString("summary");
@@ -121,6 +122,8 @@ public class APIPuller {
 		    data.highTemp[i] = obj.getJSONObject("daily").getJSONArray("data").getJSONObject(0).getDouble("temperatureHigh");
 		    data.lowTemp[i] = obj.getJSONObject("daily").getJSONArray("data").getJSONObject(0).getDouble("temperatureLow");
 		    data.temp[i] = (int)(((data.highTemp[i] + data.lowTemp[i]) / 2));
+		    data.feelsLike[0] = (int) ((obj.getJSONObject("daily").getJSONArray("data").getJSONObject(0).getDouble("apparentTemperatureHigh")
+		    						+obj.getJSONObject("daily").getJSONArray("data").getJSONObject(0).getDouble("apparentTemperatureLow"))/2);
 		    data.humidity[i] = (int)(obj.getJSONObject("daily").getJSONArray("data").getJSONObject(0).getDouble("humidity") * 100);
 		    data.precipProb[i] = (int)(obj.getJSONObject("daily").getJSONArray("data").getJSONObject(0).getDouble("precipProbability") * 100);
 		    data.forecast[i] = obj.getJSONObject("daily").getJSONArray("data").getJSONObject(0).getString("summary");
