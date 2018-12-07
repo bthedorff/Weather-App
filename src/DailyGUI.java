@@ -8,12 +8,6 @@ import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
-import tk.plogitech.darksky.forecast.ForecastException;
-import tk.plogitech.darksky.forecast.model.Latitude;
-import tk.plogitech.darksky.forecast.model.Longitude;
-import java.util.Date;
-import java.util.*;
-import java.lang.Object.*;
 
 /*****************************************************************
 * GUI for the current weather 
@@ -24,8 +18,7 @@ import java.lang.Object.*;
 * @author Ryan De Jong
 * @version Fall 2018
 *****************************************************************/
-public class DailyGUI extends JFrame implements ActionListener 
-{
+public class DailyGUI extends JFrame implements ActionListener {
 	/**Updates the checkDaily window*/
 	JButton checkDaily;
 	/**Changes to the checkWeekly window for the same location*/
