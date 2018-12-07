@@ -1,5 +1,7 @@
 import static org.junit.Assert.*;
 
+import javax.swing.JComboBox;
+
 public class Test {
 
 	@org.junit.Test
@@ -9,7 +11,7 @@ public class Test {
 		x.setVisible(false);
 		x.Long = -85.95365;
 		x.Lat = 42.97225;
-	
+		//x.locList.getSelectedItem().
 	}
 	
 	@org.junit.Test
@@ -20,13 +22,13 @@ public class Test {
 		searchGUI.Long = -85.95365;
 		searchGUI.Lat = 42.97225;
 	   double lat = x.getLong();
-	   if (searchGUI.Long = lat) {
-		   
-	   }	   
-	}
+//	   if (lat = searchGUI.Long;) {
+//   
+//	}
 	
 	
 
 
 
+}
 }

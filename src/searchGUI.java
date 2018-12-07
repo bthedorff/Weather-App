@@ -21,7 +21,7 @@ public class searchGUI extends JFrame implements ActionListener{
 	public static double Long = -0.12574, Lat = 51.50853;
 	public boolean waiting = true;
 	
-	private JComboBox<String> locList;
+	JComboBox<String> locList;
 
 	/**Initializes each variable*/
 	public searchGUI() {
