@@ -62,13 +62,9 @@ public class DailyGUI extends JFrame implements ActionListener
 	/**Holds the weather data obtained from the API*/
 	static WeatherData data = new WeatherData();
 
-	/////////////////////////DELETE/////////////////////////
-	public static void main(String[] args) {
-		DailyGUI gui = new DailyGUI(data);
-	}
 
 	/************************************************************
-	 * Initializes each label and sets it onto the frame
+	 * Creates the GUI for the daily weather
 	 * @param d the weatherdata object holding the data
 	 ************************************************************/
 	public DailyGUI(WeatherData d) {

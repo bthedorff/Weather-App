@@ -2,7 +2,16 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
-
+/*****************************************************************
+* Search Gui, used to pick a pre-coded location or input a
+* new location based on Longitude and Latitude
+* 
+* @author Brandon Thedorff
+* @author Nick Pydyn
+* @author Denver DeBoer
+* @author Ryan De Jong
+* @version Fall 2007
+******************************************************************/
 public class searchGUI extends JFrame implements ActionListener{
 	/**Displays the weather information*/
 	private JPanel Panel;
@@ -11,16 +20,15 @@ public class searchGUI extends JFrame implements ActionListener{
 	private JLabel enterLongitude;
 	private JLabel enterLatitude;
 	/**Used to search for a location*/
-
 	private JButton enterBut;
 	/**Allows the user to enter a location*/
 	private JTextField inpLat;
 	private JTextField inpLong;
 	/**Holds the user's desired location*/
 	public static String userLoc = "Choose Location";
+	/** Defaults for longitude and latitude */
 	public static double Long = -0.12574, Lat = 51.50853;
-	public boolean waiting = true;
-	
+	/**Creates the JCombobox of locations */
 	JComboBox<String> locList;
 
 	/**Initializes each variable*/
@@ -29,6 +37,7 @@ public class searchGUI extends JFrame implements ActionListener{
 		getContentPane();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		/** creates a string of locations for the combobox */
 		String[] Locations = new String[] {"Custom", "Allendale, MI", "Denver, CO", "Los Angeles, CA", "New York, NY",
 				"Detroit, MI", "London, UK"};
 		locList = new JComboBox<>(Locations);
@@ -56,7 +65,7 @@ public class searchGUI extends JFrame implements ActionListener{
 		inpLong.setBounds(120, 110, 250, 30);
 		enterLongitude.setBounds(10, 110, 250, 30);
 		
-		
+		/** adds to the panel */
 		Panel.add(enterBut);
 		Panel.add(inpLat);
 		Panel.add(inpLong);
@@ -64,26 +73,17 @@ public class searchGUI extends JFrame implements ActionListener{
 		Panel.add(enterLongitude);
 		Panel.add(enterLatitude);
 		Panel.add(locList);
-		
+
+		/** sets size, location and visiblity of the box */
 		setSize(450, 250);
 		setLocationRelativeTo(null);
 		setVisible(true);
 	}
 
-
-	/////////////////DELETE FOR FINAL///////////////////
-	/////////////////RUN IN MAIN////////////////////////
-	//public static void main(String[] args) {
-	//	new searchGUI();
-	//}
-	////////////////////////////////////////////////////
-
-	/**
+	/********************************************
 	 * Returns the location the user entered
 	 * @return userLoc user's location
-	 */
-
-	
+	 ********************************************/
 	public void setCoordinates(String Location)
 	{
 		if(Location == "Allendale, MI")
@@ -122,21 +122,27 @@ public class searchGUI extends JFrame implements ActionListener{
 			Lat = 42.97225;
 		}
 	}
-	
+	/****************************************
+	 * Gets the longitude
+	 * @return Long The longitude inputed
+	 ***************************************/
 	public double getLong()
 	{
 		return Long;
 	}
-	
+	/****************************************
+	 * Gets the latitude
+	 * @return Lat The latitude inputed
+	 ***************************************/
 	public double getLat()
 	{
 		return Lat;
 	}
 
-	/**
-	 * Stores user's input
+	/*************************************************
+	 * Stores user's input and calls API
 	 * @param e the user pressing the search button
-	 */
+	 ************************************************/
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == enterBut) {
@@ -166,6 +172,7 @@ public class searchGUI extends JFrame implements ActionListener{
 				
 			}
 			dispose();
+			/** Code to call the API with given coordinates and the DailyGUI */
 			WeatherData data = new WeatherData();
 			double[] coords = new double[2];
 			APIPuller pull = new APIPuller();
@@ -178,8 +185,6 @@ public class searchGUI extends JFrame implements ActionListener{
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			} 
-			//^ replace null with call to search gui. have gui return the longitude and latitude values as an array of 2 doubles. 
-			
 			DailyGUI dgui = new DailyGUI(data);
 		}
 	}

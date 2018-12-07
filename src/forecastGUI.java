@@ -7,12 +7,19 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-
+/*****************************************************************
+* GUI for the weather for the next 7 days 
+*
+* @author Brandon Thedorff
+* @author Nick Pydyn
+* @author Denver DeBoer
+* @author Ryan De Jong
+* @version Fall 2018
+*****************************************************************/
 public class forecastGUI extends JFrame implements ActionListener
 {
 	/**Displays the weather forecast for the week*/
 	private JPanel Panel;
-	
 	/**Displays data for current day*/
 	private JLabel day1;
 	/**Displays data for tomorrow*/
@@ -46,18 +53,23 @@ public class forecastGUI extends JFrame implements ActionListener
 	/**Holds the weather data obtained from the API*/
 	static WeatherData data = new WeatherData();
 	
-	/**
+	/***************************************
 	 * Sets up the forecastGUI panel
-	 */
+	 * @param d WeatherData object holding 
+	 * the weather data
+	 ***************************************/
 	public forecastGUI(WeatherData d)
 	{
+		/** Initializes data */
 		data = d;
 		//data.setTestData();
 		
+		/**Initializes GUI window*/
 		setTitle("Weekly Forecast");
 		getContentPane();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		/**Sets up the JPanel */
 		Panel = (JPanel) getContentPane();
 		Panel.setLayout(null);
 		
@@ -78,6 +90,7 @@ public class forecastGUI extends JFrame implements ActionListener
 		warnBut.setBackground(Color.RED);
 		warnBut.addActionListener(this);
 		
+		/**Initializes the calendar and sets time*/
 		Calendar calendar = Calendar.getInstance();
 		Date day = calendar.getTime();
 		SimpleDateFormat format = new SimpleDateFormat("E");
@@ -156,10 +169,10 @@ public class forecastGUI extends JFrame implements ActionListener
 		setVisible(true);
 	}
 
-	/**
+	/******************************************
 	 * Sets the functionality of the buttons
 	 * @param arg0 the user pressing a button
-	 */
+	 *****************************************/
 	public void actionPerformed(ActionEvent arg0) {
 		if(arg0.getSource() == dailyBut) {
 			new DailyGUI(data);
@@ -181,10 +194,6 @@ public class forecastGUI extends JFrame implements ActionListener
 		else if(arg0.getSource() == warnBut) {
 			new WarnGUI(data);
 		}
-	}
-	////////////////DELETE//////////////////////////
-	public static void main(String[] args) {
-		new forecastGUI(data);
 	}
 }
 

@@ -1,7 +1,15 @@
 import static org.junit.Assert.*;
 
 import javax.swing.JComboBox;
-
+/*****************************************************************
+* Test Cases
+* 
+* @author Brandon Thedorff
+* @author Nick Pydyn
+* @author Denver DeBoer
+* @author Ryan De Jong
+* @version Fall 2007
+******************************************************************/
 public class Test {
 
 	@org.junit.Test

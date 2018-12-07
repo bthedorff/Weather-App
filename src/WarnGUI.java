@@ -4,7 +4,16 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
+/*****************************************************************
+* Warning GUI used to display any possible warning such as, 
+* floods, blizzards, wild fires, ect.
+* 
+* @author Brandon Thedorff
+* @author Nick Pydyn
+* @author Denver DeBoer
+* @author Ryan De Jong
+* @version Fall 2007
+******************************************************************/
 public class WarnGUI extends JFrame implements ActionListener
 {
 	/**Contains all the elements to put on the Frame*/
@@ -15,17 +24,23 @@ public class WarnGUI extends JFrame implements ActionListener
 	private JButton closeBut;
 	/**Updated from main, contains number of current weather warnings*/
 	public int numOfWarnings;
-	
+	/** Initializes WeatherData object */ 
 	static WeatherData data;
 	
+	/********************************************************
+	 *  Creates the GUI for warning if available 
+	 * @param d WeatherData object to hold the weather data
+	 *******************************************************/
 	public WarnGUI(WeatherData d)
 	{
+		/** Initializes Data*/
 		data = d;
 		
 		/**Sets title and layout of frame*/
 		setTitle("Weather Warnings");
 		getContentPane();
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		
 		/** Creates Panel*/
 		Panel = (JPanel) getContentPane();
 		Panel.setLayout(null);
@@ -90,6 +105,10 @@ public class WarnGUI extends JFrame implements ActionListener
 		setLocationRelativeTo(null);
 		setVisible(true);
 	}
+	/*************************************************
+	 * Action for the close button
+	 * @param e the user pressing the exit button
+	 ************************************************/
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		/**Close the warning GUI*/
@@ -97,7 +116,4 @@ public class WarnGUI extends JFrame implements ActionListener
 			dispose();
 		}
 	}
-	//public static void main(String[] args) {
-	//	new WarnGUI(data);
-	//}
 }

@@ -45,6 +45,9 @@ public class WeatherData {
 	/**Name/type of the warning*/
 	public String warnTitle;
 	
+	/*********************************************
+	 * Creates WeatherData objects to hold data
+	 *********************************************/
 	WeatherData(){
 		//current date/time
 		date = new Date[8];
@@ -68,21 +71,21 @@ public class WeatherData {
 		feelsLike = new double[8];
 	}
 	
-	public void setTestData() {
-		cityName = "TEST";
-		StateName = "DATA";
-		for(int i = 0; i < 8; i++) {
-			date[i] = new Date();
-			weatherIcon[i] = "rain";
-			temp[i] = 0.0;
-			highTemp[i] = 0.0;
-			lowTemp[i] = 0.0;
-			forecast[i] = "Rain";
-			humidity[i] = 0;
-			precipProb[i] = 0;
-			windSpeed[i] = 0.0;
-			feelsLike[i] = 0.0;
-		}
+//	public void setTestData() {
+//		cityName = "TEST";
+//		StateName = "DATA";
+//		for(int i = 0; i < 8; i++) {
+//			date[i] = new Date();
+//			weatherIcon[i] = "rain";
+//			temp[i] = 0.0;
+//			highTemp[i] = 0.0;
+//			lowTemp[i] = 0.0;
+//			forecast[i] = "Rain";
+//			humidity[i] = 0;
+//			precipProb[i] = 0;
+//			windSpeed[i] = 0.0;
+//			feelsLike[i] = 0.0;
+//		}
 	}
 
-}
+

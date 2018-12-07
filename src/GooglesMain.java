@@ -9,6 +9,19 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.json.JSONObject;
 
+/*****************************************************************
+* Part of parsing the google API, not coded by us
+* But edited by us
+* can be found here:
+* https://halexv.blogspot.com/2015/07/java-geocoding-using-
+* google-maps-api.html
+*****************************************************************/
+
+/****************************************************************
+ * Googles main method used to parse out the Google API
+ * data from a JSON file
+ * 
+ ****************************************************************/
 public class GooglesMain {
 	public String getGeoCode(double lon, double lat, boolean ssl) throws Exception {
 	    // build url
@@ -16,10 +29,7 @@ public class GooglesMain {
 	    if ( ssl ) {
 	        url.append("s");
 	    }
-	  
 	    url.append("://maps.googleapis.com/maps/api/geocode/json?");
-	    
-	    // new api key?  AIzaSyB0qev_Lz6CWQDApx1n24b5VglYaFDFlTs 
 	    String API_KEY = "AIzaSyC-R5ltDUdew5JR_LpFQWOlLla9Y4Wdxog";
 	    url.append("latlng=");
 	    url.append(lat);   // latitude
@@ -29,7 +39,6 @@ public class GooglesMain {
 	    if ( ssl ) {
 	        url.append("key=");
 	        url.append(API_KEY);
-	  
 	    }
 	    
 	  
@@ -57,46 +66,9 @@ public class GooglesMain {
 	                    result.append(inputLine);
 	                    result.append("\n");
 	                }
-	            }
-
-	            //System.out.print(result);
-	            
-//	            JSONObject obj2 = new JSONObject(result);
-	            
+	            }            
 	            return result.toString();
-	            //use own json parser
-//	            // parse result
-//	            ObjectMapper mapper = new ObjectMapper();
-//	            GoogleGeoCode geocode = mapper.readValue(result.toString(), GoogleGeoCode.class);
-//
-//	            if (!"OK".equals(geocode.getStatus())) {
-//	                if (geocode.getError_message() != null) {
-//	                    throw new Exception(geocode.getError_message());
-//	                }
-//	                throw new Exception("Can not find geocode for: " + address);
-//	            }
-//	            return geocode;
 	        }
 	    }
 	}
-	
-	
-//	public GoogleGeoLatLng getMostProbableLocation(String address, GoogleGeoCode geocode) {
-//	    address = address.toLowerCase();
-//	    int expected = address.length() / 2;
-//	    int sz = geocode.getResults().length;
-//	    int best = expected;
-//	    GoogleGeoLatLng latlng = null;
-//	    for (GoogleGeoResult result : geocode.getResults()) {
-//	        GoogleGeoLatLng cur = result.getGeometry().getLocation();
-//	        String formattedAddress = result.getFormatted_address().toLowerCase();
-//	        int p = lcs(address, formattedAddress);
-//
-//	        if (p > best) {
-//	            latlng = cur;
-//	            best = p;
-//	        }
-//	    }
-//	    return latlng;
-//	}
 }
