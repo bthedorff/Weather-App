@@ -170,7 +170,6 @@ public class searchGUI extends JFrame implements ActionListener {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			} 
-			DailyGUI dgui = new DailyGUI(data);
 		}
 	}
 }
