@@ -19,7 +19,7 @@ import tk.plogitech.darksky.forecast.*;
 //test
 public class Main {
 	
-	
+	//(39.780047, -84.008410)
 	
 	public static void main(String args[]) {
 

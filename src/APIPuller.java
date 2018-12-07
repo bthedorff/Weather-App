@@ -69,7 +69,7 @@ public class APIPuller {
 	            .key(new APIKey(APIKey))
 	            .time(Instant.now().plus(0, ChronoUnit.DAYS))
 	            .language(ForecastRequestBuilder.Language.en)
-	            .units(ForecastRequestBuilder.Units.auto)
+	            .units(ForecastRequestBuilder.Units.us)
 	            .exclude(ForecastRequestBuilder.Block.minutely)
 	            .exclude(ForecastRequestBuilder.Block.hourly)
 	            .location(new GeoCoordinates(new Longitude(coords[0]), new Latitude(coords[1]))).build();
