@@ -65,7 +65,7 @@ public class searchGUI extends JFrame implements ActionListener{
 		Panel.add(enterLatitude);
 		Panel.add(locList);
 		
-		setSize(450, 215);
+		setSize(450, 250);
 		setLocationRelativeTo(null);
 		setVisible(true);
 	}
