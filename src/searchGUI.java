@@ -52,9 +52,9 @@ public class searchGUI extends JFrame implements ActionListener{
 		locList.setBounds(175, 20, 160, 30);
 		enterBut.setBounds(160, 155, 130, 30);
 		inpLat.setBounds(120, 70, 250, 30);
-		enterLatitude.setBounds(16, 110, 250, 30);
+		enterLatitude.setBounds(16, 70, 250, 30);
 		inpLong.setBounds(120, 110, 250, 30);
-		enterLongitude.setBounds(10, 70, 250, 30);
+		enterLongitude.setBounds(10, 110, 250, 30);
 		
 		
 		Panel.add(enterBut);
