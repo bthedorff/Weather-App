@@ -85,39 +85,38 @@ public class forecastGUI extends JFrame implements ActionListener
 		/**Initailizes JLabels*/
 		day1 = new JLabel("<html><div style='text-align: center;'>" + format.format(day)
 		+ "<br><br>" + "<div style='text-align: center;'>" + data.highTemp[0]
-				+ "<br>-------<br>" + data.lowTemp[0] + "</div></div></html>");
+				+ "*F<br>-------<br>" + data.lowTemp[0] + "*F</div></div></html>");
 		calendar.add(Calendar.DAY_OF_YEAR, 1);
 		day = calendar.getTime();
 		day2 = new JLabel("<html><div style='text-align: center;'>" + format.format(day)
 		+ "<br><br>" + "<div style='text-align: center;'>" + data.highTemp[1]
-				+ "<br>-------<br>" + data.lowTemp[1] + "</div></div></html>");
+				+ "*F<br>-------<br>" + data.lowTemp[1] + "*F</div></div></html>");
 		calendar.add(Calendar.DAY_OF_YEAR, 1);
 		day = calendar.getTime();
 		day3 = new JLabel("<html><div style='text-align: center;'>" + format.format(day)
 		+ "<br><br>" + "<div style='text-align: center;'>" + data.highTemp[2]
-				+ "<br>-------<br>" + data.lowTemp[2] + "</div></div></html>");
+				+ "*F<br>-------<br>" + data.lowTemp[2] + "*F</div></div></html>");
 		calendar.add(Calendar.DAY_OF_YEAR, 1);
 		day = calendar.getTime();
 		day4 = new JLabel("<html><div style='text-align: center;'>" + format.format(day)
 		+ "<br><br>" + "<div style='text-align: center;'>" + data.highTemp[3]
-				+ "<br>-------<br>" + data.lowTemp[3] + "</div></div></html>");
+				+ "*F<br>-------<br>" + data.lowTemp[3] + "*F</div></div></html>");
 		calendar.add(Calendar.DAY_OF_YEAR, 1);
 		day = calendar.getTime();
 		day5 = new JLabel("<html><div style='text-align: center;'>" + format.format(day)
 		+ "<br><br>" + "<div style='text-align: center;'>" + data.highTemp[4]
-				+ "<br>-------<br>" + data.lowTemp[4] + "</div></div></html>");
+				+ "*F<br>-------<br>" + data.lowTemp[4] + "*F</div></div></html>");
 		calendar.add(Calendar.DAY_OF_YEAR, 1);
 		day = calendar.getTime();
 		day6 = new JLabel("<html><div style='text-align: center;'>" + format.format(day)
 		+ "<br><br>" + "<div style='text-align: center;'>" + data.highTemp[5]
-				+ "<br>-------<br>" + data.lowTemp[5] + "</div></div></html>");
+				+ "*F<br>-------<br>" + data.lowTemp[5] + "*F</div></div></html>");
 		calendar.add(Calendar.DAY_OF_YEAR, 1);
 		day = calendar.getTime();
 		day7 = new JLabel("<html><div style='text-align: center;'>" + format.format(day)
 		+ "<br><br>" + "<div style='text-align: center;'>" + data.highTemp[6]
-				+ "<br>-------<br>" + data.lowTemp[6] + "</div></div></html>");
+				+ "*F<br>-------<br>" + data.lowTemp[6] + "*F</div></div></html>");
 		hilow = new JLabel("<html><div style='text-align: center;'>High<br>-------<br>Low</div></html>");
-		precip = new JLabel("Precipitation");
 		location = new JLabel(data.cityName + ", " + data.StateName);
 		location.setFont(new Font("Serif", Font.PLAIN, 20));
 		
@@ -130,7 +129,6 @@ public class forecastGUI extends JFrame implements ActionListener
 		day6.setBounds(610, 42, 75, 200);
 		day7.setBounds(675, 42, 75, 200);
 		hilow.setBounds(210, 107, 75, 100);
-		//precip.setBounds(200, 217, 90, 30);
 		location.setBounds(340, 30, 300, 30);
 		dailyBut.setBounds(30, 120, 150, 30);
 		weeklyBut.setBounds(30, 150, 150, 30);
@@ -146,7 +144,6 @@ public class forecastGUI extends JFrame implements ActionListener
 		Panel.add(day6);
 		Panel.add(day7);
 		Panel.add(hilow);
-		//Panel.add(precip);
 		Panel.add(location);
 		Panel.add(dailyBut);
 		Panel.add(weeklyBut);
