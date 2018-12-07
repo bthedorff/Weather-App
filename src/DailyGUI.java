@@ -1,4 +1,3 @@
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -97,7 +96,7 @@ public class DailyGUI extends JFrame implements ActionListener {
 		warning.addActionListener(this);
 		position.gridx = 5;
 		position.gridy = 6;
-		warning.setPreferredSize(new Dimension(20,20));
+		warning.setPreferredSize(new Dimension(20, 20));
 		add(warning, position);
 		
 		/**location Label*/
@@ -122,39 +121,39 @@ public class DailyGUI extends JFrame implements ActionListener {
 		/**Sets the icon image that will be displayed*/
 		try {
 			if (data.weatherIcon[0].equals("partly-cloudy-day")) {
-				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/partlyCloudyDayIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
-			}
-			else if (data.weatherIcon[0].equals("clear-day")) {
-				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/clearDayIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
-			}
-			else if (data.weatherIcon[0].equals("rain")) {
-				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/rainIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
-			}
-			else if (data.weatherIcon[0].equals("cloudy")) {
-				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/cloudyIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
-			}
-			else if (data.weatherIcon[0].equals("snow")) {
-				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/snowIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
-			}
-			else if (data.weatherIcon[0].equals("sleet")) {
-				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/sleetIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
-			}
-			else if (data.weatherIcon[0].equals("wind")) {
-				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/windIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
-			}
-			else if (data.weatherIcon[0].equals("fog")) {
+				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/partlyCloudyDayIcon.png"))
+						.getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+			} else if (data.weatherIcon[0].equals("clear-day")) {
+				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/clearDayIcon.png"))
+						.getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+			} else if (data.weatherIcon[0].equals("rain")) {
+				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/rainIcon.png"))
+						.getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+			} else if (data.weatherIcon[0].equals("cloudy")) {
+				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/cloudyIcon.png"))
+						.getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+			} else if (data.weatherIcon[0].equals("snow")) {
+				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/snowIcon.png"))
+						.getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+			} else if (data.weatherIcon[0].equals("sleet")) {
+				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/sleetIcon.png"))
+						.getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+			} else if (data.weatherIcon[0].equals("wind")) {
+				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/windIcon.png"))
+						.getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+			} else if (data.weatherIcon[0].equals("fog")) {
 				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/fogIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+			} else if (data.weatherIcon[0].equals("clear-night")) {
+				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/clearNightIcon.png"))
+						.getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+			} else if (data.weatherIcon[0].equals("partly-cloudy-night")) {
+				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/partlyCloudyNightIcon.png"))
+						.getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+		} else {
+				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/clearDayIcon.png"))
+						.getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
 			}
-			else if (data.weatherIcon[0].equals("clear-night")) {
-				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/clearNightIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
-			}
-			else if (data.weatherIcon[0].equals("partly-cloudy-night")) {
-				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/partlyCloudyNightIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
-			}
-			else {
-				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/clearDayIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
-			}
-		} catch(IOException e) {}
+		} catch (IOException e) { }
 		//SpotBugs: image isn't really null
 		icon = new ImageIcon(image);
 		
@@ -208,15 +207,13 @@ public class DailyGUI extends JFrame implements ActionListener {
 	 * @param arg0 the user pressing a button
 	 */
 	public void actionPerformed(ActionEvent arg0) {		
-		if(arg0.getSource() == checkDaily) {
+		if (arg0.getSource() == checkDaily) {
 			new DailyGUI(data);
 			dispose();
-		}
-		else if(arg0.getSource() == checkWeekly) {
+		} else if (arg0.getSource() == checkWeekly) {
 			new forecastGUI(data);
 			dispose();
-		}
-		else if(arg0.getSource() == search) {
+			} else if (arg0.getSource() == search) {
 			String args[] = new String[0];
 			try {
 				Main.main(args);
@@ -224,8 +221,7 @@ public class DailyGUI extends JFrame implements ActionListener {
 				e.printStackTrace();
 			}
 			dispose();
-		}
-		else if(arg0.getSource() == warning) {
+		} else if (arg0.getSource() == warning) {
 			new WarnGUI(data);
 		}
 	}

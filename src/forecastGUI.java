@@ -16,8 +16,7 @@ import java.util.Date;
 * @author Ryan De Jong
 * @version Fall 2018
 *****************************************************************/
-public class forecastGUI extends JFrame implements ActionListener
-{
+public class forecastGUI extends JFrame implements ActionListener {
 	/**Displays the weather forecast for the week*/
 	private JPanel Panel;
 	/**Displays data for current day*/
@@ -58,8 +57,7 @@ public class forecastGUI extends JFrame implements ActionListener
 	 * @param d WeatherData object holding 
 	 * the weather data
 	 ***************************************/
-	public forecastGUI(WeatherData d)
-	{
+	public forecastGUI(WeatherData d) {
 		/** Initializes data */
 		data = d;
 		//data.setTestData();
@@ -174,15 +172,13 @@ public class forecastGUI extends JFrame implements ActionListener
 	 * @param arg0 the user pressing a button
 	 *****************************************/
 	public void actionPerformed(ActionEvent arg0) {
-		if(arg0.getSource() == dailyBut) {
+		if (arg0.getSource() == dailyBut) {
 			new DailyGUI(data);
 			dispose();
-		}
-		else if(arg0.getSource() == weeklyBut) {
+		} else if (arg0.getSource() == weeklyBut) {
 			new forecastGUI(data);
 			dispose();
-		}
-		else if(arg0.getSource() == searchLocBut) {
+		} else if (arg0.getSource() == searchLocBut) {
 			String args[] = new String[0];
 			try {
 				Main.main(args);
@@ -190,8 +186,7 @@ public class forecastGUI extends JFrame implements ActionListener
 				e.printStackTrace();
 			}
 			dispose();
-		}
-		else if(arg0.getSource() == warnBut) {
+		} else if (arg0.getSource() == warnBut) {
 			new WarnGUI(data);
 		}
 	}

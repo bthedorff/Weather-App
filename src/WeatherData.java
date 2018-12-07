@@ -1,6 +1,4 @@
 import java.util.Date;
-
-import javax.swing.JLabel;
 /*****************************************************************
 * Stores all the things parsed from the Darksky API for use
 * throughout the app
@@ -48,7 +46,7 @@ public class WeatherData {
 	/*********************************************
 	 * Creates WeatherData objects to hold data
 	 *********************************************/
-	WeatherData(){
+	WeatherData() {
 		//current date/time
 		date = new Date[8];
 		//icon correlating to current weather

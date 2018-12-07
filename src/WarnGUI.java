@@ -14,8 +14,7 @@ import java.awt.event.ActionListener;
 * @author Ryan De Jong
 * @version Fall 2007
 ******************************************************************/
-public class WarnGUI extends JFrame implements ActionListener
-{
+public class WarnGUI extends JFrame implements ActionListener {
 	/**Contains all the elements to put on the Frame*/
 	private JPanel Panel;
 	/**Display number and type of warnings*/
@@ -31,8 +30,7 @@ public class WarnGUI extends JFrame implements ActionListener
 	 *  Creates the GUI for warning if available 
 	 * @param d WeatherData object to hold the weather data
 	 *******************************************************/
-	public WarnGUI(WeatherData d)
-	{
+	public WarnGUI(WeatherData d) {
 		/** Initializes Data*/
 		data = d;
 		
@@ -51,30 +49,21 @@ public class WarnGUI extends JFrame implements ActionListener
 		heading = new JLabel(numOfWarnings + " Weather Warnings");
 
 		/**Displays appropriate number of warnings*/
-		if(numOfWarnings == 1)
-		{
+		if (numOfWarnings == 1) {
 			Warning1 = new JLabel("There is a Winter Weather Advisory");
-		}
-		else if(numOfWarnings == 2)
-		{
+		} else if (numOfWarnings == 2) {
 			Warning1 = new JLabel("There is a Winter Weather Advisory");
 			Warning2 = new JLabel("There is a Winter Weather Advisory");
-		}
-		else if(numOfWarnings == 3)
-		{
+		} else if (numOfWarnings == 3) {
 			Warning1 = new JLabel("There is a Winter Weather Advisory");
 			Warning2 = new JLabel("There is a Winter Weather Advisory");
 			Warning3 = new JLabel("There is a Winter Weather Advisory");
-		}
-		else if(numOfWarnings == 4)
-		{
+		} else if (numOfWarnings == 4) {
 			Warning1 = new JLabel("There is a Winter Weather Advisory");
 			Warning2 = new JLabel("There is a Winter Weather Advisory");
 			Warning3 = new JLabel("There is a Winter Weather Advisory");
 			Warning4 = new JLabel("There is a Winter Weather Advisory");		
-		}
-		else
-		{
+		} else {
 			Warning1 = new JLabel("");
 			Warning2 = new JLabel("");
 			Warning3 = new JLabel("");
@@ -86,11 +75,11 @@ public class WarnGUI extends JFrame implements ActionListener
 		closeBut.setBounds(150, 140, 150, 30);
 		
 		/**Set location and size*/
-		heading.setBounds(15,5,150,20);
-		Warning1.setBounds(15,25,240,20);
-		Warning2.setBounds(15,40,240,20);
-		Warning3.setBounds(15,55,240,20);
-		Warning4.setBounds(15,70,240,20);
+		heading.setBounds(15, 5, 150, 20);
+		Warning1.setBounds(15, 25, 240, 20);
+		Warning2.setBounds(15, 40, 240, 20);
+		Warning3.setBounds(15, 55, 240, 20);
+		Warning4.setBounds(15, 70, 240, 20);
 		
 		/**Add to panel*/
 		Panel.add(heading);
@@ -112,7 +101,7 @@ public class WarnGUI extends JFrame implements ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		/**Close the warning GUI*/
-		if(e.getSource() == closeBut) {
+		if (e.getSource() == closeBut) {
 			dispose();
 		}
 	}

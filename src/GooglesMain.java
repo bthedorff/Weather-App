@@ -23,10 +23,16 @@ import org.json.JSONObject;
  * 
  ****************************************************************/
 public class GooglesMain {
+	/***********************************************
+	 * Gets the geoLocation code fromn google maps
+	 * @param lon the longitude
+	 * @param lat the latitude
+	 * @return result.tostring the string with the data
+	 **********************************************/
 	public String getGeoCode(double lon, double lat, boolean ssl) throws Exception {
 	    // build url
 	    StringBuilder url = new StringBuilder("http");
-	    if ( ssl ) {
+	    if (ssl) {
 	        url.append("s");
 	    }
 	    url.append("://maps.googleapis.com/maps/api/geocode/json?");
@@ -36,7 +42,7 @@ public class GooglesMain {
 	    url.append(",");
 	    url.append(lon);    // longitude
 	    url.append("&");
-	    if ( ssl ) {
+	    if (ssl) {
 	        url.append("key=");
 	        url.append(API_KEY);
 	    }

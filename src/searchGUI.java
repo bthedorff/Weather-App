@@ -1,4 +1,3 @@
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
@@ -12,17 +11,20 @@ import javax.swing.*;
 * @author Ryan De Jong
 * @version Fall 2007
 ******************************************************************/
-public class searchGUI extends JFrame implements ActionListener{
+public class searchGUI extends JFrame implements ActionListener {
 	/**Displays the weather information*/
 	private JPanel Panel;
-	/**Instructs the user*/
+	/**Label for Location*/
 	private JLabel location;
+	/**Label for Longitude input*/
 	private JLabel enterLongitude;
+	/**Label for Latitude input*/
 	private JLabel enterLatitude;
 	/**Used to search for a location*/
 	private JButton enterBut;
 	/**Allows the user to enter a location*/
 	private JTextField inpLat;
+	/**text field for long input for Location*/
 	private JTextField inpLong;
 	/**Holds the user's desired location*/
 	public static String userLoc = "Choose Location";
@@ -50,8 +52,8 @@ public class searchGUI extends JFrame implements ActionListener{
 		enterBut.addActionListener(this);
 
 		/**Initializes search bar*/
-		inpLat= new JTextField("",10);
-		inpLong= new JTextField("",10);
+		inpLat = new JTextField("",10);
+		inpLong = new JTextField("",10);
 		location = new JLabel("Choose Desired Location:");
 		enterLongitude = new JLabel("Enter Longitude:");
 		enterLatitude = new JLabel("Enter Latitude:");
@@ -82,41 +84,34 @@ public class searchGUI extends JFrame implements ActionListener{
 
 	/********************************************
 	 * Returns the location the user entered
-	 * @return userLoc user's location
 	 ********************************************/
 	public void setCoordinates(String Location)
 	{
-		if(Location == "Allendale, MI")
+		if (Location == "Allendale, MI")
 		{
 			Long = -85.95365;
 			Lat = 42.97225;
-		}
-		else if(Location == "Denver, CO")
+		} else if (Location == "Denver, CO")
 		{
 			Long = -104.9847;
 			Lat = 39.73915;
-		}
-		else if(Location == "Los Angeles, CA")
+		} else if (Location == "Los Angeles, CA")
 		{
 			Long = -118.24368;
 			Lat = 34.05223;
-		}
-		else if(Location == "Detroit, MI")
+		} else if (Location == "Detroit, MI")
 		{
 			Long = -83.04575;
 			Lat = 42.33143;
-		}
-		else if(Location == "New York, NY")
+		} else if  (Location == "New York, NY")
 		{
 			Long = -74.00597;
 			Lat = 40.71427;
-		}
-		else if(Location == "London, UK")
+		} else if (Location == "London, UK")
 		{
 			Long = -0.12574;
 			Lat = 51.50853;
-		}
-		else
+		} else
 		{
 			Long = -85.95365;
 			Lat = 42.97225;
@@ -126,16 +121,14 @@ public class searchGUI extends JFrame implements ActionListener{
 	 * Gets the longitude
 	 * @return Long The longitude inputed
 	 ***************************************/
-	public double getLong()
-	{
+	public double getLong() {
 		return Long;
 	}
 	/****************************************
 	 * Gets the latitude
 	 * @return Lat The latitude inputed
 	 ***************************************/
-	public double getLat()
-	{
+	public double getLat() {
 		return Lat;
 	}
 
@@ -146,25 +139,19 @@ public class searchGUI extends JFrame implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource() == enterBut) {
-			if(locList.getSelectedItem() != "Custom")
+			if (locList.getSelectedItem() != "Custom")
 			{
 				this.setCoordinates((String) locList.getSelectedItem());
-			}
-			else
-			{
-				try 
-				{
+			} else {
+				try {
 				Long = Double.parseDouble(inpLong.getText());
 				Lat = Double.parseDouble(inpLat.getText());
-				if((!(-180.0 <= Long && Long <= 180.0) || !(-90 <= Lat && Lat <= 90)))
-				{
+				if ((!(-180.0 <= Long && Long <= 180.0) || !(-90 <= Lat && Lat <= 90))) {
 					inpLong.setText("");
 					inpLat.setText("");
 					return;
-				}
-				}
-				catch(Exception ex)
-				{
+				} 
+				} catch (Exception ex) {
 					inpLong.setText("");
 					inpLat.setText("");
 					return;
