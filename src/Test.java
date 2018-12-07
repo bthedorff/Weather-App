@@ -17,8 +17,8 @@ public class Test {
 		
 		searchGUI x = new searchGUI();
 		x.setVisible(false);
-		x.Long = -85.95365;
-		x.Lat = 42.97225;
+//		x.Long = -85.95365;
+//		x.Lat = 42.97225;
 		//x.locList.getSelectedItem().
 	}
 	
@@ -27,8 +27,8 @@ public class Test {
 		
 		searchGUI x = new searchGUI();
 		x.setVisible(false);
-		searchGUI.Long = -85.95365;
-		searchGUI.Lat = 42.97225;
+//		searchGUI.Long = -85.95365;
+//		searchGUI.Lat = 42.97225;
 	   double lat = x.getLong();
 //	   if (lat = searchGUI.Long;) {
 //   
