@@ -64,7 +64,7 @@ public class APIPuller {
 		DarkSkyClient client = new DarkSkyClient();
 		JSONObject obj;
 		
-		//creates a request for the current day (more accurate)
+		//creates a request for the current day (more accu rate)
 		ForecastRequest current = new ForecastRequestBuilder()
 	            .key(new APIKey(APIKey))
 	            .time(Instant.now().plus(0, ChronoUnit.DAYS))
@@ -108,7 +108,7 @@ public class APIPuller {
 		            .key(new APIKey(APIKey))
 		            .time(Instant.now().plus(i, ChronoUnit.DAYS))
 		            .language(ForecastRequestBuilder.Language.en)
-		            .units(ForecastRequestBuilder.Units.auto)
+		            .units(ForecastRequestBuilder.Units.us)
 		            .exclude(ForecastRequestBuilder.Block.minutely)
 		            .exclude(ForecastRequestBuilder.Block.hourly)
 		            .location(new GeoCoordinates(new Longitude(coords[0]), new Latitude(coords[1]))).build();
