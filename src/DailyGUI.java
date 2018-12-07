@@ -47,6 +47,8 @@ public class DailyGUI extends JFrame implements ActionListener
 	JLabel dailyForecast;
 	/**Displays the daily humidity for the location*/
 	JLabel humidity;
+	/**Displays the probability of precipitation*/
+	JLabel probPrecip;
 	/**Displays the average windspeed for the day for the location*/
 	JLabel windspeed;
 	/**Displays what it currently feels like at the location*/
@@ -71,7 +73,7 @@ public class DailyGUI extends JFrame implements ActionListener
 	 ************************************************************/
 	public DailyGUI(WeatherData d) {
 		data = d;
-		//data.setTestData();
+		data.setTestData();
 		
 		setLayout(new GridBagLayout());
 		GridBagConstraints position = new GridBagConstraints();
@@ -122,8 +124,8 @@ public class DailyGUI extends JFrame implements ActionListener
 		position.gridy = 2;
 		add(currentTemp, position);
 
-		/**highTemp Label*/
-		highlowTemp = new JLabel("<html><div style='text-align: center;'>" + data.highTemp[0] + "<br>-------<br>" + data.lowTemp[0] + "</div></html>");
+		/**highlowTemp Label*/
+		highlowTemp = new JLabel("<html><div style='text-align: center;'>H: " + data.highTemp[0] + "<br>-------<br>L: " + data.lowTemp[0] + "</div></html>");
 		position.gridx = 2;
 		position.gridy = 2;
 		add(highlowTemp, position);
@@ -180,20 +182,26 @@ public class DailyGUI extends JFrame implements ActionListener
 		add(dailyForecast, position);
 
 		/**humidity Label*/
-		humidity = new JLabel("<html><div style='text-align: center;'>Humidity<br>-------<br>" + data.humidity[0] + "</div></html>");
+		humidity = new JLabel("<html><div style='text-align: center;'>Humidity<br>-------<br>" + data.humidity[0] + "%</div></html>");
 		position.gridx = 2;
 		position.gridy = 4;
 		add(humidity, position);
 
-		/**windspeed Label*/
-		windspeed = new JLabel("<html><div style='text-align: center;'>Wind Speed<br>-------<br>" + data.windSpeed[0] + "</div></html>");
+		/**probPrecip Label*/
+		probPrecip = new JLabel("<html><div style='text-align: center;'>Precipitation<br>-------<br>" + data.precipProb[0] + "%</div></html>");
 		position.gridx = 3;
 		position.gridy = 4;
+		add(probPrecip, position);
+		
+		/**windspeed Label*/
+		windspeed = new JLabel("<html><div style='text-align: center;'>Wind Speed<br>-------<br>" + data.windSpeed[0] + "</div></html>");
+		position.gridx = 1;
+		position.gridy = 6;
 		add(windspeed, position);
 
 		/**feelsLike Label*/
 		feelsLike = new JLabel("<html><div style='text-align: center;'>Feels Like<br>-------<br>" + data.feelsLike[0] + "</div></html>");
-		position.gridx = 1;
+		position.gridx = 2;
 		position.gridy = 6;
 		add(feelsLike, position);
 
