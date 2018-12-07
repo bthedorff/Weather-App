@@ -24,7 +24,7 @@ public class WarnGUI extends JFrame implements ActionListener {
 	/**Updated from main, contains number of current weather warnings*/
 	public int numOfWarnings;
 	/** Initializes WeatherData object */ 
-	static WeatherData data;
+	WeatherData data;
 	
 	/********************************************************
 	 *  Creates the GUI for warning if available 

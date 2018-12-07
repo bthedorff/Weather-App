@@ -26,10 +26,8 @@ public class searchGUI extends JFrame implements ActionListener {
 	private JTextField inpLat;
 	/**text field for long input for Location*/
 	private JTextField inpLong;
-	/**Holds the user's desired location*/
-	public static String userLoc = "Choose Location";
 	/** Defaults for longitude and latitude */
-	public static double Long = -0.12574, Lat = 51.50853;
+	public double Long = -0.12574, Lat = 51.50853;
 	/**Creates the JCombobox of locations */
 	JComboBox<String> locList;
 

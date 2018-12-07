@@ -53,7 +53,7 @@ public class DailyGUI extends JFrame implements ActionListener {
 	Image image = null;
 	
 	/**Holds the weather data obtained from the API*/
-	static WeatherData data = new WeatherData();
+	WeatherData data = new WeatherData();
 
 
 	/************************************************************
