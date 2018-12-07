@@ -79,7 +79,8 @@ public class WeatherData {
 			highTemp[i] = 0.0;
 			lowTemp[i] = 0.0;
 			forecast[i] = "Rain";
-			humidity[i] = 0.0;
+			humidity[i] = 0;
+			precipProb[i] = 0;
 			windSpeed[i] = 0.0;
 			feelsLike[i] = 0.0;
 		}
