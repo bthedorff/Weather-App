@@ -133,7 +133,7 @@ public class DailyGUI extends JFrame implements ActionListener
 		/**Sets the icon image that will be displayed*/
 		try {
 			if (data.weatherIcon[0].equals("partly-cloudy-day")) {
-				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/partlyCloudyIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
+				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/partlyCloudyDayIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
 			}
 			else if (data.weatherIcon[0].equals("clear-day")) {
 				image = ImageIO.read(new URL("https://raw.githubusercontent.com/bthedorff/Weather-App/master/Icons/clearDayIcon.png")).getScaledInstance(50, 50, BufferedImage.SCALE_SMOOTH);
