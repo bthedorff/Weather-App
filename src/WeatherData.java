@@ -2,9 +2,8 @@ import java.util.Date;
 
 import javax.swing.JLabel;
 /*****************************************************************
-* Stores all the things parsed from the Darksky API for use 
+* Stores all the things parsed from the Darksky API for use
 * throughout the app
-* 
 * @author Brandon Thedorff
 * @author Nick Pydyn
 * @author Denver DeBoer
