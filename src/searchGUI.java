@@ -87,27 +87,27 @@ public class searchGUI extends JFrame implements ActionListener {
 	 ********************************************/
 	public void setCoordinates(String Location)
 	{
-		if (Location == "Allendale, MI")
+		if (Location.equals("Allendale, MI") )
 		{
 			Long = -85.95365;
 			Lat = 42.97225;
-		} else if (Location == "Denver, CO")
+		} else if (Location.equals("Denver, CO"))
 		{
 			Long = -104.9847;
 			Lat = 39.73915;
-		} else if (Location == "Los Angeles, CA")
+		} else if (Location.equals("Los Angeles, CA"))
 		{
 			Long = -118.24368;
 			Lat = 34.05223;
-		} else if (Location == "Detroit, MI")
+		} else if (Location.equals("Detroit, MI"))
 		{
 			Long = -83.04575;
 			Lat = 42.33143;
-		} else if  (Location == "New York, NY")
+		} else if  (Location.equals("New York, NY"))
 		{
 			Long = -74.00597;
 			Lat = 40.71427;
-		} else if (Location == "London, UK")
+		} else if (Location.equals("London, UK"))
 		{
 			Long = -0.12574;
 			Lat = 51.50853;
