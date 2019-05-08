@@ -3,119 +3,192 @@ import java.awt.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
-
-public class forecastGUI extends JFrame implements ActionListener
-{
+/*****************************************************************
+* GUI for the weather for the next 7 days 
+*
+* @author Brandon Thedorff
+* @author Nick Pydyn
+* @author Denver DeBoer
+* @author Ryan De Jong
+* @version Fall 2018
+*****************************************************************/
+public class forecastGUI extends JFrame implements ActionListener {
+	/**Displays the weather forecast for the week*/
 	private JPanel Panel;
-	
-	private JLabel Sunday;
-	private JLabel Monday;
-	private JLabel Tuesday;
-	private JLabel Wednesday;
-	private JLabel Thursday;
-	private JLabel Friday;
-	private JLabel Saturday;
-	private JLabel high;
-	private JLabel low;
+	/**Displays data for current day*/
+	private JLabel day1;
+	/**Displays data for tomorrow*/
+	private JLabel day2;
+	/**Displays data for Day 3 for forecast*/
+	private JLabel day3;
+	/**Displays data for Day 4*/
+	private JLabel day4;
+	/**Displays data for Day 5*/
+	private JLabel day5;
+	/**Displays data for Day 6*/
+	private JLabel day6;
+	/**Displays data for Day 7*/
+	private JLabel day7;
+	/**Displays data for daily high and low*/
+	private JLabel hilow;
+	/**Displays data for precipitation*/
 	private JLabel precip;
+	/**Displays the location*/
 	private JLabel location;
 	
+	/**Used to switch to the dailyGUI window*/
 	private JButton dailyBut;
+	/**Used to refresh the forecastGUI window*/
 	private JButton weeklyBut;
+	/**Allows the user to search for a new location*/
 	private JButton searchLocBut;
+	/**Used to display any weather warnings*/
 	private JButton warnBut;
 	
-	private Graphics line;
+	/**Holds the weather data obtained from the API*/
+	WeatherData data = new WeatherData();
 	
-	public void Forecast()
-	{
+	/***************************************
+	 * Sets up the forecastGUI panel
+	 * @param d WeatherData object holding 
+	 * the weather data
+	 ***************************************/
+	public forecastGUI(WeatherData d) {
+		/** Initializes data */
+		data = d;
+		//data.setTestData();
+		
+		/**Initializes GUI window*/
 		setTitle("Weekly Forecast");
 		getContentPane();
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		/**Sets up the JPanel */
 		Panel = (JPanel) getContentPane();
 		Panel.setLayout(null);
 		
+		/**Initializes search button*/
 		searchLocBut = new JButton("Set Location");
 		searchLocBut.addActionListener(this);
 		
+		/**Initializes weekly weather button*/
 		weeklyBut = new JButton("Weekly Forecast");
 		weeklyBut.addActionListener(this);
 		
+		/**Initializes daily weather button*/
 		dailyBut = new JButton("Daily Weather");
 		dailyBut.addActionListener(this);
 		
-		warnBut = new JButton("Warnings");
+		/**Initializes warning button*/
+		warnBut = new JButton();
+		warnBut.setBackground(Color.RED);
 		warnBut.addActionListener(this);
 		
-		JLabel Sunday = new JLabel("Sunday");
-		JLabel Monday = new JLabel("Monday");
-		JLabel Tuesday = new JLabel("Tuesday");
-		JLabel Wednesday = new JLabel("Wednesday");
-		JLabel Thursday = new JLabel("Thursday");
-		JLabel Friday = new JLabel("Friday");
-		JLabel Saturday = new JLabel("Saturday");
-		JLabel hilow = new JLabel("High/Low");
-		JLabel precip = new JLabel("Precipitation");
-		JLabel location = new JLabel(searchGUI.getLoc());
+		/**Initializes the calendar and sets time*/
+		Calendar calendar = Calendar.getInstance();
+		Date day = calendar.getTime();
+		SimpleDateFormat format = new SimpleDateFormat("E");
+		
+		/**Initailizes JLabels*/
+		day1 = new JLabel("<html><div style='text-align: center;'>" + format.format(day)
+		+ "<br><br>" + "<div style='text-align: center;'>" + data.highTemp[0]
+				+ "*F<br>-------<br>" + data.lowTemp[0] + "*F</div></div></html>");
+		calendar.add(Calendar.DAY_OF_YEAR, 1);
+		day = calendar.getTime();
+		day2 = new JLabel("<html><div style='text-align: center;'>" + format.format(day)
+		+ "<br><br>" + "<div style='text-align: center;'>" + data.highTemp[1]
+				+ "*F<br>-------<br>" + data.lowTemp[1] + "*F</div></div></html>");
+		calendar.add(Calendar.DAY_OF_YEAR, 1);
+		day = calendar.getTime();
+		day3 = new JLabel("<html><div style='text-align: center;'>" + format.format(day)
+		+ "<br><br>" + "<div style='text-align: center;'>" + data.highTemp[2]
+				+ "*F<br>-------<br>" + data.lowTemp[2] + "*F</div></div></html>");
+		calendar.add(Calendar.DAY_OF_YEAR, 1);
+		day = calendar.getTime();
+		day4 = new JLabel("<html><div style='text-align: center;'>" + format.format(day)
+		+ "<br><br>" + "<div style='text-align: center;'>" + data.highTemp[3]
+				+ "*F<br>-------<br>" + data.lowTemp[3] + "*F</div></div></html>");
+		calendar.add(Calendar.DAY_OF_YEAR, 1);
+		day = calendar.getTime();
+		day5 = new JLabel("<html><div style='text-align: center;'>" + format.format(day)
+		+ "<br><br>" + "<div style='text-align: center;'>" + data.highTemp[4]
+				+ "*F<br>-------<br>" + data.lowTemp[4] + "*F</div></div></html>");
+		calendar.add(Calendar.DAY_OF_YEAR, 1);
+		day = calendar.getTime();
+		day6 = new JLabel("<html><div style='text-align: center;'>" + format.format(day)
+		+ "<br><br>" + "<div style='text-align: center;'>" + data.highTemp[5]
+				+ "*F<br>-------<br>" + data.lowTemp[5] + "*F</div></div></html>");
+		calendar.add(Calendar.DAY_OF_YEAR, 1);
+		day = calendar.getTime();
+		day7 = new JLabel("<html><div style='text-align: center;'>" + format.format(day)
+		+ "<br><br>" + "<div style='text-align: center;'>" + data.highTemp[6]
+				+ "*F<br>-------<br>" + data.lowTemp[6] + "*F</div></div></html>");
+		hilow = new JLabel("<html><div style='text-align: center;'>High<br>-------<br>Low</div></html>");
+		location = new JLabel(data.cityName + ", " + data.StateName);
 		location.setFont(new Font("Serif", Font.PLAIN, 20));
 		
-		Sunday.setBounds(285, 80, 75, 30);
-		Monday.setBounds(350, 80, 75, 30);
-		Tuesday.setBounds(415, 80, 75, 30);
-		Wednesday.setBounds(480, 80, 75, 30);
-		Thursday.setBounds(565, 80, 75, 30);
-		Friday.setBounds(640, 80, 75, 30);
-		Saturday.setBounds(705, 80, 75, 30);
-		hilow.setBounds(210, 140, 75, 30);
-		precip.setBounds(200, 250, 90, 30);
+		/**Sets location of components on the panel*/
+		day1.setBounds(285, 42, 75, 200);
+		day2.setBounds(350, 42, 75, 200);
+		day3.setBounds(415, 42, 75, 200);
+		day4.setBounds(480, 42, 75, 200);
+		day5.setBounds(545, 42, 75, 200);
+		day6.setBounds(610, 42, 75, 200);
+		day7.setBounds(675, 42, 75, 200);
+		hilow.setBounds(210, 107, 75, 100);
 		location.setBounds(340, 30, 300, 30);
-		dailyBut.setBounds(35, 120, 150, 30);
-		weeklyBut.setBounds(35, 230, 150, 30);
-		searchLocBut.setBounds(35, 350, 150, 30);
-		warnBut.setBounds(670, 400, 120, 30);
+		dailyBut.setBounds(30, 120, 150, 30);
+		weeklyBut.setBounds(30, 150, 150, 30);
+		searchLocBut.setBounds(30, 180, 150, 30);
+		warnBut.setBounds(730, 275, 20, 20);
 		
-		Panel.add(Sunday);
-		Panel.add(Monday);
-		Panel.add(Tuesday);
-		Panel.add(Wednesday);
-		Panel.add(Thursday);
-		Panel.add(Friday);
-		Panel.add(Saturday);
+		/**Adds components to panel*/
+		Panel.add(day1);
+		Panel.add(day2);
+		Panel.add(day3);
+		Panel.add(day4);
+		Panel.add(day5);
+		Panel.add(day6);
+		Panel.add(day7);
 		Panel.add(hilow);
-		Panel.add(precip);
 		Panel.add(location);
 		Panel.add(dailyBut);
 		Panel.add(weeklyBut);
 		Panel.add(searchLocBut);
 		Panel.add(warnBut);
 		
-		
-		setSize(800, 450);
+		/**Creates frame on screen*/
+		setSize(800, 375);
 		setLocationRelativeTo(null);
 		setVisible(true);
 	}
-	
-	public void actionPerformed(ActionEvent arg0) {		
-		if(arg0.getSource() == dailyBut) {
+
+	/******************************************
+	 * Sets the functionality of the buttons
+	 * @param arg0 the user pressing a button
+	 *****************************************/
+	public void actionPerformed(ActionEvent arg0) {
+		if (arg0.getSource() == dailyBut) {
+			new DailyGUI(data);
 			dispose();
-			new DailyGUI();
-		}
-		else if(arg0.getSource() == weeklyBut) {
-		}
-		else if(arg0.getSource() == searchLocBut) {
+		} else if (arg0.getSource() == weeklyBut) {
+			new forecastGUI(data);
 			dispose();
-			new searchGUI().locationLookup();
-		}
-		else if(arg0.getSource() == warnBut) {
+		} else if (arg0.getSource() == searchLocBut) {
+			String args[] = new String[0];
+			try {
+				Main.main(args);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			dispose();
-			//new warnGUI();
-			System.exit(0);
+		} else if (arg0.getSource() == warnBut) {
+			new WarnGUI(data);
 		}
-	}
-	public static void main(String[] args) {
-		new forecastGUI().Forecast();
 	}
 }
 
